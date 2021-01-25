@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.timerLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbl_minutes = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // timerLabel
@@ -50,14 +52,31 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lbl_minutes
+            // 
+            this.lbl_minutes.AutoSize = true;
+            this.lbl_minutes.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_minutes.Font = new System.Drawing.Font("Segoe Script", 23.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_minutes.ForeColor = System.Drawing.Color.Lime;
+            this.lbl_minutes.Location = new System.Drawing.Point(1167, -10);
+            this.lbl_minutes.Name = "lbl_minutes";
+            this.lbl_minutes.Size = new System.Drawing.Size(123, 49);
+            this.lbl_minutes.TabIndex = 2;
+            this.lbl_minutes.Text = "00:00";
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
+            // 
             // Interaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.lbl_minutes);
             this.Controls.Add(this.timerLabel);
             this.Name = "Interaction";
-            this.Size = new System.Drawing.Size(879, 390);
+            this.Size = new System.Drawing.Size(1303, 390);
             this.Load += new System.EventHandler(this.Interaction_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -68,5 +87,7 @@
 
         private System.Windows.Forms.Label timerLabel;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbl_minutes;
+        private System.Windows.Forms.Timer timer2;
     }
 }
