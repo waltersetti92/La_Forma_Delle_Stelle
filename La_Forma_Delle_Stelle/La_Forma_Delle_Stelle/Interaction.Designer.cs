@@ -33,6 +33,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbl_minutes = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.btn_conferma = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timerLabel
@@ -69,15 +70,27 @@
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // btn_conferma
+            // 
+            this.btn_conferma.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_conferma.ForeColor = System.Drawing.Color.Blue;
+            this.btn_conferma.Location = new System.Drawing.Point(612, 560);
+            this.btn_conferma.Name = "btn_conferma";
+            this.btn_conferma.Size = new System.Drawing.Size(209, 47);
+            this.btn_conferma.TabIndex = 3;
+            this.btn_conferma.Text = "CONFERMA ";
+            this.btn_conferma.UseVisualStyleBackColor = true;
+            // 
             // Interaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.btn_conferma);
             this.Controls.Add(this.lbl_minutes);
             this.Controls.Add(this.timerLabel);
             this.Name = "Interaction";
-            this.Size = new System.Drawing.Size(1303, 390);
+            this.Size = new System.Drawing.Size(1303, 762);
             this.Load += new System.EventHandler(this.Interaction_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -90,5 +103,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbl_minutes;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Button btn_conferma;
     }
 }

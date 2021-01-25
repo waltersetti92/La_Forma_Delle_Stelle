@@ -24,6 +24,7 @@ namespace La_Forma_Delle_Stelle
         {
             InitializeComponent();
             lbl_minutes.Visible = false;
+            btn_conferma.Visible = false;
         }
         public void setPos(int w, int h)
         {
@@ -73,6 +74,7 @@ namespace La_Forma_Delle_Stelle
             if (total_seconds > 0)
             {
                 lbl_minutes.Visible = true;
+                btn_conferma.Visible = true;
                 total_seconds--;
                 int minutes = total_seconds / 60;
                 int seconds = total_seconds - (minutes * 60);
