@@ -33,7 +33,8 @@ namespace La_Forma_Delle_Stelle
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            parentForm.onStart();
+            this.Visible = false;
         }
     }
 }

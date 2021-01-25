@@ -8,4 +8,5 @@ C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews\La_Forma_Delle_Stelle\La_For
 C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.exe
 C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.pdb
 C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.Initial.resources
+C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.Interaction.resources
 C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.csprojAssemblyReference.cache

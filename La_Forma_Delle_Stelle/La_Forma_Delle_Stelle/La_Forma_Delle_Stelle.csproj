@@ -52,6 +52,12 @@
     <Compile Include="Initial.Designer.cs">
       <DependentUpon>Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interaction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interaction.Designer.cs">
+      <DependentUpon>Interaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Initial.resx">
       <DependentUpon>Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interaction.resx">
+      <DependentUpon>Interaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

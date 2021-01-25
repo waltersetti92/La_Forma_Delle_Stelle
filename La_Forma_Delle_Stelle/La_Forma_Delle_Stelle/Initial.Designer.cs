@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.labLuda = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,10 +49,22 @@
             this.labLuda.TabIndex = 4;
             this.labLuda.Text = "LA FORMA DELLE STELLE";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe Script", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Blue;
+            this.button1.Location = new System.Drawing.Point(718, 482);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(146, 59);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "INIZIA!";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::La_Forma_Delle_Stelle.Properties.Resources.star;
-            this.pictureBox2.Location = new System.Drawing.Point(554, 192);
+            this.pictureBox2.Location = new System.Drawing.Point(538, 201);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(91, 77);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -62,24 +74,12 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::La_Forma_Delle_Stelle.Properties.Resources.Polar_Bear1;
-            this.pictureBox1.Location = new System.Drawing.Point(413, 275);
+            this.pictureBox1.Location = new System.Drawing.Point(397, 284);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(232, 196);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Segoe Script", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Blue;
-            this.button1.Location = new System.Drawing.Point(851, 485);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 59);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "INIZIA!";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Initial
             // 
