@@ -32,6 +32,7 @@ namespace La_Forma_Delle_Stelle
         private void Interaction_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
+            timer1.Start();
         }
 
         private void timerLabel_Click(object sender, EventArgs e)
@@ -48,7 +49,7 @@ namespace La_Forma_Delle_Stelle
             }
             else if (timeleft == 0)
             {
-                timer1.Stop();
+                this.timer1.Stop();
             }
         }
     }

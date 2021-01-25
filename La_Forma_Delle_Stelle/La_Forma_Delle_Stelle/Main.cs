@@ -21,6 +21,8 @@ namespace La_Forma_Delle_Stelle
             interaction1.parentForm = this;
             initial1.Visible = false;
             interaction1.Visible = false;
+            activity1.parentForm = this;
+            activity1.Visible = false;
             home();
 
         }
@@ -43,12 +45,19 @@ namespace La_Forma_Delle_Stelle
             player = new SoundPlayer(s);
             player.Play();
         }
+        public void activity()
+        {
+            interaction1.Visible = false;
+            activity1.Visible = true;
+            currUC = activity1;
+        }
 
         private void Main_Load(object sender, EventArgs e)
         {
             Size size = this.Size;
             initial1.setPos(size.Width, size.Height);
             interaction1.setPos(size.Width, size.Height);
+            activity1.setPos(size.Width, size.Height);
         }
     }
 }
