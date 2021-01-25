@@ -17,6 +17,9 @@ namespace La_Forma_Delle_Stelle
         public int timeleft = 6;
         public int counter_responses = 0;
         public int timer_game = 0;
+        private int total_seconds;
+        private int seconds=0;
+        private int minutes=4;
         public Interaction()
         {
             InitializeComponent();
@@ -38,10 +41,9 @@ namespace La_Forma_Delle_Stelle
             timer1.Start();
         }
         private void circles()
-        {
-            lbl_minutes.Visible = true;
+        {                   
+            total_seconds = (minutes * 60) + seconds;          
             timer2.Enabled = true;
-
         }
 
         private void timerLabel_Click(object sender, EventArgs e)
@@ -63,6 +65,23 @@ namespace La_Forma_Delle_Stelle
                 timerLabel.Visible = false;
                 timer_game = 1;
                 circles();
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (total_seconds > 0)
+            {
+                lbl_minutes.Visible = true;
+                total_seconds--;
+                int minutes = total_seconds / 60;
+                int seconds = total_seconds - (minutes * 60);
+                this.lbl_minutes.Text = minutes.ToString() + ":" + seconds.ToString();
+            }
+            else
+            {
+                this.timer2.Stop();
+                MessageBox.Show("Finished");
             }
         }
     }
