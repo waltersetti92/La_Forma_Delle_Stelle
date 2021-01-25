@@ -28,7 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.initial1 = new La_Forma_Delle_Stelle.Initial();
             this.SuspendLayout();
+            // 
+            // initial1
+            // 
+            this.initial1.Location = new System.Drawing.Point(3, -1);
+            this.initial1.Name = "initial1";
+            this.initial1.parentForm = null;
+            this.initial1.Size = new System.Drawing.Size(880, 364);
+            this.initial1.TabIndex = 0;
             // 
             // Main
             // 
@@ -36,6 +45,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::La_Forma_Delle_Stelle.Properties.Resources.Cielo_Stellato;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.initial1);
             this.Name = "Main";
             this.Text = "La Forma Delle Stelle";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -45,6 +55,8 @@
         }
 
         #endregion
+
+        private Initial initial1;
     }
 }
 

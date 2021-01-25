@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Initial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Initial.Designer.cs">
+      <DependentUpon>Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Initial.resx">
+      <DependentUpon>Initial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -82,6 +91,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\resources\Cielo_Stellato.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resources\Polar_Bear1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resources\star.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
