@@ -91,7 +91,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labLuda);
             this.Name = "Initial";
-            this.Size = new System.Drawing.Size(1114, 660);
+            this.Size = new System.Drawing.Size(1205, 762);
             this.Load += new System.EventHandler(this.Initial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

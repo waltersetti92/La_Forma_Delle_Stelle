@@ -34,6 +34,10 @@ namespace La_Forma_Delle_Stelle
             timer1.Enabled = true;
             timer1.Start();
         }
+        private void circles()
+        {
+           
+        }
 
         private void timerLabel_Click(object sender, EventArgs e)
         {
@@ -50,6 +54,9 @@ namespace La_Forma_Delle_Stelle
             else if (timeleft == 0)
             {
                 this.timer1.Stop();
+                timerLabel.Enabled = false;
+                timerLabel.Visible = false;
+                circles();
             }
         }
     }
