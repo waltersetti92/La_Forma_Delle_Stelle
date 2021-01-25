@@ -34,6 +34,7 @@
             this.lbl_minutes = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.btn_conferma = new System.Windows.Forms.Button();
+            this.txt_answers = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // timerLabel
@@ -74,18 +75,26 @@
             // 
             this.btn_conferma.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_conferma.ForeColor = System.Drawing.Color.Blue;
-            this.btn_conferma.Location = new System.Drawing.Point(612, 560);
+            this.btn_conferma.Location = new System.Drawing.Point(612, 561);
             this.btn_conferma.Name = "btn_conferma";
             this.btn_conferma.Size = new System.Drawing.Size(209, 47);
             this.btn_conferma.TabIndex = 3;
             this.btn_conferma.Text = "CONFERMA ";
             this.btn_conferma.UseVisualStyleBackColor = true;
             // 
+            // txt_answers
+            // 
+            this.txt_answers.Location = new System.Drawing.Point(610, 520);
+            this.txt_answers.Name = "txt_answers";
+            this.txt_answers.Size = new System.Drawing.Size(211, 20);
+            this.txt_answers.TabIndex = 4;
+            // 
             // Interaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.txt_answers);
             this.Controls.Add(this.btn_conferma);
             this.Controls.Add(this.lbl_minutes);
             this.Controls.Add(this.timerLabel);
@@ -104,5 +113,6 @@
         private System.Windows.Forms.Label lbl_minutes;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Button btn_conferma;
+        private System.Windows.Forms.TextBox txt_answers;
     }
 }
