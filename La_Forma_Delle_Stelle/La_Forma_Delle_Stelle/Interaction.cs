@@ -26,6 +26,9 @@ namespace La_Forma_Delle_Stelle
             lbl_minutes.Visible = false;
             btn_conferma.Visible = false;
             txt_answers.Visible = false;
+            Circle1.Visible = false;
+            Circle2.Visible = false;
+            lbl_Error.Visible = false;
         }
         public void setPos(int w, int h)
         {
@@ -77,6 +80,8 @@ namespace La_Forma_Delle_Stelle
                 lbl_minutes.Visible = true;
                 btn_conferma.Visible = true;
                 txt_answers.Visible = true;
+                Circle1.Visible = true;
+                Circle2.Visible = true;
                 total_seconds--;
                 int minutes = total_seconds / 60;
                 int seconds = total_seconds - (minutes * 60);
