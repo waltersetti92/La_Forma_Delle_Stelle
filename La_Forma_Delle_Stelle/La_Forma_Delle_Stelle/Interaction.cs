@@ -20,11 +20,12 @@ namespace La_Forma_Delle_Stelle
         private int total_seconds;
         private int seconds=0;
         private int minutes=2;
-        public int number_circle;
+        public int number_star=1;
         public Interaction()
         {
             InitializeComponent();
             resetOperations();
+
             
         }
         private void resetOperations()
@@ -47,9 +48,9 @@ namespace La_Forma_Delle_Stelle
             op4.Parent = Circle2;
             op5.Parent = Circle2;
             op6.Parent = Circle2;
-            Point up = new Point(120, 90);
-            Point middle = new Point(120, 190);
-            Point bottom = new Point(120, 290);
+            Point up = new Point(90, 90);
+            Point middle = new Point(90, 190);
+            Point bottom = new Point(90, 290);
             op1.Location = up;
             op2.Location = middle;
             op3.Location = bottom;
@@ -71,31 +72,40 @@ namespace La_Forma_Delle_Stelle
         private void Interaction_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
+            total_seconds = (minutes * 60) + seconds;
             timer1.Start();
         }
         public void circles()
-        {                      
-            total_seconds = (minutes * 60) + seconds;
-            timer2.Enabled = true;
-            char[] operators = { '+', '-', '*', '/' };
-            Random number = new Random();
-            number_circle = number.Next(1, 3);
-            Circle1.Visible = true;
-            Circle2.Visible = true;
-            if (number_circle == 1)
-            {            
-                op1.Visible = true;
-                op2.Visible = true;
-                op3.Visible = true;
-            }
-            else 
+        {                                  
+            switch (number_star)
             {
-                op4.Visible = true;
-                op5.Visible = true;
-                op6.Visible = true;
+                case 1:
+                    op1.Text = "3+4";
+                    this.Update();
+                    op2.Text = "6x2";
+                    this.Update();
+                    op3.Text = "15-5";
+                    this.Update();
+                    op4.Text = "7-3";
+                    this.Update();
+                    op5.Text = "5+1";
+                    this.Update();
+                    op6.Text = "10+2";
+                    this.Update();
+                    break;
+                case 2:
+                    op1.Text = "3-2";
+                    this.Update();
+                    break;
             }
-
+            op1.Visible = true;
+            op2.Visible = true;
+            op3.Visible = true;
+            op4.Visible = true;
+            op5.Visible = true;
+            op6.Visible = true;
         }
+
 
         private void timerLabel_Click(object sender, EventArgs e)
         {
@@ -115,6 +125,7 @@ namespace La_Forma_Delle_Stelle
                 timerLabel.Enabled = false;
                 timerLabel.Visible = false;
                 timer_game = 1;
+                timer2.Enabled = true;
                 circles();
             }
         }
@@ -126,6 +137,8 @@ namespace La_Forma_Delle_Stelle
                 lbl_minutes.Visible = true;
                 btn_conferma.Visible = true;
                 txt_answers.Visible = true;
+                Circle1.Visible = true;
+                Circle2.Visible = true;
                 total_seconds--;
                 int minutes = total_seconds / 60;
                 int seconds = total_seconds - (minutes * 60);
@@ -133,6 +146,7 @@ namespace La_Forma_Delle_Stelle
                 this.lbl_minutes.Text = minutes.ToString() + ":" + seconds.ToString();
                 else if (seconds <10)
                 this.lbl_minutes.Text = minutes.ToString() + ":" + "0" + seconds.ToString();
+                circles();
             }
             else if (total_seconds<=10)
             {
@@ -141,12 +155,29 @@ namespace La_Forma_Delle_Stelle
                 int seconds = total_seconds - (minutes * 60);
                 this.lbl_minutes.ForeColor = Color.Red;
                 this.lbl_minutes.Text =  minutes.ToString() + ":" + "0" + seconds.ToString();
+                circles();
             }
             else if (total_seconds==0)
             {
                 this.timer2.Stop();
                 MessageBox.Show("Finished");
             }
+        }
+
+        private void btn_conferma_Click(object sender, EventArgs e)
+        {
+            switch (number_star)
+            {
+                case 1:
+
+                    break;
+            }
+            number_star++;
+        }
+
+        private void Circle1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

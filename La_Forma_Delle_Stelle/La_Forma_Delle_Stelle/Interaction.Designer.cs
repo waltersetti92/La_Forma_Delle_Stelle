@@ -92,24 +92,27 @@
             this.btn_conferma.TabIndex = 3;
             this.btn_conferma.Text = "CONFERMA ";
             this.btn_conferma.UseVisualStyleBackColor = true;
+            this.btn_conferma.Click += new System.EventHandler(this.btn_conferma_Click);
             // 
             // txt_answers
             // 
-            this.txt_answers.Location = new System.Drawing.Point(554, 519);
+            this.txt_answers.Location = new System.Drawing.Point(624, 519);
+            this.txt_answers.Multiline = true;
             this.txt_answers.Name = "txt_answers";
-            this.txt_answers.Size = new System.Drawing.Size(211, 20);
+            this.txt_answers.Size = new System.Drawing.Size(76, 36);
             this.txt_answers.TabIndex = 4;
             // 
             // Circle1
             // 
             this.Circle1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Circle1.Image = global::La_Forma_Delle_Stelle.Properties.Resources.Circle;
-            this.Circle1.Location = new System.Drawing.Point(111, 75);
+            this.Circle1.Location = new System.Drawing.Point(123, 75);
             this.Circle1.Name = "Circle1";
             this.Circle1.Size = new System.Drawing.Size(379, 441);
             this.Circle1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Circle1.TabIndex = 5;
             this.Circle1.TabStop = false;
+            this.Circle1.Click += new System.EventHandler(this.Circle1_Click);
             // 
             // Circle2
             // 
@@ -135,11 +138,11 @@
             // 
             this.op1.AutoSize = true;
             this.op1.BackColor = System.Drawing.Color.Transparent;
-            this.op1.Font = new System.Drawing.Font("Segoe Script", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.op1.Font = new System.Drawing.Font("Segoe Script", 47.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.op1.ForeColor = System.Drawing.Color.Lime;
             this.op1.Location = new System.Drawing.Point(220, 126);
             this.op1.Name = "op1";
-            this.op1.Size = new System.Drawing.Size(144, 60);
+            this.op1.Size = new System.Drawing.Size(253, 104);
             this.op1.TabIndex = 8;
             this.op1.Text = "label1";
             // 
@@ -147,11 +150,11 @@
             // 
             this.op2.AutoSize = true;
             this.op2.BackColor = System.Drawing.Color.Transparent;
-            this.op2.Font = new System.Drawing.Font("Segoe Script", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.op2.Font = new System.Drawing.Font("Segoe Script", 47.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.op2.ForeColor = System.Drawing.Color.Lime;
             this.op2.Location = new System.Drawing.Point(101, 249);
             this.op2.Name = "op2";
-            this.op2.Size = new System.Drawing.Size(144, 60);
+            this.op2.Size = new System.Drawing.Size(253, 104);
             this.op2.TabIndex = 9;
             this.op2.Text = "label1";
             // 
@@ -159,11 +162,11 @@
             // 
             this.op3.AutoSize = true;
             this.op3.BackColor = System.Drawing.Color.Transparent;
-            this.op3.Font = new System.Drawing.Font("Segoe Script", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.op3.Font = new System.Drawing.Font("Segoe Script", 47.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.op3.ForeColor = System.Drawing.Color.Lime;
             this.op3.Location = new System.Drawing.Point(101, 389);
             this.op3.Name = "op3";
-            this.op3.Size = new System.Drawing.Size(144, 60);
+            this.op3.Size = new System.Drawing.Size(253, 104);
             this.op3.TabIndex = 10;
             this.op3.Text = "label2";
             // 
@@ -171,11 +174,11 @@
             // 
             this.op4.AutoSize = true;
             this.op4.BackColor = System.Drawing.Color.Transparent;
-            this.op4.Font = new System.Drawing.Font("Segoe Script", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.op4.Font = new System.Drawing.Font("Segoe Script", 47.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.op4.ForeColor = System.Drawing.Color.Lime;
             this.op4.Location = new System.Drawing.Point(1048, 126);
             this.op4.Name = "op4";
-            this.op4.Size = new System.Drawing.Size(144, 60);
+            this.op4.Size = new System.Drawing.Size(253, 104);
             this.op4.TabIndex = 11;
             this.op4.Text = "label1";
             // 
@@ -183,11 +186,11 @@
             // 
             this.op5.AutoSize = true;
             this.op5.BackColor = System.Drawing.Color.Transparent;
-            this.op5.Font = new System.Drawing.Font("Segoe Script", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.op5.Font = new System.Drawing.Font("Segoe Script", 47.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.op5.ForeColor = System.Drawing.Color.Lime;
             this.op5.Location = new System.Drawing.Point(1091, 249);
             this.op5.Name = "op5";
-            this.op5.Size = new System.Drawing.Size(144, 60);
+            this.op5.Size = new System.Drawing.Size(253, 104);
             this.op5.TabIndex = 12;
             this.op5.Text = "label1";
             // 
@@ -195,11 +198,11 @@
             // 
             this.op6.AutoSize = true;
             this.op6.BackColor = System.Drawing.Color.Transparent;
-            this.op6.Font = new System.Drawing.Font("Segoe Script", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.op6.Font = new System.Drawing.Font("Segoe Script", 47.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.op6.ForeColor = System.Drawing.Color.Lime;
             this.op6.Location = new System.Drawing.Point(1091, 389);
             this.op6.Name = "op6";
-            this.op6.Size = new System.Drawing.Size(144, 60);
+            this.op6.Size = new System.Drawing.Size(253, 104);
             this.op6.TabIndex = 13;
             this.op6.Text = "label1";
             // 

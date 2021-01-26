@@ -35,3 +35,16 @@ C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews4\La_Forma_Delle_Stelle\La_Fo
 C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews4\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.exe
 C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews4\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.pdb
 C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews4\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.csprojAssemblyReference.cache
+C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews5\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\bin\Debug\La_Forma_Delle_Stelle.exe.config
+C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews5\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\bin\Debug\La_Forma_Delle_Stelle.exe
+C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews5\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\bin\Debug\La_Forma_Delle_Stelle.pdb
+C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews5\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.csprojAssemblyReference.cache
+C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews5\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.activity.resources
+C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews5\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.Initial.resources
+C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews5\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.Interaction.resources
+C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews5\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.Main.resources
+C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews5\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.Properties.Resources.resources
+C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews5\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.csproj.GenerateResource.cache
+C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews5\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.csproj.CoreCompileInputs.cache
+C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews5\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.exe
+C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews5\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.pdb
