@@ -76,7 +76,7 @@ namespace La_Forma_Delle_Stelle
         }
         public void circles()
         {
-            lbl_Error.Visible = false;
+            timer2.Start();
             switch (number_star)
             {
                 case 1:
@@ -173,15 +173,26 @@ namespace La_Forma_Delle_Stelle
 
         private void btn_conferma_Click(object sender, EventArgs e)
         {
+            timer2.Stop();
             switch (number_star)
             {
+
                 case 1:
                     if (string.Equals(txt_answers.Text, "12"))
                     {
+                        
+                        parentForm.playbackResourceAudio("success");
                         MessageBox.Show("Esatto!");
                         txt_answers.Text = "";
-                        this.Update();
+                        number_star++;
                         circles();
+                    }
+                    else 
+                    {
+                        parentForm.playbackResourceAudio("failure");
+                        MessageBox.Show("Sbagliato!");
+                        txt_answers.Text = "";
+                        timer2.Start();
                     }
                     break;
             }
