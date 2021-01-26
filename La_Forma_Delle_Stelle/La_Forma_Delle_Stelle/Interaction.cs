@@ -96,6 +96,12 @@ namespace La_Forma_Delle_Stelle
             }
 
         }
+        public string[] operations1(int i)
+        {
+            string[] operations = new string[3];
+
+            return operations;
+        }
 
         private void timerLabel_Click(object sender, EventArgs e)
         {
@@ -118,6 +124,7 @@ namespace La_Forma_Delle_Stelle
                 circles();
             }
         }
+        
 
         private void timer2_Tick(object sender, EventArgs e)
         {
