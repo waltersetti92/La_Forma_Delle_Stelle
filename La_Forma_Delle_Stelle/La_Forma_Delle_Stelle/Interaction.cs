@@ -58,6 +58,7 @@ namespace La_Forma_Delle_Stelle
             op5.Location = middle;
             op6.Location = bottom;
 
+
         }
         public void setPos(int w, int h)
         {
