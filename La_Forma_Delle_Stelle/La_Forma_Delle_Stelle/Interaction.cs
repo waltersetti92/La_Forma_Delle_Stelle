@@ -57,8 +57,6 @@ namespace La_Forma_Delle_Stelle
             op4.Location = up;
             op5.Location = middle;
             op6.Location = bottom;
-
-
         }
         public void setPos(int w, int h)
         {
@@ -77,7 +75,8 @@ namespace La_Forma_Delle_Stelle
             timer1.Start();
         }
         public void circles()
-        {                                  
+        {
+            lbl_Error.Visible = false;
             switch (number_star)
             {
                 case 1:
@@ -177,10 +176,16 @@ namespace La_Forma_Delle_Stelle
             switch (number_star)
             {
                 case 1:
-
+                    if (string.Equals(txt_answers.Text, "12"))
+                    {
+                        MessageBox.Show("Esatto!");
+                        txt_answers.Text = "";
+                        this.Update();
+                        circles();
+                    }
                     break;
             }
-            number_star++;
+            //number_star++;
         }
 
         private void Circle1_Click(object sender, EventArgs e)

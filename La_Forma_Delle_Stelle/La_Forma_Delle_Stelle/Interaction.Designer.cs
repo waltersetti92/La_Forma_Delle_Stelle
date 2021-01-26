@@ -96,10 +96,11 @@
             // 
             // txt_answers
             // 
-            this.txt_answers.Location = new System.Drawing.Point(624, 519);
+            this.txt_answers.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_answers.Location = new System.Drawing.Point(624, 512);
             this.txt_answers.Multiline = true;
             this.txt_answers.Name = "txt_answers";
-            this.txt_answers.Size = new System.Drawing.Size(76, 36);
+            this.txt_answers.Size = new System.Drawing.Size(66, 38);
             this.txt_answers.TabIndex = 4;
             // 
             // Circle1
