@@ -51,7 +51,6 @@ namespace La_Forma_Delle_Stelle
             Point up = new Point(90, 90);
             Point middle = new Point(90, 190);
             Point bottom = new Point(90, 290);
-
             op1.Location = up;
             op2.Location = middle;
             op3.Location = bottom;
