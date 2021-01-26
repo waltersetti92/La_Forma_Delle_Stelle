@@ -19,7 +19,7 @@ namespace La_Forma_Delle_Stelle
         public int timer_game = 0;
         private int total_seconds;
         private int seconds=0;
-        private int minutes=4;
+        private int minutes=2;
         public Interaction()
         {
             InitializeComponent();
@@ -72,7 +72,7 @@ namespace La_Forma_Delle_Stelle
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            if (total_seconds > 0)
+            if (total_seconds > 10)
             {
                 lbl_minutes.Visible = true;
                 btn_conferma.Visible = true;
@@ -80,9 +80,20 @@ namespace La_Forma_Delle_Stelle
                 total_seconds--;
                 int minutes = total_seconds / 60;
                 int seconds = total_seconds - (minutes * 60);
+                if (seconds >=10)
                 this.lbl_minutes.Text = minutes.ToString() + ":" + seconds.ToString();
+                else if (seconds <10)
+                this.lbl_minutes.Text = minutes.ToString() + ":" + "0" + seconds.ToString();
             }
-            else
+            else if (total_seconds<=10)
+            {
+                total_seconds--;
+                int minutes = total_seconds / 60;
+                int seconds = total_seconds - (minutes * 60);
+                this.lbl_minutes.ForeColor = Color.Red;
+                this.lbl_minutes.Text =  minutes.ToString() + ":" + "0" + seconds.ToString();
+            }
+            else if (total_seconds==0)
             {
                 this.timer2.Stop();
                 MessageBox.Show("Finished");
