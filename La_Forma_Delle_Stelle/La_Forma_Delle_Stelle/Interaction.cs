@@ -20,15 +20,43 @@ namespace La_Forma_Delle_Stelle
         private int total_seconds;
         private int seconds=0;
         private int minutes=2;
+        public int number_circle;
         public Interaction()
         {
             InitializeComponent();
+            resetOperations();
+            
+        }
+        private void resetOperations()
+        {
             lbl_minutes.Visible = false;
             btn_conferma.Visible = false;
             txt_answers.Visible = false;
             Circle1.Visible = false;
             Circle2.Visible = false;
             lbl_Error.Visible = false;
+            op1.Visible = false;
+            op2.Visible = false;
+            op3.Visible = false;
+            op4.Visible = false;
+            op5.Visible = false;
+            op6.Visible = false;
+            op1.Parent = Circle1;
+            op2.Parent = Circle1;
+            op3.Parent = Circle1;
+            op4.Parent = Circle2;
+            op5.Parent = Circle2;
+            op6.Parent = Circle2;
+            Point up = new Point(120, 90);
+            Point middle = new Point(120, 190);
+            Point bottom = new Point(120, 290);
+            op1.Location = up;
+            op2.Location = middle;
+            op3.Location = bottom;
+            op4.Location = up;
+            op5.Location = middle;
+            op6.Location = bottom;
+
         }
         public void setPos(int w, int h)
         {
@@ -45,10 +73,28 @@ namespace La_Forma_Delle_Stelle
             timer1.Enabled = true;
             timer1.Start();
         }
-        private void circles()
-        {                   
-            total_seconds = (minutes * 60) + seconds;          
+        public void circles()
+        {                      
+            total_seconds = (minutes * 60) + seconds;
             timer2.Enabled = true;
+            char[] operators = { '+', '-', '*', '/' };
+            Random number = new Random();
+            number_circle = number.Next(1, 3);
+            Circle1.Visible = true;
+            Circle2.Visible = true;
+            if (number_circle == 1)
+            {            
+                op1.Visible = true;
+                op2.Visible = true;
+                op3.Visible = true;
+            }
+            else 
+            {
+                op4.Visible = true;
+                op5.Visible = true;
+                op6.Visible = true;
+            }
+
         }
 
         private void timerLabel_Click(object sender, EventArgs e)
@@ -80,8 +126,6 @@ namespace La_Forma_Delle_Stelle
                 lbl_minutes.Visible = true;
                 btn_conferma.Visible = true;
                 txt_answers.Visible = true;
-                Circle1.Visible = true;
-                Circle2.Visible = true;
                 total_seconds--;
                 int minutes = total_seconds / 60;
                 int seconds = total_seconds - (minutes * 60);
