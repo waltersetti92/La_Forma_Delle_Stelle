@@ -288,7 +288,7 @@
             this.lbl_Error.AutoSize = true;
             this.lbl_Error.Font = new System.Drawing.Font("Segoe Script", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Error.ForeColor = System.Drawing.Color.Gold;
-            this.lbl_Error.Location = new System.Drawing.Point(256, 651);
+            this.lbl_Error.Location = new System.Drawing.Point(510, 573);
             this.lbl_Error.Name = "lbl_Error";
             this.lbl_Error.Size = new System.Drawing.Size(645, 71);
             this.lbl_Error.TabIndex = 36;

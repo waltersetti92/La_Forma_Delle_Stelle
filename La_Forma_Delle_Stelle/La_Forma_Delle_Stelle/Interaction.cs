@@ -253,8 +253,7 @@ namespace La_Forma_Delle_Stelle
                 circles();
             }
             else if (total_seconds<1)
-            {
-                timer2.Stop();
+            {              
                 final_scenario_time();
             }
         }
@@ -284,7 +283,9 @@ namespace La_Forma_Delle_Stelle
         }
         public void final_scenario_time()
         {
+            timer2.Stop();
             MessageBox.Show("Tempo Scaduto!");
+            lbl_Error.Visible = true;
             star1.Visible = true;
             star2.Visible = true;
             star3.Visible = true;
@@ -304,7 +305,6 @@ namespace La_Forma_Delle_Stelle
             txt_answers.Visible = false;
             Circle1.Visible = false;
             Circle2.Visible = false;
-            lbl_Error.Visible = false;
             op1.Visible = false;
             op2.Visible = false;
             op3.Visible = false;
@@ -481,9 +481,9 @@ namespace La_Forma_Delle_Stelle
         }
 
         private void lbl_Error_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
+        {           
             parentForm.activity();
+            parentForm.playbackResourceAudio("clapping");
         }
     }
 }
