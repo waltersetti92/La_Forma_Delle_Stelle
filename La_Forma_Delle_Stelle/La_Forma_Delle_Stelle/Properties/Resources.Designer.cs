@@ -83,6 +83,16 @@ namespace La_Forma_Delle_Stelle.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fifth {
+            get {
+                object obj = ResourceManager.GetObject("fifth", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap first {
             get {
                 object obj = ResourceManager.GetObject("first", resourceCulture);
@@ -126,6 +136,26 @@ namespace La_Forma_Delle_Stelle.Properties {
         internal static System.Drawing.Bitmap second1 {
             get {
                 object obj = ResourceManager.GetObject("second1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sei {
+            get {
+                object obj = ResourceManager.GetObject("sei", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap seventh {
+            get {
+                object obj = ResourceManager.GetObject("seventh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
