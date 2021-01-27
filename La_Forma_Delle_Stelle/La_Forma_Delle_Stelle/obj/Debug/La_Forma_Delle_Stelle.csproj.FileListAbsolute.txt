@@ -61,3 +61,4 @@ C:\Users\Luigi\source\repos\La_Forma_Delle_Stellews5\La_Forma_Delle_Stelle\La_Fo
 C:\Users\Luigi\source\repos\La_Forma_Delle_Stellews5\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.csproj.CoreCompileInputs.cache
 C:\Users\Luigi\source\repos\La_Forma_Delle_Stellews5\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.exe
 C:\Users\Luigi\source\repos\La_Forma_Delle_Stellews5\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.pdb
+C:\Users\Luigi\Source\Repos\La_Forma_Delle_Stellews5\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.Ursa.resources

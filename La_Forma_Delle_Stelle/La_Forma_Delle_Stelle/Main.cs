@@ -23,6 +23,8 @@ namespace La_Forma_Delle_Stelle
             interaction1.Visible = false;
             activity1.parentForm = this;
             activity1.Visible = false;
+            ursa1.parentForm = this;
+            ursa1.Visible = false;
             home();
 
         }
@@ -48,8 +50,8 @@ namespace La_Forma_Delle_Stelle
         public void activity()
         {
             interaction1.Visible = false;
-            activity1.Visible = true;
-            currUC = activity1;
+            ursa1.Visible = true;
+            currUC = ursa1;
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -57,7 +59,7 @@ namespace La_Forma_Delle_Stelle
             Size size = this.Size;
             initial1.setPos(size.Width, size.Height);
             interaction1.setPos(size.Width, size.Height);
-            activity1.setPos(size.Width, size.Height);
+            ursa1.setPos(size.Width, size.Height);
         }
     }
 }

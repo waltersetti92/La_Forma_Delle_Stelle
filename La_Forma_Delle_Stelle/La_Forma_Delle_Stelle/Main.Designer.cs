@@ -28,10 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.activity1 = new La_Forma_Delle_Stelle.activity();
             this.interaction1 = new La_Forma_Delle_Stelle.Interaction();
             this.initial1 = new La_Forma_Delle_Stelle.Initial();
-            this.activity1 = new La_Forma_Delle_Stelle.activity();
+            this.ursa1 = new La_Forma_Delle_Stelle.Ursa();
             this.SuspendLayout();
+            // 
+            // activity1
+            // 
+            this.activity1.BackColor = System.Drawing.Color.Transparent;
+            this.activity1.Location = new System.Drawing.Point(523, 12);
+            this.activity1.Name = "activity1";
+            this.activity1.parentForm = null;
+            this.activity1.Size = new System.Drawing.Size(904, 477);
+            this.activity1.TabIndex = 2;
             // 
             // interaction1
             // 
@@ -51,14 +61,14 @@
             this.initial1.Size = new System.Drawing.Size(880, 364);
             this.initial1.TabIndex = 0;
             // 
-            // activity1
+            // ursa1
             // 
-            this.activity1.BackColor = System.Drawing.Color.Transparent;
-            this.activity1.Location = new System.Drawing.Point(523, 12);
-            this.activity1.Name = "activity1";
-            this.activity1.parentForm = null;
-            this.activity1.Size = new System.Drawing.Size(904, 477);
-            this.activity1.TabIndex = 2;
+            this.ursa1.BackColor = System.Drawing.Color.Transparent;
+            this.ursa1.Location = new System.Drawing.Point(-7, -1);
+            this.ursa1.Name = "ursa1";
+            this.ursa1.parentForm = null;
+            this.ursa1.Size = new System.Drawing.Size(761, 364);
+            this.ursa1.TabIndex = 3;
             // 
             // Main
             // 
@@ -66,6 +76,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::La_Forma_Delle_Stelle.Properties.Resources.Cielo_Stellato;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ursa1);
             this.Controls.Add(this.activity1);
             this.Controls.Add(this.interaction1);
             this.Controls.Add(this.initial1);
@@ -82,6 +93,7 @@
         private Initial initial1;
         private Interaction interaction1;
         private activity activity1;
+        private Ursa ursa1;
     }
 }
 

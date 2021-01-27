@@ -452,7 +452,8 @@ namespace La_Forma_Delle_Stelle
 
         private void lbl_Error_Click(object sender, EventArgs e)
         {
-
+            this.Visible = false;
+            parentForm.activity();
         }
     }
 }
