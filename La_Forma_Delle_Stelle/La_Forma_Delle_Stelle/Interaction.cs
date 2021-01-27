@@ -255,9 +255,7 @@ namespace La_Forma_Delle_Stelle
             else if (total_seconds<1)
             {
                 timer2.Stop();
-                MessageBox.Show("Tempo Scaduto!");
-                final_scenario();
-
+                final_scenario_time();
             }
         }
 
@@ -283,6 +281,36 @@ namespace La_Forma_Delle_Stelle
                 MessageBox.Show("Inserisci il numero!");
                 timer2.Start();
             }
+        }
+        public void final_scenario_time()
+        {
+            MessageBox.Show("Tempo Scaduto!");
+            star1.Visible = true;
+            star2.Visible = true;
+            star3.Visible = true;
+            star4.Visible = true;
+            star5.Visible = true;
+            star6.Visible = true;
+            star7.Visible = true;
+            lbl_Alkaid.Visible = true;
+            lbl_Mizar.Visible = true;
+            lbl_alioth.Visible = true;
+            lbl_Megrez.Visible = true;
+            lbl_Dubhe.Visible = true;
+            lbl_Merak.Visible = true;
+            lbl_Phecda.Visible = true;
+            lbl_minutes.Visible = false;
+            btn_conferma.Visible = false;
+            txt_answers.Visible = false;
+            Circle1.Visible = false;
+            Circle2.Visible = false;
+            lbl_Error.Visible = false;
+            op1.Visible = false;
+            op2.Visible = false;
+            op3.Visible = false;
+            op4.Visible = false;
+            op5.Visible = false;
+            op6.Visible = false;
         }
         public void final_scenario()
         {
