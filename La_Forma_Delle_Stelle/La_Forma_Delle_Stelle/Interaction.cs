@@ -282,6 +282,24 @@ namespace La_Forma_Delle_Stelle
                 timer2.Start();
             }
         }
+        public void final_scenario()
+        {
+            lbl_minutes.Visible = false;
+            this.Update();
+            btn_conferma.Visible = false;
+            txt_answers.Visible = false;
+            Circle1.Visible = false;
+            Circle2.Visible = false;
+            lbl_Error.Visible = false;
+            op1.Visible = false;
+            op2.Visible = false;
+            op3.Visible = false;
+            op4.Visible = false;
+            op5.Visible = false;
+            op6.Visible = false;
+            timer2.Stop();
+            lbl_Error.Visible = true;
+        }
 
         private void btn_conferma_Click(object sender, EventArgs e)
         {
@@ -316,6 +334,7 @@ namespace La_Forma_Delle_Stelle
                         this.Update();
                         lbl_Mizar.Visible = true;
                         this.Update();
+
                         circles();
                     }
                     else if (string.Equals(txt_answers.Text, ""))
@@ -411,7 +430,8 @@ namespace La_Forma_Delle_Stelle
                         this.Update();
                         lbl_Phecda.Visible = true;
                         this.Update();
-                        circles();
+                        final_scenario();
+                      
                     }
                     else if (string.Equals(txt_answers.Text, ""))
                     {
@@ -426,6 +446,11 @@ namespace La_Forma_Delle_Stelle
         }
 
         private void Circle1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_Error_Click(object sender, EventArgs e)
         {
 
         }

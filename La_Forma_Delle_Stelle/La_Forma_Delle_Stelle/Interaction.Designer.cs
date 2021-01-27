@@ -149,12 +149,14 @@
             // lbl_Error
             // 
             this.lbl_Error.AutoSize = true;
-            this.lbl_Error.Font = new System.Drawing.Font("Segoe Script", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Error.Location = new System.Drawing.Point(618, 483);
+            this.lbl_Error.Font = new System.Drawing.Font("Segoe Script", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Error.ForeColor = System.Drawing.Color.Gold;
+            this.lbl_Error.Location = new System.Drawing.Point(226, 464);
             this.lbl_Error.Name = "lbl_Error";
-            this.lbl_Error.Size = new System.Drawing.Size(82, 33);
+            this.lbl_Error.Size = new System.Drawing.Size(954, 71);
             this.lbl_Error.TabIndex = 7;
-            this.lbl_Error.Text = "label1";
+            this.lbl_Error.Text = "CLICCA E SCOPRI LA COSTELLAZIONE!";
+            this.lbl_Error.Click += new System.EventHandler(this.lbl_Error_Click);
             // 
             // op1
             // 
