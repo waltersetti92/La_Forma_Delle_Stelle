@@ -43,7 +43,11 @@ namespace La_Forma_Delle_Stelle
             op5.Visible = false;
             op6.Visible = false;
             star1.Visible = false;
+            star2.Visible = false;
+            star3.Visible = false;
             lbl_Alkaid.Visible = false;
+            lbl_Mizar.Visible = false;
+            lbl_alioth.Visible = false;
             op1.Parent = Circle1;
             op2.Parent = Circle1;
             op3.Parent = Circle1;
@@ -107,6 +111,20 @@ namespace La_Forma_Delle_Stelle
                     op5.Text = "7-4";
                     this.Update();
                     op6.Text = "14-5";
+                    this.Update();
+                    break;
+                case 3:
+                    op1.Text = "9-2";
+                    this.Update();
+                    op2.Text = "6-3";
+                    this.Update();
+                    op3.Text = "4+2";
+                    this.Update();
+                    op4.Text = "5+1";
+                    this.Update();
+                    op5.Text = "10-2";
+                    this.Update();
+                    op6.Text = "7+6";
                     this.Update();
                     break;
             }
@@ -229,11 +247,34 @@ namespace La_Forma_Delle_Stelle
                     if (string.Equals(txt_answers.Text, "9"))
                     {
                         answer(1);
-                        star1.Visible = true;
+                        star2.Visible = true;
                         this.Update();
-                        lbl_Alkaid.Visible = true;
+                        lbl_Mizar.Visible = true;
                         this.Update();
                         circles();
+                    }
+                    else if (string.Equals(txt_answers.Text, ""))
+                    {
+                        answer(2);
+                    }
+                    else
+                    {
+                        answer(0);
+                    }
+                    break;
+                case 3:
+                    if (string.Equals(txt_answers.Text, "6"))
+                    {
+                        answer(1);
+                        star3.Visible = true;
+                        this.Update();
+                        lbl_alioth.Visible = true;
+                        this.Update();
+                        circles();
+                    }
+                    else if (string.Equals(txt_answers.Text, ""))
+                    {
+                        answer(2);
                     }
                     else
                     {
@@ -241,7 +282,6 @@ namespace La_Forma_Delle_Stelle
                     }
                     break;
             }
-            //number_star++;
         }
 
         private void Circle1_Click(object sender, EventArgs e)
