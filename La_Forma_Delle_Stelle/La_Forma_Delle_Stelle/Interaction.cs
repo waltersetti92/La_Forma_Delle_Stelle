@@ -19,7 +19,7 @@ namespace La_Forma_Delle_Stelle
         public int timer_game = 0;
         private int total_seconds;
         private int seconds=0;
-        private int minutes=2;
+        private int minutes=1;
         public int number_star=1;
         public Interaction()
         {
@@ -227,7 +227,7 @@ namespace La_Forma_Delle_Stelle
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            if (total_seconds > 10)
+            if (total_seconds > 6)
             {
                 lbl_minutes.Visible = true;
                 btn_conferma.Visible = true;
@@ -243,7 +243,7 @@ namespace La_Forma_Delle_Stelle
                 this.lbl_minutes.Text = minutes.ToString() + ":" + "0" + seconds.ToString();
                 circles();
             }
-            else if (total_seconds<=10)
+            else if (total_seconds <= 6 && total_seconds >= 1)
             {
                 total_seconds--;
                 int minutes = total_seconds / 60;
@@ -252,10 +252,12 @@ namespace La_Forma_Delle_Stelle
                 this.lbl_minutes.Text =  minutes.ToString() + ":" + "0" + seconds.ToString();
                 circles();
             }
-            else if (total_seconds==0)
+            else if (total_seconds<1)
             {
-                this.timer2.Stop();
+                timer2.Stop();
                 MessageBox.Show("Tempo Scaduto!");
+                final_scenario();
+
             }
         }
 
