@@ -42,6 +42,8 @@ namespace La_Forma_Delle_Stelle
             op4.Visible = false;
             op5.Visible = false;
             op6.Visible = false;
+            star1.Visible = false;
+            lbl_Alkaid.Visible = false;
             op1.Parent = Circle1;
             op2.Parent = Circle1;
             op3.Parent = Circle1;
@@ -82,7 +84,7 @@ namespace La_Forma_Delle_Stelle
                 case 1:
                     op1.Text = "3+4";
                     this.Update();
-                    op2.Text = "6x2";
+                    op2.Text = "6+2";
                     this.Update();
                     op3.Text = "15-5";
                     this.Update();
@@ -94,7 +96,17 @@ namespace La_Forma_Delle_Stelle
                     this.Update();
                     break;
                 case 2:
-                    op1.Text = "3-2";
+                    op1.Text = "4+5";
+                    this.Update();
+                    op2.Text = "3-2";
+                    this.Update();
+                    op3.Text = "11+1";
+                    this.Update();
+                    op4.Text = "2+2";
+                    this.Update();
+                    op5.Text = "7-4";
+                    this.Update();
+                    op6.Text = "14-5";
                     this.Update();
                     break;
             }
@@ -105,13 +117,6 @@ namespace La_Forma_Delle_Stelle
             op5.Visible = true;
             op6.Visible = true;
         }
-        public string[] operations1(int i)
-        {
-            string[] operations = new string[3];
-
-            return operations;
-        }
-
 
         private void timerLabel_Click(object sender, EventArgs e)
         {
@@ -167,7 +172,31 @@ namespace La_Forma_Delle_Stelle
             else if (total_seconds==0)
             {
                 this.timer2.Stop();
-                MessageBox.Show("Finished");
+                MessageBox.Show("Tempo Scaduto!");
+            }
+        }
+
+        public void answer(int i)
+        {
+            if (i == 1)
+            {
+                parentForm.playbackResourceAudio("success");
+                MessageBox.Show("Esatto!");
+                txt_answers.Text = "";
+                number_star++;
+            }
+            else if (i==0)
+            {
+                parentForm.playbackResourceAudio("failure");
+                MessageBox.Show("Sbagliato!");
+                txt_answers.Text = "";
+                timer2.Start();
+            }
+            else if (i == 2)
+            {
+                parentForm.playbackResourceAudio("failure");
+                MessageBox.Show("Inserisci il numero!");
+                timer2.Start();
             }
         }
 
@@ -180,19 +209,35 @@ namespace La_Forma_Delle_Stelle
                 case 1:
                     if (string.Equals(txt_answers.Text, "12"))
                     {
-                        
-                        parentForm.playbackResourceAudio("success");
-                        MessageBox.Show("Esatto!");
-                        txt_answers.Text = "";
-                        number_star++;
+                        answer(1);
+                        star1.Visible = true;
+                        this.Update();
+                        lbl_Alkaid.Visible = true;
+                        this.Update();
                         circles();
                     }
-                    else 
+                    else if (string.Equals(txt_answers.Text, ""))
                     {
-                        parentForm.playbackResourceAudio("failure");
-                        MessageBox.Show("Sbagliato!");
-                        txt_answers.Text = "";
-                        timer2.Start();
+                        answer(2);
+                    }
+                    else
+                    {
+                        answer(0);
+                    }
+                    break;
+                case 2:
+                    if (string.Equals(txt_answers.Text, "9"))
+                    {
+                        answer(1);
+                        star1.Visible = true;
+                        this.Update();
+                        lbl_Alkaid.Visible = true;
+                        this.Update();
+                        circles();
+                    }
+                    else
+                    {
+                        answer(0);
                     }
                     break;
             }

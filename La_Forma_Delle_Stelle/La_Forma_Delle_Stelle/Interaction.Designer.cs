@@ -44,8 +44,11 @@
             this.op4 = new System.Windows.Forms.Label();
             this.op5 = new System.Windows.Forms.Label();
             this.op6 = new System.Windows.Forms.Label();
+            this.star1 = new System.Windows.Forms.PictureBox();
+            this.lbl_Alkaid = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Circle1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Circle2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.star1)).BeginInit();
             this.SuspendLayout();
             // 
             // timerLabel
@@ -207,11 +210,34 @@
             this.op6.TabIndex = 13;
             this.op6.Text = "label1";
             // 
+            // star1
+            // 
+            this.star1.Image = global::La_Forma_Delle_Stelle.Properties.Resources.star;
+            this.star1.Location = new System.Drawing.Point(15, 470);
+            this.star1.Name = "star1";
+            this.star1.Size = new System.Drawing.Size(80, 67);
+            this.star1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star1.TabIndex = 14;
+            this.star1.TabStop = false;
+            // 
+            // lbl_Alkaid
+            // 
+            this.lbl_Alkaid.AutoSize = true;
+            this.lbl_Alkaid.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Alkaid.ForeColor = System.Drawing.Color.Gold;
+            this.lbl_Alkaid.Location = new System.Drawing.Point(3, 530);
+            this.lbl_Alkaid.Name = "lbl_Alkaid";
+            this.lbl_Alkaid.Size = new System.Drawing.Size(120, 38);
+            this.lbl_Alkaid.TabIndex = 15;
+            this.lbl_Alkaid.Text = "ALKAID";
+            // 
             // Interaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.lbl_Alkaid);
+            this.Controls.Add(this.star1);
             this.Controls.Add(this.op6);
             this.Controls.Add(this.op5);
             this.Controls.Add(this.op4);
@@ -230,6 +256,7 @@
             this.Load += new System.EventHandler(this.Interaction_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Circle1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Circle2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.star1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,5 +279,7 @@
         private System.Windows.Forms.Label op4;
         private System.Windows.Forms.Label op5;
         private System.Windows.Forms.Label op6;
+        private System.Windows.Forms.PictureBox star1;
+        private System.Windows.Forms.Label lbl_Alkaid;
     }
 }
