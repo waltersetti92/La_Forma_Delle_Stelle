@@ -128,5 +128,17 @@
   <ItemGroup>
     <None Include="bin\Debug\resources\Circle.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resources\first.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resources\second.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resources\third.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resources\fourth.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
