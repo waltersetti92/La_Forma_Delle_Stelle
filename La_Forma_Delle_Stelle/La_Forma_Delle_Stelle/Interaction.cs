@@ -45,9 +45,17 @@ namespace La_Forma_Delle_Stelle
             star1.Visible = false;
             star2.Visible = false;
             star3.Visible = false;
+            star4.Visible = false;
+            star5.Visible = false;
+            star6.Visible = false;
+            star7.Visible = false;
             lbl_Alkaid.Visible = false;
             lbl_Mizar.Visible = false;
             lbl_alioth.Visible = false;
+            lbl_Megrez.Visible = false;
+            lbl_Dubhe.Visible = false;
+            lbl_Merak.Visible = false;
+            lbl_Phecda.Visible = false;
             op1.Parent = Circle1;
             op2.Parent = Circle1;
             op3.Parent = Circle1;
@@ -127,6 +135,63 @@ namespace La_Forma_Delle_Stelle
                     op6.Text = "7+6";
                     this.Update();
                     break;
+                case 4:
+                    op1.Text = "4x6";
+                    this.Update();
+                    op2.Text = "9+6";
+                    this.Update();
+                    op3.Text = "2x5";
+                    this.Update();
+                    op4.Text = "16-5";
+                    this.Update();
+                    op5.Text = "4+4";
+                    this.Update();
+                    op6.Text = "3x5";
+                    this.Update();
+                    break;
+                case 5:
+                    op1.Text = "7x5";
+                    this.Update();
+                    op2.Text = "3x3";
+                    this.Update();
+                    op3.Text = "5x4";
+                    this.Update();
+                    op4.Text = "12+3";
+                    this.Update();
+                    op5.Text = "10x2";
+                    this.Update();
+                    op6.Text = "9x4";
+                    this.Update();
+                    break;
+                case 6:
+                    op1.Text = "8x3";
+                    this.Update();
+                    op2.Text = "30/5";
+                    this.Update();
+                    op3.Text = "64/8";
+                    this.Update();
+                    op4.Text = "28/7";
+                    this.Update();
+                    op5.Text = "22x3";
+                    this.Update();
+                    op6.Text = "72/9";
+                    this.Update();
+                    break;
+                case 7:
+                    op1.Text = "36/4";
+                    this.Update();
+                    op2.Text = "12x2";
+                    this.Update();
+                    op3.Text = "9x7";
+                    this.Update();
+                    op4.Text = "6x7";
+                    this.Update();
+                    op5.Text = "3x8";
+                    this.Update();
+                    op6.Text = "42/6";
+                    this.Update();
+                    break;
+
             }
             op1.Visible = true;
             op2.Visible = true;
@@ -269,6 +334,82 @@ namespace La_Forma_Delle_Stelle
                         star3.Visible = true;
                         this.Update();
                         lbl_alioth.Visible = true;
+                        this.Update();
+                        circles();
+                    }
+                    else if (string.Equals(txt_answers.Text, ""))
+                    {
+                        answer(2);
+                    }
+                    else
+                    {
+                        answer(0);
+                    }
+                    break;
+                case 4:
+                    if (string.Equals(txt_answers.Text, "15"))
+                    {
+                        answer(1);
+                        star4.Visible = true;
+                        this.Update();
+                        lbl_Megrez.Visible = true;
+                        this.Update();
+                        circles();
+                    }
+                    else if (string.Equals(txt_answers.Text, ""))
+                    {
+                        answer(2);
+                    }
+                    else
+                    {
+                        answer(0);
+                    }
+                    break;
+                case 5:
+                    if (string.Equals(txt_answers.Text, "20"))
+                    {
+                        answer(1);
+                        star5.Visible = true;
+                        this.Update();
+                        lbl_Dubhe.Visible = true;
+                        this.Update();
+                        circles();
+                    }
+                    else if (string.Equals(txt_answers.Text, ""))
+                    {
+                        answer(2);
+                    }
+                    else
+                    {
+                        answer(0);
+                    }
+                    break;
+                case 6:
+                    if (string.Equals(txt_answers.Text, "8"))
+                    {
+                        answer(1);
+                        star6.Visible = true;
+                        this.Update();
+                        lbl_Merak.Visible = true;
+                        this.Update();
+                        circles();
+                    }
+                    else if (string.Equals(txt_answers.Text, ""))
+                    {
+                        answer(2);
+                    }
+                    else
+                    {
+                        answer(0);
+                    }
+                    break;
+                case 7:
+                    if (string.Equals(txt_answers.Text, "24"))
+                    {
+                        answer(1);
+                        star7.Visible = true;
+                        this.Update();
+                        lbl_Phecda.Visible = true;
                         this.Update();
                         circles();
                     }

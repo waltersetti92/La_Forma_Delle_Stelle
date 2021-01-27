@@ -50,11 +50,23 @@
             this.lbl_Mizar = new System.Windows.Forms.Label();
             this.star3 = new System.Windows.Forms.PictureBox();
             this.lbl_alioth = new System.Windows.Forms.Label();
+            this.star4 = new System.Windows.Forms.PictureBox();
+            this.lbl_Megrez = new System.Windows.Forms.Label();
+            this.star5 = new System.Windows.Forms.PictureBox();
+            this.lbl_Dubhe = new System.Windows.Forms.Label();
+            this.star6 = new System.Windows.Forms.PictureBox();
+            this.lbl_Merak = new System.Windows.Forms.Label();
+            this.star7 = new System.Windows.Forms.PictureBox();
+            this.lbl_Phecda = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Circle1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Circle2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.star4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.star5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.star6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.star7)).BeginInit();
             this.SuspendLayout();
             // 
             // timerLabel
@@ -273,17 +285,109 @@
             this.lbl_alioth.AutoSize = true;
             this.lbl_alioth.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_alioth.ForeColor = System.Drawing.Color.Gold;
-            this.lbl_alioth.Location = new System.Drawing.Point(3, 173);
+            this.lbl_alioth.Location = new System.Drawing.Point(1, 173);
             this.lbl_alioth.Name = "lbl_alioth";
             this.lbl_alioth.Size = new System.Drawing.Size(116, 38);
             this.lbl_alioth.TabIndex = 19;
             this.lbl_alioth.Text = "ALIOTH";
+            // 
+            // star4
+            // 
+            this.star4.Image = global::La_Forma_Delle_Stelle.Properties.Resources.star;
+            this.star4.Location = new System.Drawing.Point(1220, 103);
+            this.star4.Name = "star4";
+            this.star4.Size = new System.Drawing.Size(80, 67);
+            this.star4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star4.TabIndex = 20;
+            this.star4.TabStop = false;
+            // 
+            // lbl_Megrez
+            // 
+            this.lbl_Megrez.AutoSize = true;
+            this.lbl_Megrez.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Megrez.ForeColor = System.Drawing.Color.Gold;
+            this.lbl_Megrez.Location = new System.Drawing.Point(1198, 173);
+            this.lbl_Megrez.Name = "lbl_Megrez";
+            this.lbl_Megrez.Size = new System.Drawing.Size(136, 38);
+            this.lbl_Megrez.TabIndex = 21;
+            this.lbl_Megrez.Text = "MEGREZ";
+            // 
+            // star5
+            // 
+            this.star5.Image = global::La_Forma_Delle_Stelle.Properties.Resources.star;
+            this.star5.Location = new System.Drawing.Point(1220, 300);
+            this.star5.Name = "star5";
+            this.star5.Size = new System.Drawing.Size(80, 67);
+            this.star5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star5.TabIndex = 22;
+            this.star5.TabStop = false;
+            // 
+            // lbl_Dubhe
+            // 
+            this.lbl_Dubhe.AutoSize = true;
+            this.lbl_Dubhe.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Dubhe.ForeColor = System.Drawing.Color.Gold;
+            this.lbl_Dubhe.Location = new System.Drawing.Point(1206, 370);
+            this.lbl_Dubhe.Name = "lbl_Dubhe";
+            this.lbl_Dubhe.Size = new System.Drawing.Size(112, 38);
+            this.lbl_Dubhe.TabIndex = 23;
+            this.lbl_Dubhe.Text = "DUBHE";
+            // 
+            // star6
+            // 
+            this.star6.Image = global::La_Forma_Delle_Stelle.Properties.Resources.star;
+            this.star6.Location = new System.Drawing.Point(1220, 497);
+            this.star6.Name = "star6";
+            this.star6.Size = new System.Drawing.Size(80, 67);
+            this.star6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star6.TabIndex = 24;
+            this.star6.TabStop = false;
+            // 
+            // lbl_Merak
+            // 
+            this.lbl_Merak.AutoSize = true;
+            this.lbl_Merak.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Merak.ForeColor = System.Drawing.Color.Gold;
+            this.lbl_Merak.Location = new System.Drawing.Point(1198, 567);
+            this.lbl_Merak.Name = "lbl_Merak";
+            this.lbl_Merak.Size = new System.Drawing.Size(120, 38);
+            this.lbl_Merak.TabIndex = 25;
+            this.lbl_Merak.Text = "MERAK";
+            // 
+            // star7
+            // 
+            this.star7.Image = global::La_Forma_Delle_Stelle.Properties.Resources.star;
+            this.star7.Location = new System.Drawing.Point(610, 300);
+            this.star7.Name = "star7";
+            this.star7.Size = new System.Drawing.Size(80, 67);
+            this.star7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star7.TabIndex = 26;
+            this.star7.TabStop = false;
+            // 
+            // lbl_Phecda
+            // 
+            this.lbl_Phecda.AutoSize = true;
+            this.lbl_Phecda.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Phecda.ForeColor = System.Drawing.Color.Gold;
+            this.lbl_Phecda.Location = new System.Drawing.Point(587, 370);
+            this.lbl_Phecda.Name = "lbl_Phecda";
+            this.lbl_Phecda.Size = new System.Drawing.Size(129, 38);
+            this.lbl_Phecda.TabIndex = 27;
+            this.lbl_Phecda.Text = "PHECDA";
             // 
             // Interaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.lbl_Phecda);
+            this.Controls.Add(this.star7);
+            this.Controls.Add(this.lbl_Merak);
+            this.Controls.Add(this.star6);
+            this.Controls.Add(this.lbl_Dubhe);
+            this.Controls.Add(this.star5);
+            this.Controls.Add(this.lbl_Megrez);
+            this.Controls.Add(this.star4);
             this.Controls.Add(this.lbl_alioth);
             this.Controls.Add(this.star3);
             this.Controls.Add(this.lbl_Mizar);
@@ -304,13 +408,17 @@
             this.Controls.Add(this.lbl_minutes);
             this.Controls.Add(this.timerLabel);
             this.Name = "Interaction";
-            this.Size = new System.Drawing.Size(1303, 762);
+            this.Size = new System.Drawing.Size(1338, 762);
             this.Load += new System.EventHandler(this.Interaction_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Circle1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Circle2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.star4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.star5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.star6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.star7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,5 +447,13 @@
         private System.Windows.Forms.Label lbl_Mizar;
         private System.Windows.Forms.PictureBox star3;
         private System.Windows.Forms.Label lbl_alioth;
+        private System.Windows.Forms.PictureBox star4;
+        private System.Windows.Forms.Label lbl_Megrez;
+        private System.Windows.Forms.PictureBox star5;
+        private System.Windows.Forms.Label lbl_Dubhe;
+        private System.Windows.Forms.PictureBox star6;
+        private System.Windows.Forms.Label lbl_Merak;
+        private System.Windows.Forms.PictureBox star7;
+        private System.Windows.Forms.Label lbl_Phecda;
     }
 }
