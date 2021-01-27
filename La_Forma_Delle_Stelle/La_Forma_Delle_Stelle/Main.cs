@@ -39,6 +39,7 @@ namespace La_Forma_Delle_Stelle
             initial1.Visible = false;
             interaction1.Visible = true;
             currUC = interaction1;
+
         }
         public void playbackResourceAudio(string audioname)
         {
