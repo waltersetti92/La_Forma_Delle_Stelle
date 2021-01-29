@@ -19,7 +19,7 @@ namespace La_Forma_Delle_Stelle
         public int timer_game = 0;
         private int total_seconds;
         private int seconds=0;
-        private int minutes=1;
+        private int minutes=4;
         public int number_star=1;
         public Interaction()
         {
@@ -56,6 +56,7 @@ namespace La_Forma_Delle_Stelle
             lbl_Dubhe.Visible = false;
             lbl_Merak.Visible = false;
             lbl_Phecda.Visible = false;
+            lbl_outoftime.Visible = false;
             op1.Parent = Circle1;
             op2.Parent = Circle1;
             op3.Parent = Circle1;
@@ -98,7 +99,7 @@ namespace La_Forma_Delle_Stelle
                     this.Update();
                     op2.Text = "6+2";
                     this.Update();
-                    op3.Text = "15-5";
+                    op3.Text = "15-3";
                     this.Update();
                     op4.Text = "7-3";
                     this.Update();
@@ -284,7 +285,8 @@ namespace La_Forma_Delle_Stelle
         public void final_scenario_time()
         {
             timer2.Stop();
-            MessageBox.Show("Tempo Scaduto!");
+            lbl_outoftime.Visible = true;
+            parentForm.playbackResourceAudio("failure");
             lbl_Error.Visible = true;
             star1.Visible = true;
             star2.Visible = true;
@@ -483,7 +485,7 @@ namespace La_Forma_Delle_Stelle
         private void lbl_Error_Click(object sender, EventArgs e)
         {           
             parentForm.activity();
-            parentForm.playbackResourceAudio("clapping");
+            parentForm.playbackResourceAudio("clapping1");
         }
     }
 }
