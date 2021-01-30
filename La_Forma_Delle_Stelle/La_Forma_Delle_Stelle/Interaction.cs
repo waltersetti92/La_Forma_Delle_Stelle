@@ -14,7 +14,7 @@ namespace La_Forma_Delle_Stelle
     public partial class Interaction : UserControl
     {
         public Main parentForm { get; set; }
-        public int timeleft = 6;
+        public int timeleft = 5;
         public int counter_responses = 0;
         public int timer_game = 0;
         private int total_seconds;
@@ -209,13 +209,12 @@ namespace La_Forma_Delle_Stelle
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            timeleft--;
             if (timeleft > 0)
             {
-                timeleft--;
                 timerLabel.Text = timeleft.ToString();
             }
-            else if (timeleft == 0)
-            {
+            else {
                 this.timer1.Stop();
                 timerLabel.Enabled = false;
                 timerLabel.Visible = false;
@@ -223,6 +222,7 @@ namespace La_Forma_Delle_Stelle
                 timer2.Enabled = true;
                 circles();
             }
+            this.Update();
         }
         
 
