@@ -380,9 +380,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         answer(1);
                         star5.Visible = true;
-                        this.Update();
                         lbl_Dubhe.Visible = true;
-                        this.Update();
                         circles();
                     }
                     else if (string.Equals(txt_answers.Text, ""))
@@ -399,9 +397,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         answer(1);
                         star6.Visible = true;
-                        this.Update();
                         lbl_Merak.Visible = true;
-                        this.Update();
                         circles();
                     }
                     else if (string.Equals(txt_answers.Text, ""))
@@ -418,9 +414,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         answer(1);
                         star7.Visible = true;
-                        this.Update();
                         lbl_Phecda.Visible = true;
-                        this.Update();
                         final_scenario();
                       
                     }
