@@ -96,101 +96,59 @@ namespace La_Forma_Delle_Stelle
             {
                 case 1:
                     op1.Text = "3+4";
-                    this.Update();
                     op2.Text = "6+2";
-                    this.Update();
                     op3.Text = "15-3";
-                    this.Update();
                     op4.Text = "7-3";
-                    this.Update();
                     op5.Text = "5+1";
-                    this.Update();
                     op6.Text = "10+2";
-                    this.Update();
                     break;
                 case 2:
                     op1.Text = "4+5";
-                    this.Update();
                     op2.Text = "3-2";
-                    this.Update();
                     op3.Text = "11+1";
-                    this.Update();
                     op4.Text = "2+2";
-                    this.Update();
                     op5.Text = "7-4";
-                    this.Update();
                     op6.Text = "14-5";
-                    this.Update();
                     break;
                 case 3:
                     op1.Text = "9-2";
-                    this.Update();
                     op2.Text = "6-3";
-                    this.Update();
                     op3.Text = "4+2";
-                    this.Update();
                     op4.Text = "5+1";
-                    this.Update();
                     op5.Text = "10-2";
-                    this.Update();
                     op6.Text = "7+6";
-                    this.Update();
                     break;
                 case 4:
                     op1.Text = "4x6";
-                    this.Update();
                     op2.Text = "9+6";
-                    this.Update();
                     op3.Text = "2x5";
-                    this.Update();
                     op4.Text = "16-5";
-                    this.Update();
                     op5.Text = "4+4";
-                    this.Update();
                     op6.Text = "3x5";
-                    this.Update();
                     break;
                 case 5:
                     op1.Text = "7x5";
-                    this.Update();
                     op2.Text = "3x3";
-                    this.Update();
                     op3.Text = "5x4";
-                    this.Update();
                     op4.Text = "12+3";
-                    this.Update();
                     op5.Text = "10x2";
-                    this.Update();
                     op6.Text = "9x4";
-                    this.Update();
                     break;
                 case 6:
                     op1.Text = "8x3";
-                    this.Update();
                     op2.Text = "30/5";
-                    this.Update();
                     op3.Text = "64/8";
-                    this.Update();
                     op4.Text = "28/7";
-                    this.Update();
                     op5.Text = "22x3";
-                    this.Update();
                     op6.Text = "72/9";
-                    this.Update();
                     break;
                 case 7:
                     op1.Text = "36/4";
-                    this.Update();
                     op2.Text = "12x2";
-                    this.Update();
                     op3.Text = "9x7";
-                    this.Update();
                     op4.Text = "6x7";
-                    this.Update();
                     op5.Text = "3x8";
-                    this.Update();
                     op6.Text = "42/6";
-                    this.Update();
                     break;
 
             }
@@ -200,6 +158,7 @@ namespace La_Forma_Delle_Stelle
             op4.Visible = true;
             op5.Visible = true;
             op6.Visible = true;
+            this.Update();
         }
 
         private void timerLabel_Click(object sender, EventArgs e)
