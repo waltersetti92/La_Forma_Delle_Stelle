@@ -303,9 +303,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         answer(1);
                         star1.Visible = true;
-                        this.Update();
                         lbl_Alkaid.Visible = true;
-                        this.Update();
                         circles();
                     }
                     else if (string.Equals(txt_answers.Text, ""))
@@ -322,9 +320,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         answer(1);
                         star2.Visible = true;
-                        this.Update();
                         lbl_Mizar.Visible = true;
-                        this.Update();
 
                         circles();
                     }
@@ -342,9 +338,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         answer(1);
                         star3.Visible = true;
-                        this.Update();
                         lbl_alioth.Visible = true;
-                        this.Update();
                         circles();
                     }
                     else if (string.Equals(txt_answers.Text, ""))
@@ -361,9 +355,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         answer(1);
                         star4.Visible = true;
-                        this.Update();
                         lbl_Megrez.Visible = true;
-                        this.Update();
                         circles();
                     }
                     else if (string.Equals(txt_answers.Text, ""))
