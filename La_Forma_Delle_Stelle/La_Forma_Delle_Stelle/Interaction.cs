@@ -14,7 +14,7 @@ namespace La_Forma_Delle_Stelle
     public partial class Interaction : UserControl
     {
         public Main parentForm { get; set; }
-        public int timeleft = 6;
+        public int timeleft = 5;
         public int counter_responses = 0;
         public int timer_game = 0;
         private int total_seconds;
@@ -96,101 +96,59 @@ namespace La_Forma_Delle_Stelle
             {
                 case 1:
                     op1.Text = "3+4";
-                    this.Update();
                     op2.Text = "6+2";
-                    this.Update();
                     op3.Text = "15-3";
-                    this.Update();
                     op4.Text = "7-3";
-                    this.Update();
                     op5.Text = "5+1";
-                    this.Update();
                     op6.Text = "10+2";
-                    this.Update();
                     break;
                 case 2:
                     op1.Text = "4+5";
-                    this.Update();
                     op2.Text = "3-2";
-                    this.Update();
                     op3.Text = "11+1";
-                    this.Update();
                     op4.Text = "2+2";
-                    this.Update();
                     op5.Text = "7-4";
-                    this.Update();
                     op6.Text = "14-5";
-                    this.Update();
                     break;
                 case 3:
                     op1.Text = "9-2";
-                    this.Update();
                     op2.Text = "6-3";
-                    this.Update();
                     op3.Text = "4+2";
-                    this.Update();
                     op4.Text = "5+1";
-                    this.Update();
                     op5.Text = "10-2";
-                    this.Update();
                     op6.Text = "7+6";
-                    this.Update();
                     break;
                 case 4:
                     op1.Text = "4x6";
-                    this.Update();
                     op2.Text = "9+6";
-                    this.Update();
                     op3.Text = "2x5";
-                    this.Update();
                     op4.Text = "16-5";
-                    this.Update();
                     op5.Text = "4+4";
-                    this.Update();
                     op6.Text = "3x5";
-                    this.Update();
                     break;
                 case 5:
                     op1.Text = "7x5";
-                    this.Update();
                     op2.Text = "3x3";
-                    this.Update();
                     op3.Text = "5x4";
-                    this.Update();
                     op4.Text = "12+3";
-                    this.Update();
                     op5.Text = "10x2";
-                    this.Update();
                     op6.Text = "9x4";
-                    this.Update();
                     break;
                 case 6:
                     op1.Text = "8x3";
-                    this.Update();
                     op2.Text = "30/5";
-                    this.Update();
                     op3.Text = "64/8";
-                    this.Update();
                     op4.Text = "28/7";
-                    this.Update();
                     op5.Text = "22x3";
-                    this.Update();
                     op6.Text = "72/9";
-                    this.Update();
                     break;
                 case 7:
                     op1.Text = "36/4";
-                    this.Update();
                     op2.Text = "12x2";
-                    this.Update();
                     op3.Text = "9x7";
-                    this.Update();
                     op4.Text = "6x7";
-                    this.Update();
                     op5.Text = "3x8";
-                    this.Update();
                     op6.Text = "42/6";
-                    this.Update();
                     break;
 
             }
@@ -200,6 +158,7 @@ namespace La_Forma_Delle_Stelle
             op4.Visible = true;
             op5.Visible = true;
             op6.Visible = true;
+            this.Update();
         }
 
         private void timerLabel_Click(object sender, EventArgs e)
@@ -209,13 +168,12 @@ namespace La_Forma_Delle_Stelle
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            timeleft--;
             if (timeleft > 0)
             {
-                timeleft--;
                 timerLabel.Text = timeleft.ToString();
             }
-            else if (timeleft == 0)
-            {
+            else {
                 this.timer1.Stop();
                 timerLabel.Enabled = false;
                 timerLabel.Visible = false;
@@ -223,6 +181,7 @@ namespace La_Forma_Delle_Stelle
                 timer2.Enabled = true;
                 circles();
             }
+            this.Update();
         }
         
 
@@ -344,9 +303,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         answer(1);
                         star1.Visible = true;
-                        this.Update();
                         lbl_Alkaid.Visible = true;
-                        this.Update();
                         circles();
                     }
                     else if (string.Equals(txt_answers.Text, ""))
@@ -363,9 +320,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         answer(1);
                         star2.Visible = true;
-                        this.Update();
                         lbl_Mizar.Visible = true;
-                        this.Update();
 
                         circles();
                     }
@@ -383,9 +338,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         answer(1);
                         star3.Visible = true;
-                        this.Update();
                         lbl_alioth.Visible = true;
-                        this.Update();
                         circles();
                     }
                     else if (string.Equals(txt_answers.Text, ""))
@@ -402,9 +355,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         answer(1);
                         star4.Visible = true;
-                        this.Update();
                         lbl_Megrez.Visible = true;
-                        this.Update();
                         circles();
                     }
                     else if (string.Equals(txt_answers.Text, ""))
@@ -421,9 +372,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         answer(1);
                         star5.Visible = true;
-                        this.Update();
                         lbl_Dubhe.Visible = true;
-                        this.Update();
                         circles();
                     }
                     else if (string.Equals(txt_answers.Text, ""))
@@ -440,9 +389,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         answer(1);
                         star6.Visible = true;
-                        this.Update();
                         lbl_Merak.Visible = true;
-                        this.Update();
                         circles();
                     }
                     else if (string.Equals(txt_answers.Text, ""))
@@ -459,9 +406,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         answer(1);
                         star7.Visible = true;
-                        this.Update();
                         lbl_Phecda.Visible = true;
-                        this.Update();
                         final_scenario();
                       
                     }
