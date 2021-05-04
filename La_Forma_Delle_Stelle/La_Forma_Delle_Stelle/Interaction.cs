@@ -13,6 +13,7 @@ namespace La_Forma_Delle_Stelle
 {
     public partial class Interaction : UserControl
     {
+
         public Main parentForm { get; set; }
         public int timeleft = 6;
         public int counter_responses = 0;
