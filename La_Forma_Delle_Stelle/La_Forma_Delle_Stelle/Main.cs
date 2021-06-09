@@ -14,9 +14,11 @@ namespace La_Forma_Delle_Stelle
         private const string background_image = "Cielo_Stellato.png";
         private UserControl currUC = null;
         public SoundPlayer player = null;
+        public string activity_form;
         public Main()
         {
-            InitializeComponent();
+            InitializeComponent();          
+          Business_Logic BL = new Business_Logic(this);
             initial1.parentForm = this;
             interaction1.parentForm = this;
             initial1.Visible = false;
@@ -28,13 +30,47 @@ namespace La_Forma_Delle_Stelle
             home();
 
         }
+        public string Status_Changed(string k)
+        {
+            this.BeginInvoke((Action)delegate ()
+            {
+                int status = int.Parse(k);
+                if (status == 6)
+                {
+                    onStart(activity_form);
+                }
+                if (status == 8)
+                {
+
+
+                }
+                if (status == 9)
+                {
+
+
+                }
+                if (status == 11 || status == 12)
+                {
+
+                    Application.Exit();
+                    Environment.Exit(0);
+
+                }
+                if (status == 15)
+                {
+
+                }
+
+            });
+            return k;
+        }
         public void home()
         {
             if (currUC != null) currUC.Visible = false;
             initial1.Show();
             currUC = initial1;
         }
-        public void onStart()
+        public void onStart(string k)
         {
             initial1.Visible = false;
             interaction1.Visible = true;
