@@ -59,6 +59,7 @@
             this.Circle1 = new System.Windows.Forms.PictureBox();
             this.lbl_outoftime = new System.Windows.Forms.Label();
             this.txt_answers = new System.Windows.Forms.TextBox();
+            this.Feedback = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.star7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star5)).BeginInit();
@@ -389,11 +390,23 @@
             this.txt_answers.TabIndex = 29;
             this.txt_answers.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // Feedback
+            // 
+            this.Feedback.AutoSize = true;
+            this.Feedback.Font = new System.Drawing.Font("Segoe Script", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Feedback.ForeColor = System.Drawing.Color.Gold;
+            this.Feedback.Location = new System.Drawing.Point(364, 605);
+            this.Feedback.Name = "Feedback";
+            this.Feedback.Size = new System.Drawing.Size(954, 71);
+            this.Feedback.TabIndex = 30;
+            this.Feedback.Text = "CLICCA E SCOPRI LA COSTELLAZIONE!";
+            // 
             // Interaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.Feedback);
             this.Controls.Add(this.txt_answers);
             this.Controls.Add(this.lbl_outoftime);
             this.Controls.Add(this.lbl_Phecda);
@@ -471,5 +484,6 @@
         private System.Windows.Forms.Label lbl_Phecda;
         private System.Windows.Forms.Label lbl_outoftime;
         private System.Windows.Forms.TextBox txt_answers;
+        private System.Windows.Forms.Label Feedback;
     }
 }

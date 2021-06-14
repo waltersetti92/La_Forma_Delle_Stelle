@@ -22,12 +22,14 @@ namespace La_Forma_Delle_Stelle
         private int seconds=0;
         private int minutes=4;
         public int number_star=1;
+        public string put_started;
         public Interaction()
         {
             InitializeComponent();
             resetOperations();
+            put_started = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=3&k=7";
 
-            
+
         }
         private void resetOperations()
         {
@@ -58,6 +60,7 @@ namespace La_Forma_Delle_Stelle
             lbl_Merak.Visible = false;
             lbl_Phecda.Visible = false;
             lbl_outoftime.Visible = false;
+            Feedback.Visible = false;
             op1.Parent = Circle1;
             op2.Parent = Circle1;
             op3.Parent = Circle1;
@@ -207,6 +210,24 @@ namespace La_Forma_Delle_Stelle
         {
             
         }
+        public void Correct_Answer()
+        {
+            parentForm.playbackResourceAudio("success");
+            Feedback.ForeColor = Color.Lime;
+            Feedback.Visible = true;
+           // this.Feedback.Location = new Point(485, 518);
+            Feedback.Text = "RISPOSTA CORRETTA";
+            this.Update();
+        }
+        public void Wrong_Answer()
+        {
+            parentForm.playbackResourceAudio("failure");
+            Feedback.ForeColor = Color.Red;
+            Feedback.Visible = true;
+           // this.Feedback.Location = new Point(485, 518);
+            Feedback.Text = "RISPOSTA SBAGLIATA";
+            this.Update();
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -260,28 +281,33 @@ namespace La_Forma_Delle_Stelle
             }
         }
 
-        public void answer(int i)
+        public async void answer(int i)
         {
             if (i == 1)
             {
-                parentForm.playbackResourceAudio("success");
-                MessageBox.Show("Esatto!");
+                Correct_Answer();
+                Thread.Sleep(4000);
+                await uda_server_communication.Server_Request(put_started);
                 txt_answers.Text = "";
                 number_star++;
+                Feedback.Visible = false;
+                parentForm.onStart(parentForm.activity_form);           
             }
             else if (i==0)
             {
-                parentForm.playbackResourceAudio("failure");
-                MessageBox.Show("Sbagliato!");
+                Wrong_Answer();
+                Thread.Sleep(4000);
+                await uda_server_communication.Server_Request(put_started);
                 txt_answers.Text = "";
+                Feedback.Visible = false;
                 timer2.Start();
             }
-            else if (i == 2)
-            {
-                parentForm.playbackResourceAudio("failure");
-                MessageBox.Show("Inserisci il numero!");
-                timer2.Start();
-            }
+            //else if (i == 2)
+            //{
+            //    parentForm.playbackResourceAudio("failure");
+            //    MessageBox.Show("Inserisci il numero!");
+            //    timer2.Start();
+            //}
         }
         public void final_scenario_time()
         {
