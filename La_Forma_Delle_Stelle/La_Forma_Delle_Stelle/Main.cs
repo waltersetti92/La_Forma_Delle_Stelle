@@ -15,10 +15,12 @@ namespace La_Forma_Delle_Stelle
         private UserControl currUC = null;
         public SoundPlayer player = null;
         public string activity_form;
+        public string idle_status;
         public Main()
         {
-            InitializeComponent();          
-          Business_Logic BL = new Business_Logic(this);
+            InitializeComponent();
+            idle_status = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2&k=0";
+            Business_Logic BL = new Business_Logic(this);
             initial1.parentForm = this;
             interaction1.parentForm = this;
             initial1.Visible = false;
@@ -63,6 +65,23 @@ namespace La_Forma_Delle_Stelle
 
             });
             return k;
+        }
+
+        public async void Abort_UDA()
+        {
+            await uda_server_communication.Server_Request(idle_status);
+            if (currUC != null) currUC.Visible = false;
+            initial1.Show();
+            currUC = initial1;
+            while (true)
+            {
+                string k = activity_form;
+                int status = int.Parse(k);
+                if (status == 6 || status == 7)
+                {
+                    break;
+                }
+            }
         }
         public void home()
         {

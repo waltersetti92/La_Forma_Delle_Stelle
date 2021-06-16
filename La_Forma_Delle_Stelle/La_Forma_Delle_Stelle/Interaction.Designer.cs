@@ -33,8 +33,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbl_minutes = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.btn_conferma = new System.Windows.Forms.Button();
-            this.lbl_Error = new System.Windows.Forms.Label();
             this.op1 = new System.Windows.Forms.Label();
             this.op2 = new System.Windows.Forms.Label();
             this.op3 = new System.Windows.Forms.Label();
@@ -58,7 +56,6 @@
             this.Circle2 = new System.Windows.Forms.PictureBox();
             this.Circle1 = new System.Windows.Forms.PictureBox();
             this.lbl_outoftime = new System.Windows.Forms.Label();
-            this.txt_answers = new System.Windows.Forms.TextBox();
             this.Feedback = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.star7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star6)).BeginInit();
@@ -104,30 +101,6 @@
             // 
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // btn_conferma
-            // 
-            this.btn_conferma.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_conferma.ForeColor = System.Drawing.Color.Blue;
-            this.btn_conferma.Location = new System.Drawing.Point(554, 556);
-            this.btn_conferma.Name = "btn_conferma";
-            this.btn_conferma.Size = new System.Drawing.Size(209, 47);
-            this.btn_conferma.TabIndex = 3;
-            this.btn_conferma.Text = "CONFERMA ";
-            this.btn_conferma.UseVisualStyleBackColor = true;
-            this.btn_conferma.Click += new System.EventHandler(this.btn_conferma_Click);
-            // 
-            // lbl_Error
-            // 
-            this.lbl_Error.AutoSize = true;
-            this.lbl_Error.Font = new System.Drawing.Font("Segoe Script", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Error.ForeColor = System.Drawing.Color.Gold;
-            this.lbl_Error.Location = new System.Drawing.Point(226, 532);
-            this.lbl_Error.Name = "lbl_Error";
-            this.lbl_Error.Size = new System.Drawing.Size(954, 71);
-            this.lbl_Error.TabIndex = 7;
-            this.lbl_Error.Text = "CLICCA E SCOPRI LA COSTELLAZIONE!";
-            this.lbl_Error.Click += new System.EventHandler(this.lbl_Error_Click);
             // 
             // op1
             // 
@@ -381,21 +354,12 @@
             this.lbl_outoftime.TabIndex = 28;
             this.lbl_outoftime.Text = "TEMPO SCADUTO :(";
             // 
-            // txt_answers
-            // 
-            this.txt_answers.Font = new System.Drawing.Font("Segoe Script", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_answers.Location = new System.Drawing.Point(624, 479);
-            this.txt_answers.Name = "txt_answers";
-            this.txt_answers.Size = new System.Drawing.Size(59, 60);
-            this.txt_answers.TabIndex = 29;
-            this.txt_answers.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // Feedback
             // 
             this.Feedback.AutoSize = true;
             this.Feedback.Font = new System.Drawing.Font("Segoe Script", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Feedback.ForeColor = System.Drawing.Color.Gold;
-            this.Feedback.Location = new System.Drawing.Point(364, 605);
+            this.Feedback.Location = new System.Drawing.Point(381, 567);
             this.Feedback.Name = "Feedback";
             this.Feedback.Size = new System.Drawing.Size(954, 71);
             this.Feedback.TabIndex = 30;
@@ -407,7 +371,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.Feedback);
-            this.Controls.Add(this.txt_answers);
             this.Controls.Add(this.lbl_outoftime);
             this.Controls.Add(this.lbl_Phecda);
             this.Controls.Add(this.star7);
@@ -429,10 +392,8 @@
             this.Controls.Add(this.op3);
             this.Controls.Add(this.op2);
             this.Controls.Add(this.op1);
-            this.Controls.Add(this.lbl_Error);
             this.Controls.Add(this.Circle2);
             this.Controls.Add(this.Circle1);
-            this.Controls.Add(this.btn_conferma);
             this.Controls.Add(this.lbl_minutes);
             this.Controls.Add(this.timerLabel);
             this.Name = "Interaction";
@@ -458,10 +419,8 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbl_minutes;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Button btn_conferma;
         private System.Windows.Forms.PictureBox Circle1;
         private System.Windows.Forms.PictureBox Circle2;
-        private System.Windows.Forms.Label lbl_Error;
         private System.Windows.Forms.Label op1;
         private System.Windows.Forms.Label op2;
         private System.Windows.Forms.Label op3;
@@ -483,7 +442,6 @@
         private System.Windows.Forms.PictureBox star7;
         private System.Windows.Forms.Label lbl_Phecda;
         private System.Windows.Forms.Label lbl_outoftime;
-        private System.Windows.Forms.TextBox txt_answers;
         private System.Windows.Forms.Label Feedback;
     }
 }
