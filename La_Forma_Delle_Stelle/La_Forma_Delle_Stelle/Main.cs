@@ -112,7 +112,27 @@ namespace La_Forma_Delle_Stelle
         {
             interaction1.Visible = false;
             ursa1.Visible = true;
-            currUC = ursa1;
+            while (true)
+            {
+                string k = activity_form;
+                int status = int.Parse(k);
+                if (status == 11 || status == 12)
+                {
+                    Application.Exit();
+                    ursa1.Visible = false;
+                    Environment.Exit(0);
+                }
+                if (status == 13)
+                {
+                    this.Hide();
+                    ursa1.Visible = false;
+                    Abort_UDA();
+                    break;
+                }
+                currUC = ursa1;
+                break;
+            }
+
         }
 
         private void Main_Load(object sender, EventArgs e)
