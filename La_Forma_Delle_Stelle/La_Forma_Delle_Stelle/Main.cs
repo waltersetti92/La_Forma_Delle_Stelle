@@ -30,7 +30,6 @@ namespace La_Forma_Delle_Stelle
             ursa1.parentForm = this;
             ursa1.Visible = false;
             home();
-
         }
         public string Status_Changed(string k)
         {
@@ -70,18 +69,25 @@ namespace La_Forma_Delle_Stelle
         public async void Abort_UDA()
         {
             await uda_server_communication.Server_Request(idle_status);
-            if (currUC != null) currUC.Visible = false;
-            initial1.Show();
-            currUC = initial1;
-            while (true)
-            {
-                string k = activity_form;
-                int status = int.Parse(k);
-                if (status == 6 || status == 7)
-                {
-                    break;
-                }
-            }
+            Application.Restart();
+            //initial1.Visible = false;
+            //interaction1.Visible = true;
+            //currUC = interaction1;
+            //while (true)
+            //{
+            //    string k = activity_form;
+            //    int status = int.Parse(k);
+            //    if (status == 6 || status == 7)
+            //    {
+            //        interaction1.seconds = 0;
+            //        interaction1.minutes = 4;
+            //        interaction1.number_star = 1;
+            //        interaction1.counter_responses = 0;
+            //        interaction1.timer_game = 0;
+            //        interaction1.timeleft = 6;
+            //        break;
+            //    }
+            //}
         }
         public void home()
         {
