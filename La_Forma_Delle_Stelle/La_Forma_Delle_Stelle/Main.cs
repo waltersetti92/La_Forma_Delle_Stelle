@@ -16,10 +16,13 @@ namespace La_Forma_Delle_Stelle
         public SoundPlayer player = null;
         public string activity_form;
         public string idle_status;
+        public string data_start;
+        public string started_uda;
         public Main()
         {
             InitializeComponent();
             idle_status = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2&k=0";
+            started_uda = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2&k=7" + "&data=" + data_start;
             Business_Logic BL = new Business_Logic(this);
             initial1.parentForm = this;
             interaction1.parentForm = this;
@@ -30,6 +33,7 @@ namespace La_Forma_Delle_Stelle
             ursa1.parentForm = this;
             ursa1.Visible = false;
             home();
+
         }
         public string Status_Changed(string k)
         {

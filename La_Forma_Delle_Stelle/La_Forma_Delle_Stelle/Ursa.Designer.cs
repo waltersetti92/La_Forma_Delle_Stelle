@@ -51,6 +51,7 @@
             this.lbl_Phecda = new System.Windows.Forms.Label();
             this.lbl_Error = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.indizio_box = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -66,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.indizio_box)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Alkaid
@@ -304,11 +306,21 @@
             this.pictureBox13.TabIndex = 37;
             this.pictureBox13.TabStop = false;
             // 
+            // indizio_box
+            // 
+            this.indizio_box.Location = new System.Drawing.Point(502, 159);
+            this.indizio_box.Name = "indizio_box";
+            this.indizio_box.Size = new System.Drawing.Size(338, 175);
+            this.indizio_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.indizio_box.TabIndex = 38;
+            this.indizio_box.TabStop = false;
+            // 
             // Ursa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.indizio_box);
             this.Controls.Add(this.pictureBox13);
             this.Controls.Add(this.lbl_Error);
             this.Controls.Add(this.lbl_Phecda);
@@ -350,6 +362,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.indizio_box)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,5 +393,6 @@
         private System.Windows.Forms.Label lbl_Phecda;
         private System.Windows.Forms.Label lbl_Error;
         private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox indizio_box;
     }
 }

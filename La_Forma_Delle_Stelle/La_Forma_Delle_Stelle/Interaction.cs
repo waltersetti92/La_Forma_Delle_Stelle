@@ -34,7 +34,7 @@ namespace La_Forma_Delle_Stelle
             resetOperations();
             round_correct = 1;
             put_started = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2&k=7";
-            put_wait_data = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2&k=14";
+            put_wait_data = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2&k=14" + "&data=" + "{\"answer\": \"Inserisci il risultato corretto\", \"input_type\":[\"1\",\"2\"]}";
             get_status_uda = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/get/?i=2";
         }
         private void resetOperations()
@@ -319,6 +319,7 @@ namespace La_Forma_Delle_Stelle
             Feedback.Visible = true;
             Feedback.Text = "RISPOSTA CORRETTA";
             this.Update();
+            Thread.Sleep(3000);
         }
         public void Wrong_Answer()
         {
@@ -327,6 +328,7 @@ namespace La_Forma_Delle_Stelle
             Feedback.Visible = true;
             Feedback.Text = "RISPOSTA SBAGLIATA";
             this.Update();
+            Thread.Sleep(3000);
         }
 
         private async void timer1_Tick(object sender, EventArgs e)
@@ -383,13 +385,14 @@ namespace La_Forma_Delle_Stelle
                         }
                         if (status == 10)
                         {
-                            await uda_server_communication.Server_Request(put_started);
+                            await uda_server_communication.Server_Request(put_wait_data);
                         }
                         this.timer1.Stop();
                         timerLabel.Enabled = false;
                         timerLabel.Visible = false;
                         timer_game = 1;
                         timer2.Enabled = true;
+                        await uda_server_communication.Server_Request(put_wait_data);
                         circles();
                     }
                     break;
@@ -496,6 +499,7 @@ namespace La_Forma_Delle_Stelle
                                             lbl_Mizar.Visible = true;
                                             this.Update();
                                             circles();
+                                            break;
                                          }
                                         if (String.Equals(data, "8") && round_correct == 2)
 
@@ -507,6 +511,7 @@ namespace La_Forma_Delle_Stelle
                                             lbl_Mizar.Visible = true;
                                             this.Update();
                                             circles();
+                                            break;
                                         }
                                         if (String.Equals(data, "11") && round_correct == 3)
 
@@ -518,13 +523,14 @@ namespace La_Forma_Delle_Stelle
                                             lbl_Mizar.Visible = true;
                                             this.Update();
                                             circles();
+                                            break;
                                         }
                                         else
                                                 {
                                             await uda_server_communication.Server_Request(put_wait_data);
                                             answer(0);
+                                            break;
                                         }
-                                        break;
                                     case 3:
                                         if (String.Equals(data, "6") && round_correct == 1)
 
@@ -536,13 +542,15 @@ namespace La_Forma_Delle_Stelle
                                             lbl_Mizar.Visible = true;
                                             this.Update();
                                             circles();
+                                            break;
                                         }
                                         else
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
                                             answer(0);
+                                            break;
                                         }
-                                        break;
+                                       
                                     case 4:
                                         if (String.Equals(data, "15") && round_correct == 1)
 
@@ -554,13 +562,14 @@ namespace La_Forma_Delle_Stelle
                                             lbl_Mizar.Visible = true;
                                             this.Update();
                                             circles();
+                                            break;
                                         }
                                         else
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
                                             answer(0);
+                                            break;
                                         }
-                                        break;
                                     case 5:
                                         if (String.Equals(data, "20") && round_correct == 1)
 
@@ -572,13 +581,14 @@ namespace La_Forma_Delle_Stelle
                                             lbl_Mizar.Visible = true;
                                             this.Update();
                                             circles();
+                                            break;
                                         }
                                         else
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
                                             answer(0);
+                                            break;
                                         }
-                                        break;
                                     case 6:
                                         if (String.Equals(data, "8") && round_correct == 1)
 
@@ -590,11 +600,13 @@ namespace La_Forma_Delle_Stelle
                                             lbl_Mizar.Visible = true;
                                             this.Update();
                                             circles();
+                                            break;
                                         }
                                         else
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
                                             answer(0);
+                                            break;
                                         }
                                         break;
                                     case 7:
@@ -615,13 +627,14 @@ namespace La_Forma_Delle_Stelle
                                             this.Update();
                                             parentForm.activity();
                                             parentForm.playbackResourceAudio("clapping1");
+                                            break;
                                         }
                                         else
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
                                             answer(0);
+                                            break;
                                         }
-                                        break;
                                 }
 
                             }
@@ -718,13 +731,14 @@ namespace La_Forma_Delle_Stelle
                                             lbl_Mizar.Visible = true;
                                             this.Update();
                                             circles();
+                                            break;
                                         }
                                         else
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
                                             answer(0);
+                                            break;
                                         }
-                                        break;
                                     case 4:
                                         if (String.Equals(data, "15") && round_correct == 1)
 
@@ -736,13 +750,14 @@ namespace La_Forma_Delle_Stelle
                                             lbl_Mizar.Visible = true;
                                             this.Update();
                                             circles();
+                                            break;
                                         }
                                         else
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
                                             answer(0);
+                                            break;
                                         }
-                                        break;
                                     case 5:
                                         if (String.Equals(data, "20") && round_correct == 1)
 
@@ -754,13 +769,14 @@ namespace La_Forma_Delle_Stelle
                                             lbl_Mizar.Visible = true;
                                             this.Update();
                                             circles();
+                                            break;
                                         }
                                         else
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
                                             answer(0);
+                                            break;
                                         }
-                                        break;
                                     case 6:
                                         if (String.Equals(data, "8") && round_correct == 1)
 
@@ -805,7 +821,6 @@ namespace La_Forma_Delle_Stelle
                                         }
                                         break;
                                 }
-
                             }
                             break;
                         }
