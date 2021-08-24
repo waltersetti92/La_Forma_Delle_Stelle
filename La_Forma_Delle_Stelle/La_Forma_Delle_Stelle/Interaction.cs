@@ -34,7 +34,7 @@ namespace La_Forma_Delle_Stelle
             resetOperations();
             round_correct = 1;
             put_started = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2&k=7";
-            put_wait_data = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2&k=14" + "&data=" + "{\"answer\": \"Inserisci il risultato corretto\", \"input_type\":[\"1\",\"2\"]}";
+            put_wait_data = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2&k=14" + "&data=" + "{\"answer\": \"Inserisci il risultato corretto\", \"input_type\":\"\"}";
             get_status_uda = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/get/?i=2";
         }
         private void resetOperations()
@@ -148,6 +148,36 @@ namespace La_Forma_Delle_Stelle
                         op5.Text = "21-5";
                         this.Update();
                         op6.Text = "11+6";
+                        this.Update();
+                    }
+                    else if (round_correct == 4)
+                    { //13 
+                        op1.Text = "15-5";
+                        this.Update();
+                        op2.Text = "7+6";
+                        this.Update();
+                        op3.Text = "9+3";
+                        this.Update();
+                        op4.Text = "16+4";
+                        this.Update();
+                        op5.Text = "3+11";
+                        this.Update();
+                        op6.Text = "19-6";
+                        this.Update();
+                    }
+                    else if (round_correct == 5)
+                    { //9 
+                        op1.Text = "5+1";
+                        this.Update();
+                        op2.Text = "12+9";
+                        this.Update();
+                        op3.Text = "6+3";
+                        this.Update();
+                        op4.Text = "19-7";
+                        this.Update();
+                        op5.Text = "14+5";
+                        this.Update();
+                        op6.Text = "15-6";
                         this.Update();
                     }
                     break;
@@ -319,7 +349,6 @@ namespace La_Forma_Delle_Stelle
             Feedback.Visible = true;
             Feedback.Text = "RISPOSTA CORRETTA";
             this.Update();
-            Thread.Sleep(3000);
         }
         public void Wrong_Answer()
         {
@@ -328,7 +357,6 @@ namespace La_Forma_Delle_Stelle
             Feedback.Visible = true;
             Feedback.Text = "RISPOSTA SBAGLIATA";
             this.Update();
-            Thread.Sleep(3000);
         }
 
         private async void timer1_Tick(object sender, EventArgs e)
@@ -482,6 +510,28 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
+                                        if (String.Equals(data, "13") && round_correct == 4)
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star1.Visible = true;
+                                            this.Update();
+                                            lbl_Alkaid.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "9") && round_correct == 5)
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star1.Visible = true;
+                                            this.Update();
+                                            lbl_Alkaid.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
                                         else
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
@@ -608,7 +658,6 @@ namespace La_Forma_Delle_Stelle
                                             answer(0);
                                             break;
                                         }
-                                        break;
                                     case 7:
                                         if (String.Equals(data, "24") && round_correct == 1)
 
@@ -627,6 +676,8 @@ namespace La_Forma_Delle_Stelle
                                             this.Update();
                                             parentForm.activity();
                                             parentForm.playbackResourceAudio("clapping1");
+                                            Thread.Sleep(5000);
+                                            parentForm.indizio_finale();
                                             break;
                                         }
                                         else
@@ -1049,6 +1100,7 @@ namespace La_Forma_Delle_Stelle
         {           
             parentForm.activity();
             parentForm.playbackResourceAudio("clapping1");
+            
         }
     }
 }

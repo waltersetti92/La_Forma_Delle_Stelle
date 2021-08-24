@@ -74,24 +74,6 @@ namespace La_Forma_Delle_Stelle
         {
             await uda_server_communication.Server_Request(idle_status);
             Application.Restart();
-            //initial1.Visible = false;
-            //interaction1.Visible = true;
-            //currUC = interaction1;
-            //while (true)
-            //{
-            //    string k = activity_form;
-            //    int status = int.Parse(k);
-            //    if (status == 6 || status == 7)
-            //    {
-            //        interaction1.seconds = 0;
-            //        interaction1.minutes = 4;
-            //        interaction1.number_star = 1;
-            //        interaction1.counter_responses = 0;
-            //        interaction1.timer_game = 0;
-            //        interaction1.timeleft = 6;
-            //        break;
-            //    }
-            //}
         }
         public void home()
         {
@@ -137,6 +119,11 @@ namespace La_Forma_Delle_Stelle
                 break;
             }
 
+        }
+
+        public void indizio_finale()
+        {
+            ursa1.indizio();
         }
 
         private void Main_Load(object sender, EventArgs e)

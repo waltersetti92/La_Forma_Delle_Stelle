@@ -64,7 +64,7 @@ namespace La_Forma_Delle_Stelle
         }
         private void Ursa_Load(object sender, EventArgs e)
         {
-
+     
         }
     }
 }

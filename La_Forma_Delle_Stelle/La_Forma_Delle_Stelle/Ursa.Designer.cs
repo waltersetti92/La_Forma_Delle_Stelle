@@ -308,7 +308,7 @@
             // 
             // indizio_box
             // 
-            this.indizio_box.Location = new System.Drawing.Point(502, 159);
+            this.indizio_box.Location = new System.Drawing.Point(650, 317);
             this.indizio_box.Name = "indizio_box";
             this.indizio_box.Size = new System.Drawing.Size(338, 175);
             this.indizio_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -320,18 +320,21 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.indizio_box);
-            this.Controls.Add(this.pictureBox13);
-            this.Controls.Add(this.lbl_Error);
+            this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.lbl_Phecda);
             this.Controls.Add(this.lbl_Merak);
             this.Controls.Add(this.pictureBox9);
+            this.Controls.Add(this.pictureBox12);
+            this.Controls.Add(this.pictureBox10);
+            this.Controls.Add(this.indizio_box);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.lbl_Megrez);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox13);
+            this.Controls.Add(this.lbl_Error);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.lbl_Megrez);
             this.Controls.Add(this.lbl_Dubhe);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.lbl_alioth);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.lbl_Mizar);
@@ -341,9 +344,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_Alkaid);
             this.Controls.Add(this.star1);
-            this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.pictureBox12);
             this.Name = "Ursa";
             this.Size = new System.Drawing.Size(1084, 796);
             this.Load += new System.EventHandler(this.Ursa_Load);
