@@ -20,7 +20,7 @@ namespace La_Forma_Delle_Stelle
         public int timer_game = 0;
         private int total_seconds;
         public int seconds=0;
-        public int minutes=4;
+        public int minutes=5;
         public int number_star=1;
         public string put_started;
         public string put_wait_data;
@@ -1381,6 +1381,50 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
+                                        if (String.Equals(data, "21") && round_correct == 2)
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star1.Visible = true;
+                                            this.Update();
+                                            lbl_Alkaid.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "17") && round_correct == 3)
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star1.Visible = true;
+                                            this.Update();
+                                            lbl_Alkaid.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "13") && round_correct == 4)
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star1.Visible = true;
+                                            this.Update();
+                                            lbl_Alkaid.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "9") && round_correct == 5)
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star1.Visible = true;
+                                            this.Update();
+                                            lbl_Alkaid.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
                                         else
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
@@ -1400,6 +1444,54 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
+                                        if (String.Equals(data, "8") && round_correct == 2)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star2.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "15") && round_correct == 3)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star2.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "11") && round_correct == 4)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star2.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "10") && round_correct == 5)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star2.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
                                         else
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
@@ -1408,7 +1500,55 @@ namespace La_Forma_Delle_Stelle
                                         }
 
                                     case 3:
-                                        if (String.Equals(data, "6") && round_correct == 1)
+                                        if (String.Equals(data, "14") && round_correct == 1)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star3.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "16") && round_correct == 2)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star3.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "7") && round_correct == 3)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star3.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "4") && round_correct == 4)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star3.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "6") && round_correct == 5)
 
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
@@ -1428,7 +1568,50 @@ namespace La_Forma_Delle_Stelle
                                         }
                                     case 4:
                                         if (String.Equals(data, "15") && round_correct == 1)
-
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star4.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "10") && round_correct == 2)
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star4.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "8") && round_correct == 3)
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star4.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "20") && round_correct == 4)
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star4.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "12") && round_correct == 5)
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
@@ -1458,6 +1641,54 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
+                                        if (String.Equals(data, "7") && round_correct == 2)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star5.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "9") && round_correct == 3)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star5.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "18") && round_correct == 4)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star5.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "30") && round_correct == 5)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star5.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
                                         else
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
@@ -1475,6 +1706,55 @@ namespace La_Forma_Delle_Stelle
                                             lbl_Mizar.Visible = true;
                                             this.Update();
                                             circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "6") && round_correct == 2)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star6.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "14") && round_correct == 3)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star6.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "24") && round_correct == 4)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star6.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "45") && round_correct == 5)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star6.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
                                         }
                                         else
                                         {
@@ -1484,6 +1764,54 @@ namespace La_Forma_Delle_Stelle
                                         break;
                                     case 7:
                                         if (String.Equals(data, "24") && round_correct == 1)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star6.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "12") && round_correct == 2)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star6.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "28") && round_correct == 3)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star6.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "16") && round_correct == 4)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star6.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "10") && round_correct == 1)
 
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
@@ -1529,7 +1857,7 @@ namespace La_Forma_Delle_Stelle
             if (i == 1)
             {
                 Correct_Answer();
-                Thread.Sleep(4000);
+                //Thread.Sleep(4000);
                 round_correct = 1;
                 number_star++;
                 correct_answers++;
@@ -1539,10 +1867,10 @@ namespace La_Forma_Delle_Stelle
             else if (i==0)
             {
                 Wrong_Answer();
-                Thread.Sleep(4000);
+                //Thread.Sleep(4000);
                 Feedback.Visible = false;
                 round_correct++;
-                if (round_correct == 4)
+                if (round_correct == 5)
                 {
                     round_correct = 1;
                 }
