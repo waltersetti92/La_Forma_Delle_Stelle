@@ -531,7 +531,10 @@ namespace La_Forma_Delle_Stelle
                     }
                     break;
                 case 6:
-                    op1.Text = "8x3";
+                    if (round_correct == 1)
+                    { 
+                        //8
+                     op1.Text = "8x3";
                     this.Update();
                     op2.Text = "30/5";
                     this.Update();
@@ -543,8 +546,81 @@ namespace La_Forma_Delle_Stelle
                     this.Update();
                     op6.Text = "72/9";
                     this.Update();
+                     break;
+                    }
+                    if (round_correct == 2)
+                    {
+                        //6
+                        op1.Text = "35/7";
+                        this.Update();
+                        op2.Text = "3x2";
+                        this.Update();
+                        op3.Text = "90/10";
+                        this.Update();
+                        op4.Text = "6x1";
+                        this.Update();
+                        op5.Text = "27/9";
+                        this.Update();
+                        op6.Text = "4x2";
+                        this.Update();
+                        break;
+                    }
+                    if (round_correct == 3)
+                    {
+                        //14
+                        op1.Text = "18/9";
+                        this.Update();
+                        op2.Text = "140/10";
+                        this.Update();
+                        op3.Text = "6x2";
+                        this.Update();
+                        op4.Text = "7x2";
+                        this.Update();
+                        op5.Text = "81/9";
+                        this.Update();
+                        op6.Text = "5x5";
+                        this.Update();
+                        break;
+                    }
+                    if (round_correct == 4)
+                    {
+                        //24
+                        op1.Text = "4x7";
+                        this.Update();
+                        op2.Text = "55/5";
+                        this.Update();
+                        op3.Text = "3x8";
+                        this.Update();
+                        op4.Text = "56/7";
+                        this.Update();
+                        op5.Text = "12x2";
+                        this.Update();
+                        op6.Text = "36/4";
+                        this.Update();
+                        break;
+                    }
+                    if (round_correct == 5)
+                    {
+                        //45
+                        op1.Text = "5x9";
+                        this.Update();
+                        op2.Text = "42/6";
+                        this.Update();
+                        op3.Text = "40/2";
+                        this.Update();
+                        op4.Text = "7x9";
+                        this.Update();
+                        op5.Text = "3x7";
+                        this.Update();
+                        op6.Text = "90/2";
+                        this.Update();
+                        break;
+                    }
                     break;
                 case 7:
+                    if (round_correct == 1)
+                    {
+                    //24
                     op1.Text = "36/4";
                     this.Update();
                     op2.Text = "12x2";
@@ -557,6 +633,76 @@ namespace La_Forma_Delle_Stelle
                     this.Update();
                     op6.Text = "42/6";
                     this.Update();
+                        break;
+                    }
+                    if (round_correct == 2)
+                    {
+                        //12
+                        op1.Text = "42/6";
+                        this.Update();
+                        op2.Text = "18/6";
+                        this.Update();
+                        op3.Text = "2x6";
+                        this.Update();
+                        op4.Text = "8x9";
+                        this.Update();
+                        op5.Text = "2x7";
+                        this.Update();
+                        op6.Text = "4x3";
+                        this.Update();
+                        break;
+                    }
+                    if (round_correct == 3)
+                    {
+                        //28
+                        op1.Text = "7x4";
+                        this.Update();
+                        op2.Text = "4/2";
+                        this.Update();
+                        op3.Text = "10x5";
+                        this.Update();
+                        op4.Text = "14x2";
+                        this.Update();
+                        op5.Text = "70/7";
+                        this.Update();
+                        op6.Text = "5x3";
+                        this.Update();
+                        break;
+                    }
+                    if (round_correct == 4)
+                    {
+                        //16
+                        op1.Text = "15/5";
+                        this.Update();
+                        op2.Text = "2x8";
+                        this.Update();
+                        op3.Text = "11x4";
+                        this.Update();
+                        op4.Text = "27/9";
+                        this.Update();
+                        op5.Text = "32/2";
+                        this.Update();
+                        op6.Text = "9x5";
+                        this.Update();
+                        break;
+                    }
+                    if (round_correct == 5)
+                    {
+                        //10
+                        op1.Text = "4x8";
+                        this.Update();
+                        op2.Text = "36/4";
+                        this.Update();
+                        op3.Text = "60/6";
+                        this.Update();
+                        op4.Text = "5x2";
+                        this.Update();
+                        op5.Text = "28x3";
+                        this.Update();
+                        op6.Text = "63/9";
+                        this.Update();
+                        break;
+                    }
                     break;
 
             }
@@ -1045,6 +1191,54 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
+                                        if (String.Equals(data, "6") && round_correct == 2)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star6.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "14") && round_correct == 3)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star6.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "24") && round_correct == 4)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star6.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "45") && round_correct == 5)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star6.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
                                         else
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
@@ -1053,6 +1247,55 @@ namespace La_Forma_Delle_Stelle
                                         }
                                     case 7:
                                         if (String.Equals(data, "24") && round_correct == 1)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star6.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "12") && round_correct == 2)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star6.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "28") && round_correct == 3)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star6.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+                                        if (String.Equals(data, "16") && round_correct == 4)
+
+                                        {
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            answer(1);
+                                            star6.Visible = true;
+                                            this.Update();
+                                            lbl_Mizar.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            break;
+                                        }
+
+                                        if (String.Equals(data, "10") && round_correct == 5)
 
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
