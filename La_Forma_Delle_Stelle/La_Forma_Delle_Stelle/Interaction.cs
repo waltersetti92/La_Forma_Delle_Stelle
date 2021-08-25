@@ -393,18 +393,52 @@ namespace La_Forma_Delle_Stelle
                     }
                     if (round_correct == 3)
                     {
-                        //14
-                        op1.Text = "4x6";
+                        //8
+                        op1.Text = "5x5";
                         this.Update();
-                        op2.Text = "9+6";
+                        op2.Text = "3x7";
                         this.Update();
-                        op3.Text = "2x5";
+                        op3.Text = "4+4";
                         this.Update();
-                        op4.Text = "16-5";
+                        op4.Text = "17+2";
                         this.Update();
-                        op5.Text = "4+4";
+                        op5.Text = "4x2";
                         this.Update();
-                        op6.Text = "3x5";
+                        op6.Text = "6x6";
+                        this.Update();
+                        break;
+                    }
+                    if (round_correct == 4)
+                    {
+                        //20
+                        op1.Text = "8x8";
+                        this.Update();
+                        op2.Text = "3x3";
+                        this.Update();
+                        op3.Text = "10x2";
+                        this.Update();
+                        op4.Text = "12+12";
+                        this.Update();
+                        op5.Text = "11+11";
+                        this.Update();
+                        op6.Text = "25-5";
+                        this.Update();
+                        break;
+                    }
+                    if (round_correct == 5)
+                    {
+                        //12
+                        op1.Text = "18-6";
+                        this.Update();
+                        op2.Text = "3+2";
+                        this.Update();
+                        op3.Text = "9+4";
+                        this.Update();
+                        op4.Text = "20+2";
+                        this.Update();
+                        op5.Text = "3x4";
+                        this.Update();
+                        op6.Text = "10-6";
                         this.Update();
                         break;
                     }
