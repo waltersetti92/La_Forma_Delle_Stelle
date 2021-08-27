@@ -114,6 +114,7 @@ namespace La_Forma_Delle_Stelle
                     ursa1.Visible = false;
                     Abort_UDA();
                     break;
+
                 }
                 currUC = ursa1;
                 Thread.Sleep(5000);
