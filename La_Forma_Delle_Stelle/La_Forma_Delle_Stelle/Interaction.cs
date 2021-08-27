@@ -27,6 +27,7 @@ namespace La_Forma_Delle_Stelle
         public string get_status_uda;
         public int round_correct;
         public int correct_answers;
+        public int control = 1;
         public Interaction()
         {
             InitializeComponent();
@@ -725,6 +726,7 @@ namespace La_Forma_Delle_Stelle
             Feedback.Visible = true;
             Feedback.Text = "RISPOSTA CORRETTA";
             this.Update();
+            Thread.Sleep(2000);
         }
         public void Wrong_Answer()
         {
@@ -733,6 +735,15 @@ namespace La_Forma_Delle_Stelle
             Feedback.Visible = true;
             Feedback.Text = "RISPOSTA SBAGLIATA";
             this.Update();
+            Thread.Sleep(1000);
+            Feedback.Visible = false;
+            round_correct++;
+            if (round_correct == 5)
+            {
+                round_correct = 1;
+            }
+            circles();
+            timer2.Start();
         }
 
         private async void timer1_Tick(object sender, EventArgs e)
@@ -844,485 +855,523 @@ namespace La_Forma_Delle_Stelle
                         else if (seconds < 10)
                             this.lbl_minutes.Text = minutes.ToString() + ":" + "0" + seconds.ToString();
                         circles();
-                        //Thread.Sleep(1000);
                         while (true)
                         {
                             if (status == 15)
                             {
-                                string data = await uda_server_communication.Server_Request_datasent(get_status_uda);
-                                switch (number_star)
-                                {
-                                    case 1:
-                                        if (String.Equals(data, "12") && round_correct == 1)
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star1.Visible = true;
-                                            this.Update();
-                                            lbl_Alkaid.Visible = true;
-                                            this.Update();                                       
-                                            circles();
-                                            break;
-                                        }
-                                       if (String.Equals(data, "21") && round_correct == 2)
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star1.Visible = true;
-                                            this.Update();
-                                            lbl_Alkaid.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "17") && round_correct == 3)
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star1.Visible = true;
-                                            this.Update();
-                                            lbl_Alkaid.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "13") && round_correct == 4)
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star1.Visible = true;
-                                            this.Update();
-                                            lbl_Alkaid.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "9") && round_correct == 5)
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star1.Visible = true;
-                                            this.Update();
-                                            lbl_Alkaid.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        else
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(0);
-                                            break;
-                                        }
-                                    case 2:
-                                        if (String.Equals(data, "9") && round_correct == 1)
-                   
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);                      
-                                            star2.Visible = true;                       
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                         }
-                                        if (String.Equals(data, "8") && round_correct == 2)
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star2.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "15") && round_correct == 3)
+                                    await uda_server_communication.Server_Request(put_wait_data);
+                                    string data = await uda_server_communication.Server_Request_datasent(get_status_uda);
+                                    switch (number_star)
+                                    {
+                                        case 1:
+                                            if (String.Equals(data, "12") && round_correct == 1)
+                                            {
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star2.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "11") && round_correct == 4)
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star1.Visible = true;
+                                                this.Update();
+                                                lbl_Alkaid.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "21") && round_correct == 2 && control == 1)
+                                            {
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star2.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "10") && round_correct == 5)
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star1.Visible = true;
+                                                this.Update();
+                                                lbl_Alkaid.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "17") && round_correct == 3 && control == 1)
+                                            {
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star2.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        else
-                                                {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(0);
-                                            break;
-                                        }
-                                    case 3:
-                                        if (String.Equals(data, "14") && round_correct == 1)
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star1.Visible = true;
+                                                this.Update();
+                                                lbl_Alkaid.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "13") && round_correct == 4 && control == 1)
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star1.Visible = true;
+                                                this.Update();
+                                                lbl_Alkaid.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "9") && round_correct == 5 && control == 1)
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star1.Visible = true;
+                                                this.Update();
+                                                lbl_Alkaid.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                Wrong_Answer();                                        
+                                                break;
+                                            }
+                                        case 2:
+                                            if (String.Equals(data, "9") && round_correct == 1)
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star3.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "16") && round_correct == 2)
+                                            {
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star3.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "7") && round_correct == 3)
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star2.Visible = true;
+                                                this.Update();
+                                                lbl_Mizar.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "8") && round_correct == 2)
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star3.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "4") && round_correct == 4)
+                                            {
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star3.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "6") && round_correct == 5)
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star2.Visible = true;
+                                                this.Update();
+                                                lbl_Mizar.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "15") && round_correct == 3)
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star3.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        else
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(0);
-                                            break;
-                                        }
-                                       
-                                    case 4:
-                                        if (String.Equals(data, "15") && round_correct == 1)
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star4.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "10") && round_correct == 2)
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star4.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "8") && round_correct == 3)
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star4.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "20") && round_correct == 4)
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star4.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "12") && round_correct == 5)
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star4.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        else
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(0);
-                                            break;
-                                        }
-                                    case 5:
-                                        if (String.Equals(data, "20") && round_correct == 1)
+                                            {
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star5.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "7") && round_correct == 2)
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star2.Visible = true;
+                                                this.Update();
+                                                lbl_Mizar.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "11") && round_correct == 4)
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star5.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "9") && round_correct == 3)
+                                            {
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star5.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "18") && round_correct == 4)
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star2.Visible = true;
+                                                this.Update();
+                                                lbl_Mizar.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "10") && round_correct == 5)
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star5.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "30") && round_correct == 5)
+                                            {
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star5.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        else
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(0);
-                                            break;
-                                        }
-                                    case 6:
-                                        if (String.Equals(data, "8") && round_correct == 1)
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star2.Visible = true;
+                                                this.Update();
+                                                lbl_Mizar.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            else
+                                            {
+                                            Wrong_Answer();
+                                             break;
+                                            }
+                                        case 3:
+                                            if (String.Equals(data, "14") && round_correct == 1)
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star6.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "6") && round_correct == 2)
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star3.Visible = true;
+                                                this.Update();
+                                                lbl_alioth.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "16") && round_correct == 2)
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star6.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "14") && round_correct == 3)
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star3.Visible = true;
+                                                this.Update();
+                                                lbl_alioth.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "7") && round_correct == 3)
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star6.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "24") && round_correct == 4)
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star3.Visible = true;
+                                                this.Update();
+                                                lbl_alioth.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "4") && round_correct == 4)
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star6.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "45") && round_correct == 5)
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star3.Visible = true;
+                                                this.Update();
+                                                lbl_alioth.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "6") && round_correct == 5)
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star6.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        else
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(0);
-                                            break;
-                                        }
-                                    case 7:
-                                        if (String.Equals(data, "24") && round_correct == 1)
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star3.Visible = true;
+                                                this.Update();
+                                                lbl_alioth.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            else
+                                            {
+                                            Wrong_Answer();
+                                                break;
+                                            }
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star6.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "12") && round_correct == 2)
+                                        case 4:
+                                            if (String.Equals(data, "15") && round_correct == 1)
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star4.Visible = true;
+                                                this.Update();
+                                                lbl_Megrez.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "10") && round_correct == 2)
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star4.Visible = true;
+                                                this.Update();
+                                                lbl_Megrez.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "8") && round_correct == 3)
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star4.Visible = true;
+                                                this.Update();
+                                                lbl_Megrez.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "20") && round_correct == 4)
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star4.Visible = true;
+                                                this.Update();
+                                                lbl_Megrez.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "12") && round_correct == 5)
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star4.Visible = true;
+                                                this.Update();
+                                                lbl_Megrez.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            else
+                                            {
+                                            Wrong_Answer();
+                                                break;
+                                            }
+                                        case 5:
+                                            if (String.Equals(data, "20") && round_correct == 1)
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star6.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "28") && round_correct == 3)
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star5.Visible = true;
+                                                this.Update();
+                                                lbl_Dubhe.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "7") && round_correct == 2)
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star6.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
-                                        if (String.Equals(data, "16") && round_correct == 4)
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star5.Visible = true;
+                                                this.Update();
+                                                lbl_Dubhe.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "9") && round_correct == 3)
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star6.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            break;
-                                        }
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star5.Visible = true;
+                                                this.Update();
+                                                lbl_Dubhe.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "18") && round_correct == 4)
 
-                                        if (String.Equals(data, "10") && round_correct == 5)
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star5.Visible = true;
+                                                this.Update();
+                                                lbl_Dubhe.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "30") && round_correct == 5)
 
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(1);
-                                            star7.Visible = true;
-                                            this.Update();
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            Thread.Sleep(1000);
-                                            Feedback.ForeColor = Color.Gold;
-                                            Feedback.Visible = true;
-                                            Feedback.Text = "GIOCO COMPLETATO!!";
-                                            this.Update();
-                                            parentForm.activity();
-                                            parentForm.playbackResourceAudio("clapping1");
-                                            Thread.Sleep(5000);
-                                            parentForm.indizio_finale();
-                                            break;
-                                        }
-                                        else
-                                        {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(0);
-                                            break;
-                                        }
-                                }
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star5.Visible = true;
+                                                this.Update();
+                                                lbl_Dubhe.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            else
+                                            {
+                                            Wrong_Answer();
+                                                break;
+                                            }
+                                        case 6:
+                                            if (String.Equals(data, "8") && round_correct == 1)
+
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star6.Visible = true;
+                                                this.Update();
+                                                lbl_Merak.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "6") && round_correct == 2)
+
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star6.Visible = true;
+                                                this.Update();
+                                                lbl_Merak.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "14") && round_correct == 3)
+
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star6.Visible = true;
+                                                this.Update();
+                                                lbl_Merak.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "24") && round_correct == 4)
+
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star6.Visible = true;
+                                                this.Update();
+                                                lbl_Merak.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "45") && round_correct == 5)
+
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star6.Visible = true;
+                                                this.Update();
+                                                lbl_Merak.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                Wrong_Answer();
+                                                break;
+                                            }
+                                        case 7:
+                                            if (String.Equals(data, "24") && round_correct == 1)
+
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star6.Visible = true;
+                                                this.Update();
+                                                lbl_Phecda.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "12") && round_correct == 2)
+
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star6.Visible = true;
+                                                this.Update();
+                                                lbl_Phecda.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "28") && round_correct == 3)
+
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star6.Visible = true;
+                                                this.Update();
+                                                lbl_Phecda.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+                                            if (String.Equals(data, "16") && round_correct == 4)
+
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star6.Visible = true;
+                                                this.Update();
+                                                lbl_Phecda.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                break;
+                                            }
+
+                                            if (String.Equals(data, "10") && round_correct == 5)
+
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                star7.Visible = true;
+                                                this.Update();
+                                                lbl_Phecda.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                Thread.Sleep(1000);
+                                                Feedback.ForeColor = Color.Gold;
+                                                Feedback.Visible = true;
+                                                Feedback.Text = "GIOCO COMPLETATO!!";
+                                                this.Update();
+                                                parentForm.activity();
+                                                parentForm.playbackResourceAudio("clapping1");
+                                                Thread.Sleep(5000);
+                                                parentForm.indizio_finale();
+                                                break;
+                                            }
+                                            else
+                                            {
+                                            Wrong_Answer();
+                                                break;
+                                            }
+                                    }
+                                
 
                             }
                             break;
@@ -1372,8 +1421,9 @@ namespace La_Forma_Delle_Stelle
                                     case 1:
                                         if (String.Equals(data, "12") && round_correct == 1)
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star1.Visible = true;
                                             this.Update();
                                             lbl_Alkaid.Visible = true;
@@ -1383,8 +1433,9 @@ namespace La_Forma_Delle_Stelle
                                         }
                                         if (String.Equals(data, "21") && round_correct == 2)
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star1.Visible = true;
                                             this.Update();
                                             lbl_Alkaid.Visible = true;
@@ -1394,8 +1445,9 @@ namespace La_Forma_Delle_Stelle
                                         }
                                         if (String.Equals(data, "17") && round_correct == 3)
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star1.Visible = true;
                                             this.Update();
                                             lbl_Alkaid.Visible = true;
@@ -1405,8 +1457,9 @@ namespace La_Forma_Delle_Stelle
                                         }
                                         if (String.Equals(data, "13") && round_correct == 4)
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star1.Visible = true;
                                             this.Update();
                                             lbl_Alkaid.Visible = true;
@@ -1416,8 +1469,9 @@ namespace La_Forma_Delle_Stelle
                                         }
                                         if (String.Equals(data, "9") && round_correct == 5)
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star1.Visible = true;
                                             this.Update();
                                             lbl_Alkaid.Visible = true;
@@ -1427,16 +1481,16 @@ namespace La_Forma_Delle_Stelle
                                         }
                                         else
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(0);
+                                            Wrong_Answer();
                                             break;
                                         }
                                     case 2:
                                         if (String.Equals(data, "9") && round_correct == 1)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star2.Visible = true;
                                             this.Update();
                                             lbl_Mizar.Visible = true;
@@ -1447,8 +1501,9 @@ namespace La_Forma_Delle_Stelle
                                         if (String.Equals(data, "8") && round_correct == 2)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star2.Visible = true;
                                             this.Update();
                                             lbl_Mizar.Visible = true;
@@ -1459,8 +1514,9 @@ namespace La_Forma_Delle_Stelle
                                         if (String.Equals(data, "15") && round_correct == 3)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star2.Visible = true;
                                             this.Update();
                                             lbl_Mizar.Visible = true;
@@ -1471,8 +1527,9 @@ namespace La_Forma_Delle_Stelle
                                         if (String.Equals(data, "11") && round_correct == 4)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star2.Visible = true;
                                             this.Update();
                                             lbl_Mizar.Visible = true;
@@ -1483,8 +1540,9 @@ namespace La_Forma_Delle_Stelle
                                         if (String.Equals(data, "10") && round_correct == 5)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star2.Visible = true;
                                             this.Update();
                                             lbl_Mizar.Visible = true;
@@ -1494,8 +1552,7 @@ namespace La_Forma_Delle_Stelle
                                         }
                                         else
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(0);
+                                            Wrong_Answer();
                                             break;
                                         }
 
@@ -1503,11 +1560,12 @@ namespace La_Forma_Delle_Stelle
                                         if (String.Equals(data, "14") && round_correct == 1)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star3.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_alioth.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
@@ -1515,11 +1573,12 @@ namespace La_Forma_Delle_Stelle
                                         if (String.Equals(data, "16") && round_correct == 2)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star3.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_alioth.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
@@ -1527,11 +1586,12 @@ namespace La_Forma_Delle_Stelle
                                         if (String.Equals(data, "7") && round_correct == 3)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star3.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_alioth.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
@@ -1539,11 +1599,12 @@ namespace La_Forma_Delle_Stelle
                                         if (String.Equals(data, "4") && round_correct == 4)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star3.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_alioth.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
@@ -1551,92 +1612,97 @@ namespace La_Forma_Delle_Stelle
                                         if (String.Equals(data, "6") && round_correct == 5)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star3.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_alioth.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
                                         }
                                         else
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(0);
+                                            Wrong_Answer();
                                             break;
                                         }
                                     case 4:
                                         if (String.Equals(data, "15") && round_correct == 1)
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star4.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Megrez.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
                                         }
                                         if (String.Equals(data, "10") && round_correct == 2)
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star4.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Megrez.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
                                         }
                                         if (String.Equals(data, "8") && round_correct == 3)
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star4.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Megrez.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
                                         }
                                         if (String.Equals(data, "20") && round_correct == 4)
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star4.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Megrez.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
                                         }
                                         if (String.Equals(data, "12") && round_correct == 5)
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star4.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Megrez.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
                                         }
                                         else
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(0);
+                                            Wrong_Answer();
                                             break;
                                         }
                                     case 5:
                                         if (String.Equals(data, "20") && round_correct == 1)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star5.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Dubhe.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
@@ -1644,11 +1710,12 @@ namespace La_Forma_Delle_Stelle
                                         if (String.Equals(data, "7") && round_correct == 2)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star5.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Dubhe.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
@@ -1656,11 +1723,12 @@ namespace La_Forma_Delle_Stelle
                                         if (String.Equals(data, "9") && round_correct == 3)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star5.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Dubhe.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
@@ -1668,11 +1736,12 @@ namespace La_Forma_Delle_Stelle
                                         if (String.Equals(data, "18") && round_correct == 4)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star5.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Dubhe.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
@@ -1680,30 +1749,31 @@ namespace La_Forma_Delle_Stelle
                                         if (String.Equals(data, "30") && round_correct == 5)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star5.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Dubhe.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
                                         }
                                         else
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(0);
+                                            Wrong_Answer();
                                             break;
                                         }
                                     case 6:
                                         if (String.Equals(data, "8") && round_correct == 1)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star6.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Merak.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
@@ -1711,11 +1781,12 @@ namespace La_Forma_Delle_Stelle
                                         if (String.Equals(data, "6") && round_correct == 2)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star6.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Merak.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
@@ -1723,11 +1794,12 @@ namespace La_Forma_Delle_Stelle
                                         if (String.Equals(data, "14") && round_correct == 3)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star6.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Merak.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
@@ -1735,11 +1807,12 @@ namespace La_Forma_Delle_Stelle
                                         if (String.Equals(data, "24") && round_correct == 4)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star6.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Merak.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
@@ -1747,78 +1820,105 @@ namespace La_Forma_Delle_Stelle
                                         if (String.Equals(data, "45") && round_correct == 5)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
                                             star6.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Merak.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
                                         }
                                         else
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(0);
+                                            Wrong_Answer();
+                                            break;
                                         }
-                                        break;
                                     case 7:
                                         if (String.Equals(data, "24") && round_correct == 1)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
-                                            star6.Visible = true;
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            star7.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Phecda.Visible = true;
                                             this.Update();
                                             circles();
-                                            break;
+                                            Thread.Sleep(1000);
+                                            Feedback.ForeColor = Color.Gold;
+                                            Feedback.Visible = true;
+                                            Feedback.Text = "GIOCO COMPLETATO!!";
+                                            this.Update();
+                                            parentForm.activity();
+                                            parentForm.playbackResourceAudio("clapping1");
                                         }
                                         if (String.Equals(data, "12") && round_correct == 2)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
-                                            star6.Visible = true;
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            star7.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Phecda.Visible = true;
                                             this.Update();
                                             circles();
-                                            break;
+                                            Thread.Sleep(1000);
+                                            Feedback.ForeColor = Color.Gold;
+                                            Feedback.Visible = true;
+                                            Feedback.Text = "GIOCO COMPLETATO!!";
+                                            this.Update();
+                                            parentForm.activity();
+                                            parentForm.playbackResourceAudio("clapping1");
                                         }
                                         if (String.Equals(data, "28") && round_correct == 3)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
-                                            star6.Visible = true;
+                                            Thread.Sleep(2000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            star7.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Phecda.Visible = true;
                                             this.Update();
                                             circles();
-                                            break;
+                                            Thread.Sleep(1000);
+                                            Feedback.ForeColor = Color.Gold;
+                                            Feedback.Visible = true;
+                                            Feedback.Text = "GIOCO COMPLETATO!!";
+                                            this.Update();
+                                            parentForm.activity();
+                                            parentForm.playbackResourceAudio("clapping1");
                                         }
                                         if (String.Equals(data, "16") && round_correct == 4)
 
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
-                                            star6.Visible = true;
+                                            star7.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Phecda.Visible = true;
                                             this.Update();
                                             circles();
-                                            break;
+                                            Thread.Sleep(1000);
+                                            Feedback.ForeColor = Color.Gold;
+                                            Feedback.Visible = true;
+                                            Feedback.Text = "GIOCO COMPLETATO!!";
+                                            this.Update();
+                                            parentForm.activity();
+                                            parentForm.playbackResourceAudio("clapping1");
                                         }
-                                        if (String.Equals(data, "10") && round_correct == 1)
+                                        if (String.Equals(data, "10") && round_correct == 5)
 
                                         {
                                             await uda_server_communication.Server_Request(put_wait_data);
                                             answer(1);
                                             star7.Visible = true;
                                             this.Update();
-                                            lbl_Mizar.Visible = true;
+                                            lbl_Phecda.Visible = true;
                                             this.Update();
                                             circles();
                                             Thread.Sleep(1000);
@@ -1831,8 +1931,8 @@ namespace La_Forma_Delle_Stelle
                                         }
                                         else
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            answer(0);
+                                            Wrong_Answer();
+                                            break;
                                         }
                                         break;
                                 }
@@ -1857,7 +1957,7 @@ namespace La_Forma_Delle_Stelle
             if (i == 1)
             {
                 Correct_Answer();
-                //Thread.Sleep(4000);
+                await uda_server_communication.Server_Request(put_started);
                 round_correct = 1;
                 number_star++;
                 correct_answers++;
@@ -1867,17 +1967,15 @@ namespace La_Forma_Delle_Stelle
             else if (i==0)
             {
                 Wrong_Answer();
-                //Thread.Sleep(4000);
+                await uda_server_communication.Server_Request(put_started);
                 Feedback.Visible = false;
                 round_correct++;
                 if (round_correct == 5)
                 {
                     round_correct = 1;
-                }
-  
+                } 
                 circles();
                 timer2.Start();
-
             }
         }
         public void final_scenario_time()
@@ -1937,122 +2035,6 @@ namespace La_Forma_Delle_Stelle
         private void btn_conferma_Click(object sender, EventArgs e)
         {
 
-          
-            //        else if (string.Equals(txt_answers.Text, "8") && round_correct == 3)
-            //        {
-            //            answer(1);
-            //            star2.Visible = true;
-            //            this.Update();
-            //            lbl_Mizar.Visible = true;
-            //            this.Update();
-            //            circles();
-            //        }
-            //        else if (string.Equals(txt_answers.Text, ""))
-            //        {
-            //            answer(2);
-            //        }
-            //        else
-            //        {
-            //            answer(0);
-            //        }
-            //        break;
-            //    case 3:
-            //        if (string.Equals(txt_answers.Text, "6"))
-            //        {
-            //            answer(1);
-            //            star3.Visible = true;
-            //            this.Update();
-            //            lbl_alioth.Visible = true;
-            //            this.Update();
-            //            circles();
-            //        }
-            //        else if (string.Equals(txt_answers.Text, ""))
-            //        {
-            //            answer(2);
-            //        }
-            //        else
-            //        {
-            //            answer(0);
-            //        }
-            //        break;
-            //    case 4:
-            //        if (string.Equals(txt_answers.Text, "15"))
-            //        {
-            //            answer(1);
-            //            star4.Visible = true;
-            //            this.Update();
-            //            lbl_Megrez.Visible = true;
-            //            this.Update();
-            //            circles();
-            //        }
-            //        else if (string.Equals(txt_answers.Text, ""))
-            //        {
-            //            answer(2);
-            //        }
-            //        else
-            //        {
-            //            answer(0);
-            //        }
-            //        break;
-            //    case 5:
-            //        if (string.Equals(txt_answers.Text, "20"))
-            //        {
-            //            answer(1);
-            //            star5.Visible = true;
-            //            this.Update();
-            //            lbl_Dubhe.Visible = true;
-            //            this.Update();
-            //            circles();
-            //        }
-            //        else if (string.Equals(txt_answers.Text, ""))
-            //        {
-            //            answer(2);
-            //        }
-            //        else
-            //        {
-            //            answer(0);
-            //        }
-            //        break;
-            //    case 6:
-            //        if (string.Equals(txt_answers.Text, "8"))
-            //        {
-            //            answer(1);
-            //            star6.Visible = true;
-            //            this.Update();
-            //            lbl_Merak.Visible = true;
-            //            this.Update();
-            //            circles();
-            //        }
-            //        else if (string.Equals(txt_answers.Text, ""))
-            //        {
-            //            answer(2);
-            //        }
-            //        else
-            //        {
-            //            answer(0);
-            //        }
-            //        break;
-            //    case 7:
-            //        if (string.Equals(txt_answers.Text, "24"))
-            //        {
-            //            answer(1);
-            //            star7.Visible = true;
-            //            this.Update();
-            //            lbl_Phecda.Visible = true;
-            //            this.Update();
-            //            final_scenario();
-                      
-            //        }
-            //        else if (string.Equals(txt_answers.Text, ""))
-            //        {
-            //            answer(2);
-            //        }
-            //        else
-            //        {
-            //            answer(0);
-            //        }
-            //        break;
-            //}
         }
 
         private void Circle1_Click(object sender, EventArgs e)
