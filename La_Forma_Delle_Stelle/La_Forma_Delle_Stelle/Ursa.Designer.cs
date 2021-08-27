@@ -308,10 +308,11 @@
             // 
             // indizio_box
             // 
-            this.indizio_box.Location = new System.Drawing.Point(650, 317);
+            this.indizio_box.Image = global::La_Forma_Delle_Stelle.Properties.Resources.star;
+            this.indizio_box.Location = new System.Drawing.Point(722, 387);
             this.indizio_box.Name = "indizio_box";
             this.indizio_box.Size = new System.Drawing.Size(338, 175);
-            this.indizio_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.indizio_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.indizio_box.TabIndex = 38;
             this.indizio_box.TabStop = false;
             // 
@@ -320,13 +321,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.indizio_box);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.lbl_Phecda);
             this.Controls.Add(this.lbl_Merak);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.indizio_box);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.lbl_Megrez);
             this.Controls.Add(this.pictureBox6);

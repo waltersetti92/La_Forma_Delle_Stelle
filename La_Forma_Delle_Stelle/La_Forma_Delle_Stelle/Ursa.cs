@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace La_Forma_Delle_Stelle
 {
@@ -29,16 +30,20 @@ namespace La_Forma_Delle_Stelle
 
         public void indizio()
         {
+            Thread.Sleep(1000);
             reset_operations();
             this.Update();
             lbl_Error.Text = "ECCO L'INDIZIO!";
+            lbl_Error.ForeColor = Color.Gold;
+            lbl_Error.Visible = true;
             this.Update();
             indizio_box.Visible = true;
             this.Update();
         }
         public void reset_operations()
         {
-
+            star1.Visible = false;
+            star2.Visible = false;
             pictureBox1.Visible = false;
             pictureBox2.Visible = false;
             pictureBox3.Visible = false;
@@ -61,9 +66,39 @@ namespace La_Forma_Delle_Stelle
             lbl_Phecda.Visible = false;
             lbl_Error.Visible = false;
         }
+        public void Ursa_Final()
+        {
+            indizio_box.Visible = false;
+            star1.Visible = true;
+            star2.Visible = true;
+            pictureBox1.Visible = true;
+            pictureBox2.Visible = true;
+            pictureBox3.Visible = true;
+            pictureBox4.Visible = true;
+            pictureBox5.Visible = true;
+            pictureBox6.Visible = true;
+            pictureBox7.Visible = true;
+            pictureBox8.Visible = true;
+            pictureBox9.Visible = true;
+            pictureBox10.Visible = true;
+            pictureBox11.Visible = true;
+            pictureBox12.Visible = true;
+            pictureBox13.Visible = true;
+            lbl_Alkaid.Visible = true;
+            lbl_Mizar.Visible = true;
+            lbl_alioth.Visible = true;
+            lbl_Megrez.Visible = true;
+            lbl_Dubhe.Visible = true;
+            lbl_Merak.Visible = true;
+            lbl_Phecda.Visible = true;
+            lbl_Error.Visible = true;
+            lbl_Error.Visible = true;
+            this.Update();
+            Thread.Sleep(5000);
+        }
         private void Ursa_Load(object sender, EventArgs e)
         {
-     
+           
         }
     }
 }

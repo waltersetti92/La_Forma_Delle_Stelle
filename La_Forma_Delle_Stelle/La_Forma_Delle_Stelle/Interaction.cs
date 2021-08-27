@@ -20,7 +20,7 @@ namespace La_Forma_Delle_Stelle
         public int timer_game = 0;
         private int total_seconds;
         public int seconds=0;
-        public int minutes=1;
+        public int minutes=5;
         public int number_star=1;
         public string put_started;
         public string put_wait_data;
@@ -1889,7 +1889,7 @@ namespace La_Forma_Delle_Stelle
                                             Feedback.Text = "GIOCO COMPLETATO!!";
                                             this.Update();
                                             parentForm.activity();
-                                            parentForm.playbackResourceAudio("clapping1");
+                                            //parentForm.playbackResourceAudio("clapping1");
                                         }
                                         if (String.Equals(data, "12") && round_correct == 2)
 
@@ -1908,7 +1908,7 @@ namespace La_Forma_Delle_Stelle
                                             Feedback.Text = "GIOCO COMPLETATO!!";
                                             this.Update();
                                             parentForm.activity();
-                                            parentForm.playbackResourceAudio("clapping1");
+                                            //parentForm.playbackResourceAudio("clapping1");
                                         }
                                         if (String.Equals(data, "28") && round_correct == 3)
 
@@ -1927,7 +1927,7 @@ namespace La_Forma_Delle_Stelle
                                             Feedback.Text = "GIOCO COMPLETATO!!";
                                             this.Update();
                                             parentForm.activity();
-                                            parentForm.playbackResourceAudio("clapping1");
+                                            //parentForm.playbackResourceAudio("clapping1");
                                         }
                                         if (String.Equals(data, "16") && round_correct == 4)
 
@@ -1945,7 +1945,7 @@ namespace La_Forma_Delle_Stelle
                                             Feedback.Text = "GIOCO COMPLETATO!!";
                                             this.Update();
                                             parentForm.activity();
-                                            parentForm.playbackResourceAudio("clapping1");
+                                            //parentForm.playbackResourceAudio("clapping1");
                                         }
                                         if (String.Equals(data, "10") && round_correct == 5)
 
@@ -1963,7 +1963,7 @@ namespace La_Forma_Delle_Stelle
                                             Feedback.Text = "GIOCO COMPLETATO!!";
                                             this.Update();
                                             parentForm.activity();
-                                            parentForm.playbackResourceAudio("clapping1");
+                                            //parentForm.playbackResourceAudio("clapping1");
                                         }
                                         else
                                         {
@@ -1984,7 +1984,6 @@ namespace La_Forma_Delle_Stelle
                 final_scenario_time();
                 Thread.Sleep(3000);
                 parentForm.activity();
-                parentForm.playbackResourceAudio("clapping1");
             }
         }
 

@@ -114,14 +114,43 @@ namespace La_Forma_Delle_Stelle
                     ursa1.Visible = false;
                     Abort_UDA();
                     break;
-
                 }
                 currUC = ursa1;
-                Thread.Sleep(5000);
+                playbackResourceAudio("clapping");
+                ursa1.Ursa_Final();
+                //playbackResourceAudio("clapping1");
                 ursa1.indizio();
+                //Thread.Sleep(5000);
+                //ursa1.indizio();
                 break;
             }
 
+        }
+        public void activity_indizio()
+        {
+            ursa1.Visible = true;
+            while (true)
+            {
+                string k = activity_form;
+                int status = int.Parse(k);
+                if (status == 11 || status == 12)
+                {
+                    Application.Exit();
+                    ursa1.Visible = false;
+                    Environment.Exit(0);
+                }
+                if (status == 13)
+                {
+                    this.Hide();
+                    ursa1.Visible = false;
+                    Abort_UDA();
+                    break;
+                }
+                currUC = ursa1;
+                playbackResourceAudio("clapping1");
+                ursa1.indizio();
+                break;
+            }
         }
 
         public void indizio_finale()
