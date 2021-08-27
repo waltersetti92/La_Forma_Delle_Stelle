@@ -346,11 +346,11 @@
             // lbl_outoftime
             // 
             this.lbl_outoftime.AutoSize = true;
-            this.lbl_outoftime.Font = new System.Drawing.Font("Segoe Script", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_outoftime.Font = new System.Drawing.Font("Segoe Script", 60F, System.Drawing.FontStyle.Bold);
             this.lbl_outoftime.ForeColor = System.Drawing.Color.Red;
-            this.lbl_outoftime.Location = new System.Drawing.Point(465, 126);
+            this.lbl_outoftime.Location = new System.Drawing.Point(240, 300);
             this.lbl_outoftime.Name = "lbl_outoftime";
-            this.lbl_outoftime.Size = new System.Drawing.Size(459, 67);
+            this.lbl_outoftime.Size = new System.Drawing.Size(914, 133);
             this.lbl_outoftime.TabIndex = 28;
             this.lbl_outoftime.Text = "TEMPO SCADUTO :(";
             // 
@@ -370,8 +370,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.Feedback);
             this.Controls.Add(this.lbl_outoftime);
+            this.Controls.Add(this.Feedback);
             this.Controls.Add(this.lbl_Phecda);
             this.Controls.Add(this.star7);
             this.Controls.Add(this.lbl_Merak);

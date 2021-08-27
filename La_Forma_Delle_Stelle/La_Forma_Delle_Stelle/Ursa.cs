@@ -35,7 +35,6 @@ namespace La_Forma_Delle_Stelle
             this.Update();
             indizio_box.Visible = true;
             this.Update();
-
         }
         public void reset_operations()
         {

@@ -116,6 +116,8 @@ namespace La_Forma_Delle_Stelle
                     break;
                 }
                 currUC = ursa1;
+                Thread.Sleep(5000);
+                ursa1.indizio();
                 break;
             }
 

@@ -20,7 +20,7 @@ namespace La_Forma_Delle_Stelle
         public int timer_game = 0;
         private int total_seconds;
         public int seconds=0;
-        public int minutes=5;
+        public int minutes=1;
         public int number_star=1;
         public string put_started;
         public string put_wait_data;
@@ -1293,55 +1293,91 @@ namespace La_Forma_Delle_Stelle
                                             if (String.Equals(data, "24") && round_correct == 1)
 
                                             {
-                                                answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
-                                                star6.Visible = true;
-                                                this.Update();
-                                                lbl_Phecda.Visible = true;
-                                                this.Update();
-                                                circles();
-                                                break;
-                                            }
+                                            answer(1);
+                                            Thread.Sleep(1000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            star7.Visible = true;
+                                            this.Update();
+                                            lbl_Phecda.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            Thread.Sleep(1000);
+                                            Feedback.ForeColor = Color.Gold;
+                                            Feedback.Visible = true;
+                                            Feedback.Text = "GIOCO COMPLETATO!!";
+                                            this.Update();
+                                            parentForm.activity();
+                                            parentForm.playbackResourceAudio("clapping1");
+                                            Thread.Sleep(5000);
+                                            parentForm.indizio_finale();
+                                            break;
+                                        }
                                             if (String.Equals(data, "12") && round_correct == 2)
 
                                             {
-                                                answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
-                                                star6.Visible = true;
-                                                this.Update();
-                                                lbl_Phecda.Visible = true;
-                                                this.Update();
-                                                circles();
-                                                break;
-                                            }
+                                            answer(1);
+                                            Thread.Sleep(1000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            star7.Visible = true;
+                                            this.Update();
+                                            lbl_Phecda.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            Thread.Sleep(1000);
+                                            Feedback.ForeColor = Color.Gold;
+                                            Feedback.Visible = true;
+                                            Feedback.Text = "GIOCO COMPLETATO!!";
+                                            this.Update();
+                                            parentForm.activity();
+                                            parentForm.playbackResourceAudio("clapping1");
+                                            Thread.Sleep(5000);
+                                            parentForm.indizio_finale();
+                                            break;
+                                        }
                                             if (String.Equals(data, "28") && round_correct == 3)
 
                                             {
-                                                answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
-                                                star6.Visible = true;
-                                                this.Update();
-                                                lbl_Phecda.Visible = true;
-                                                this.Update();
-                                                circles();
-                                                break;
-                                            }
+                                            answer(1);
+                                            Thread.Sleep(1000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            star7.Visible = true;
+                                            this.Update();
+                                            lbl_Phecda.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            Thread.Sleep(1000);
+                                            Feedback.ForeColor = Color.Gold;
+                                            Feedback.Visible = true;
+                                            Feedback.Text = "GIOCO COMPLETATO!!";
+                                            this.Update();
+                                            parentForm.activity();
+                                            parentForm.playbackResourceAudio("clapping1");
+                                            Thread.Sleep(5000);
+                                            parentForm.indizio_finale();
+                                            break;
+                                        }
                                             if (String.Equals(data, "16") && round_correct == 4)
 
                                             {
-                                                answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
-                                                star6.Visible = true;
-                                                this.Update();
-                                                lbl_Phecda.Visible = true;
-                                                this.Update();
-                                                circles();
-                                                break;
-                                            }
+                                            answer(1);
+                                            Thread.Sleep(1000);
+                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            star7.Visible = true;
+                                            this.Update();
+                                            lbl_Phecda.Visible = true;
+                                            this.Update();
+                                            circles();
+                                            Thread.Sleep(1000);
+                                            Feedback.ForeColor = Color.Gold;
+                                            Feedback.Visible = true;
+                                            Feedback.Text = "GIOCO COMPLETATO!!";
+                                            this.Update();
+                                            parentForm.activity();
+                                            parentForm.playbackResourceAudio("clapping1");
+                                            Thread.Sleep(5000);
+                                            parentForm.indizio_finale();
+                                            break;
+                                        }
 
                                             if (String.Equals(data, "10") && round_correct == 5)
 
@@ -1946,7 +1982,7 @@ namespace La_Forma_Delle_Stelle
             else if (total_seconds < 1)
             {
                 final_scenario_time();
-                Thread.Sleep(1000);
+                Thread.Sleep(3000);
                 parentForm.activity();
                 parentForm.playbackResourceAudio("clapping1");
             }
@@ -1982,27 +2018,22 @@ namespace La_Forma_Delle_Stelle
         {
             timer2.Stop();
             lbl_outoftime.Visible = true;
-            parentForm.playbackResourceAudio("failure");
-            Feedback.ForeColor = Color.Red;
-            Feedback.Visible = true;
-            Feedback.Text = "TEMPO SCADUTO!";
-            this.Update();
-            star1.Visible = true;
-            star2.Visible = true;
-            star3.Visible = true;
-            star4.Visible = true;
-            star5.Visible = true;
-            star6.Visible = true;
-            star7.Visible = true;
-            lbl_Alkaid.Visible = true;
-            lbl_Mizar.Visible = true;
-            lbl_alioth.Visible = true;
-            lbl_Megrez.Visible = true;
-            lbl_Dubhe.Visible = true;
-            lbl_Merak.Visible = true;
-            lbl_Phecda.Visible = true;
+            parentForm.playbackResourceAudio("failure");           
+            star1.Visible = false;
+            star2.Visible = false;
+            star3.Visible = false;
+            star4.Visible = false;
+            star5.Visible = false;
+            star6.Visible = false;
+            star7.Visible = false;
+            lbl_Alkaid.Visible = false;
+            lbl_Mizar.Visible = false;
+            lbl_alioth.Visible = false;
+            lbl_Megrez.Visible = false;
+            lbl_Dubhe.Visible = false;
+            lbl_Merak.Visible = false;
+            lbl_Phecda.Visible = false;
             lbl_minutes.Visible = false;
-            //btn_conferma.Visible = false;
             Circle1.Visible = false;
             Circle2.Visible = false;
             op1.Visible = false;
@@ -2011,7 +2042,11 @@ namespace La_Forma_Delle_Stelle
             op4.Visible = false;
             op5.Visible = false;
             op6.Visible = false;
-
+            Feedback.ForeColor = Color.Red;
+            Feedback.Visible = false;
+            Feedback.Text = "TEMPO SCADUTO!";
+            this.Update();
+            Thread.Sleep(5000);
         }
         public void final_scenario()
         {
