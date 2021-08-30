@@ -87,7 +87,6 @@ namespace La_Forma_Delle_Stelle
                     return "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2" + "&k=" + ik1.ToString();
                 else if (ik == 6)
                     return "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2" + "&k=" + ik1.ToString() + "&data=" + mn.data_start;
-
                 else
                     return "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2" + "&k=" + ik.ToString();
             }

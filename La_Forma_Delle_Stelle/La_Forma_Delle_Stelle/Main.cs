@@ -118,10 +118,7 @@ namespace La_Forma_Delle_Stelle
                 currUC = ursa1;
                 playbackResourceAudio("clapping");
                 ursa1.Ursa_Final();
-                //playbackResourceAudio("clapping1");
                 ursa1.indizio();
-                //Thread.Sleep(5000);
-                //ursa1.indizio();
                 break;
             }
 

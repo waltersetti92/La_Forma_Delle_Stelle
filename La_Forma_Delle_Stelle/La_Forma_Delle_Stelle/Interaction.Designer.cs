@@ -77,7 +77,7 @@
             this.timerLabel.Name = "timerLabel";
             this.timerLabel.Size = new System.Drawing.Size(279, 317);
             this.timerLabel.TabIndex = 1;
-            this.timerLabel.Text = "5";
+            this.timerLabel.Text = "6";
             this.timerLabel.Click += new System.EventHandler(this.timerLabel_Click);
             // 
             // timer1
