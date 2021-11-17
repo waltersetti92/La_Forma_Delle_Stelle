@@ -13,12 +13,14 @@ namespace La_Forma_Delle_Stelle
 {
     public partial class Ursa : UserControl
     {
+        public string completed;
         public Main parentForm { get; set; }
         public Ursa()
         {
             InitializeComponent();
+            completed = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2&k=16";
         }
-        public void setPos(int w, int h)
+        public  void setPos(int w, int h)
         {
 
             int offset = 0;
@@ -28,7 +30,7 @@ namespace La_Forma_Delle_Stelle
 
         }
 
-        public void indizio()
+        public async void indizio()
         {
             Thread.Sleep(1000);
             reset_operations();
@@ -39,6 +41,7 @@ namespace La_Forma_Delle_Stelle
             this.Update();
             indizio_box.Visible = true;
             this.Update();
+            await uda_server_communication.Server_Request(completed);
         }
         public void reset_operations()
         {

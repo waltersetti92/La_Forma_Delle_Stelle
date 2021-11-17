@@ -19,8 +19,8 @@ namespace La_Forma_Delle_Stelle
         public int counter_responses = 0;
         public int timer_game = 0;
         private int total_seconds;
-        public int seconds=0;
-        public int minutes=5;
+        public int seconds=10;
+        public int minutes=0;
         public int number_star=1;
         public string put_started;
         public string put_wait_data;
@@ -35,9 +35,10 @@ namespace La_Forma_Delle_Stelle
             resetOperations();
             round_correct = 1;
             put_started = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2&k=7";
-            put_wait_data = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2&k=14" + "&data=" + "{\"answer\": \"Inserisci il risultato corretto\", \"input_type\":\"\"}";
+            put_wait_data = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2&k=14" + "&data=" + "{\"question\": \"Inserisci il risultato corretto\", \"input_type\":\"\"}";
             get_status_uda = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/get/?i=2";
         }
+
         private void resetOperations()
         {
             lbl_minutes.Visible = false;
@@ -774,7 +775,6 @@ namespace La_Forma_Delle_Stelle
                         Thread.Sleep(1000);
                         timeleft--;                        
                         timerLabel.Text = timeleft.ToString();
-
                     }
                     break;
                 }
@@ -937,7 +937,6 @@ namespace La_Forma_Delle_Stelle
                                             if (String.Equals(data, "9") && round_correct == 1)
 
                                             {
-
                                                 answer(1);
                                                 Thread.Sleep(1000);
                                                 await uda_server_communication.Server_Request(put_wait_data);
@@ -1357,7 +1356,6 @@ namespace La_Forma_Delle_Stelle
                                             break;
                                         }
                                             if (String.Equals(data, "16") && round_correct == 4)
-
                                             {
                                             answer(1);
                                             Thread.Sleep(1000);
