@@ -18,6 +18,7 @@ namespace La_Forma_Delle_Stelle
         public static readonly string resourcesPath = Path.GetDirectoryName(Application.ExecutablePath) + "\\resources";
         private const string background_image = "Cielo_Stellato.png";
         private UserControl currUC = null;
+
         public SoundPlayer player = null;
         public string activity_form;
         public string idle_status;
