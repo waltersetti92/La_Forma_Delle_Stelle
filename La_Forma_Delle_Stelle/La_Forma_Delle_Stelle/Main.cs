@@ -46,7 +46,7 @@ namespace La_Forma_Delle_Stelle
         }
        static void OnProcessExit(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("ciao");
+            //System.Diagnostics.Debug.WriteLine("ciao");
             var Nicolo = new NamedPipeClientStream("mpv-pipe");
             Nicolo.Connect();
             StreamWriter writer = new StreamWriter(Nicolo);
@@ -54,7 +54,7 @@ namespace La_Forma_Delle_Stelle
         }
         public void video_reproduction(string video1)
         {
-            string video = "C:\\Users\\Luigi\\Desktop\\UDA_Inglese_0.mov";
+            string video = "C:\\Users\\wsetti\\Documents\\Video_LUDA\\UDA_Inglese_0.mov"; 
             var Nicolo = new NamedPipeClientStream("mpv-pipe");
             Nicolo.Connect();
             StreamReader reader = new StreamReader(Nicolo);
@@ -121,8 +121,8 @@ namespace La_Forma_Delle_Stelle
             {
                 int status = int.Parse(k);
                 if (status == 6)
-                {
-                    video_reproduction("C:\\Users\\Luigi\\Desktop\\UDA_Inglese_0.mov");
+                {                   
+                    video_reproduction("C:\\Users\\wsetti\\Documents\\Video_LUDA\\UDA_Inglese_0.mov");
                     onStart(activity_form);
                 }
                 if (status == 8)
@@ -240,7 +240,7 @@ namespace La_Forma_Delle_Stelle
         {
             string mpvcommand = "--idle --input-ipc-server=\\\\.\\pipe\\mpv-pipe";
             proc = new System.Diagnostics.Process();
-            proc.StartInfo.FileName = "C:\\Users\\Luigi\\Desktop\\mpv";
+            proc.StartInfo.FileName = "C:\\Users\\wsetti\\Documents\\Video_LUDA\\mpv"; 
             proc.StartInfo.Arguments = mpvcommand;
             proc.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             proc.Start();

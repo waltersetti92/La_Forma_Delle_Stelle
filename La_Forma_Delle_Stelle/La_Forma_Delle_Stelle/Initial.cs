@@ -21,10 +21,10 @@ namespace La_Forma_Delle_Stelle
         }
         public void setPos(int w, int h)
         {
-            int offset = 100;
-            Location = new Point(offset, offset);
-            Width = w - 2 * offset;
-            Height = h - 2 * offset;
+            //int offset = 100;
+            //Location = new Point(offset, offset);
+            //Width = w - 0 * offset;
+            //Height = h - 0 * offset;
         }
         private void Initial_Load(object sender, EventArgs e)
         {

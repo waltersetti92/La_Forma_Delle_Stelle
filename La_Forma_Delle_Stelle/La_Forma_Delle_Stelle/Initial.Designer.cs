@@ -41,19 +41,20 @@
             this.labLuda.BackColor = System.Drawing.Color.Transparent;
             this.labLuda.Font = new System.Drawing.Font("Segoe Script", 57F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labLuda.ForeColor = System.Drawing.Color.Lime;
-            this.labLuda.Location = new System.Drawing.Point(3, 49);
-            this.labLuda.Margin = new System.Windows.Forms.Padding(3);
+            this.labLuda.Location = new System.Drawing.Point(76, 117);
+            this.labLuda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labLuda.Name = "labLuda";
-            this.labLuda.Size = new System.Drawing.Size(1160, 127);
+            this.labLuda.Size = new System.Drawing.Size(1741, 188);
             this.labLuda.TabIndex = 4;
             this.labLuda.Text = "LA FORMA DELLE STELLE";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::La_Forma_Delle_Stelle.Properties.Resources.star;
-            this.pictureBox2.Location = new System.Drawing.Point(538, 201);
+            this.pictureBox2.Location = new System.Drawing.Point(1042, 422);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(91, 77);
+            this.pictureBox2.Size = new System.Drawing.Size(136, 118);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
@@ -61,23 +62,28 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::La_Forma_Delle_Stelle.Properties.Resources.Polar_Bear1;
-            this.pictureBox1.Location = new System.Drawing.Point(397, 284);
+            this.pictureBox1.Location = new System.Drawing.Point(830, 524);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(232, 196);
+            this.pictureBox1.Size = new System.Drawing.Size(348, 302);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
             // Initial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labLuda);
+            this.Location = new System.Drawing.Point(200, 200);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Initial";
-            this.Size = new System.Drawing.Size(1205, 762);
+            this.Size = new System.Drawing.Size(1821, 831);
             this.Load += new System.EventHandler(this.Initial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
