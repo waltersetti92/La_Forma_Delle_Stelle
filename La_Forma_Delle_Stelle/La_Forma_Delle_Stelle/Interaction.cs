@@ -826,42 +826,21 @@ namespace La_Forma_Delle_Stelle
                 {
                     string k = parentForm.Status_Changed(parentForm.activity_form);
                     int status = int.Parse(k);
-                    //if(status==9 || status == 8){
-                        //while (true)
-                       // {
-                             //   string k1 = parentForm.Status_Changed(parentForm.activity_form);
-                             //   int status1 = int.Parse(k1);
-                           // if (status1 == 10)
-                           // {
-                              //  await uda_server_communication.Server_Request(put_wait_data);
-                              //  break;
-                           // }
-                           // if (status1 == 11 || status1 == 12)
-                            //{
-                              //  Application.Exit();
-                              //  Environment.Exit(0);
-                              //  break;
-                           // }
-                        //}
-                    //}
-
-                     if (status != 9 && status != 8)
+                   
+                    if (status == 11 || status == 12)
                     {
-                        if (status == 11 || status == 12)
-                        {
-                            Application.Exit();
-                            Environment.Exit(0);
-                        }
-                        if (status == 13)
-                        {
-                           this.Hide();                            
-                           parentForm.Abort_UDA();
-                           break;
-                        }
-                        if (status == 10)
-                        {
-                            await uda_server_communication.Server_Request(put_wait_data);
-                        }
+                        Application.Exit();
+                        Environment.Exit(0);
+                    }
+                    if (status == 13)
+                    {
+                        this.Hide();
+                        parentForm.Abort_UDA();
+                        break;
+                    }
+                    if (status==10||status==7||status==6 || status==14)
+                    {
+                        await uda_server_communication.Server_Request(put_wait_data);
                         lbl_minutes.Visible = true;
                         Circle1.Visible = true;
                         Circle2.Visible = true;
@@ -1440,23 +1419,22 @@ namespace La_Forma_Delle_Stelle
                 {
                     string k = parentForm.Status_Changed(parentForm.activity_form);
                     int status = int.Parse(k);
-                    if (status != 9 && status != 8)
+                    if (status == 11 || status == 12)
                     {
-                        if (status == 11 || status == 12)
-                        {
-                            Application.Exit();
-                            Environment.Exit(0);
-                        }
-                        if (status == 13)
-                        {
-                            this.Hide();
-                            parentForm.Abort_UDA();
-                            break;
-                        }
-                        if (status == 10)
-                        {
+                        Application.Exit();
+                        Environment.Exit(0);
+                    }
+                    if (status == 13)
+                    {
+                        this.Hide();
+                        parentForm.Abort_UDA();
+                        break;
+                    }
+                    if (status==10|| status==14 || status==6 || status==7)
+                    {
+                       
                             await uda_server_communication.Server_Request(put_wait_data);
-                        }
+                        
                         Thread.Sleep(1000);
                         total_seconds--;
                         int minutes = total_seconds / 60;
