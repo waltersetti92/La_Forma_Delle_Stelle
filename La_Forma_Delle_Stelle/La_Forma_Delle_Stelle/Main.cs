@@ -54,7 +54,7 @@ namespace La_Forma_Delle_Stelle
         }
         public void video_reproduction(string video1)
         {
-            string video = "C:\\Users\\wsetti\\Documents\\Video_LUDA\\UDA_Inglese_0.mov"; 
+            string video = "C:\\Users\\wsetti\\Documents\\Video_LUDA\\Forma_Delle_Stelle_Iniziale.mov"; 
             var Nicolo = new NamedPipeClientStream("mpv-pipe");
             Nicolo.Connect();
             StreamReader reader = new StreamReader(Nicolo);
@@ -122,19 +122,10 @@ namespace La_Forma_Delle_Stelle
                 int status = int.Parse(k);
                 if (status == 6)
                 {                   
-                    video_reproduction("C:\\Users\\wsetti\\Documents\\Video_LUDA\\UDA_Inglese_0.mov");
+                    video_reproduction("C:\\Users\\wsetti\\Documents\\Video_LUDA\\Forma_Delle_Stelle_Iniziale.mov");
                     onStart(activity_form);
                 }
-                if (status == 8)
-                {
 
-
-                }
-                if (status == 9)
-                {
-
-
-                }
                 if (status == 11 || status == 12)
                 {
 
@@ -142,10 +133,7 @@ namespace La_Forma_Delle_Stelle
                     Environment.Exit(0);
 
                 }
-                if (status == 15)
-                {
 
-                }
 
             });
             return k;
@@ -197,9 +185,12 @@ namespace La_Forma_Delle_Stelle
                     break;
                 }
                 currUC = ursa1;
-                playbackResourceAudio("clapping");
+                //playbackResourceAudio("clapping");
                 ursa1.Ursa_Final();
+                this.Update();
                 ursa1.indizio();
+                //Thread.Sleep(3000);
+    
                 break;
             }
 

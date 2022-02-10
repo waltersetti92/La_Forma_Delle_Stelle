@@ -19,8 +19,8 @@ namespace La_Forma_Delle_Stelle
         public int counter_responses = 0;
         public int timer_game = 0;
         private int total_seconds;
-        public int seconds=10;
-        public int minutes=0;
+        public int seconds =0;
+        public int minutes=5;
         public int number_star=1;
         public string put_started;
         public string put_wait_data;
@@ -510,7 +510,7 @@ namespace La_Forma_Delle_Stelle
                         this.Update();
                         op5.Text = "8x8";
                         this.Update();
-                        op6.Text = "16-7";
+                        op6.Text = "16+2";
                         this.Update();
                         break;
                     }
@@ -625,7 +625,7 @@ namespace La_Forma_Delle_Stelle
                     //24
                     op1.Text = "36/4";
                     this.Update();
-                    op2.Text = "12x2";
+                    op2.Text = "23+1";
                     this.Update();
                     op3.Text = "9x7";
                     this.Update();
@@ -826,8 +826,26 @@ namespace La_Forma_Delle_Stelle
                 {
                     string k = parentForm.Status_Changed(parentForm.activity_form);
                     int status = int.Parse(k);
-                   
-                    if (status != 9 && status != 8)
+                    //if(status==9 || status == 8){
+                        //while (true)
+                       // {
+                             //   string k1 = parentForm.Status_Changed(parentForm.activity_form);
+                             //   int status1 = int.Parse(k1);
+                           // if (status1 == 10)
+                           // {
+                              //  await uda_server_communication.Server_Request(put_wait_data);
+                              //  break;
+                           // }
+                           // if (status1 == 11 || status1 == 12)
+                            //{
+                              //  Application.Exit();
+                              //  Environment.Exit(0);
+                              //  break;
+                           // }
+                        //}
+                    //}
+
+                     if (status != 9 && status != 8)
                     {
                         if (status == 11 || status == 12)
                         {
@@ -857,7 +875,8 @@ namespace La_Forma_Delle_Stelle
                         circles();
                         while (true)
                         {
-                            if (status == 15)
+      
+                                if (status == 15)
                             {
 
                                     await uda_server_communication.Server_Request(put_wait_data);
@@ -1980,7 +1999,7 @@ namespace La_Forma_Delle_Stelle
             else if (total_seconds < 1)
             {
                 final_scenario_time();
-                Thread.Sleep(3000);
+                Thread.Sleep(1500);
                 parentForm.activity();
             }
         }
@@ -2043,7 +2062,7 @@ namespace La_Forma_Delle_Stelle
             Feedback.Visible = false;
             Feedback.Text = "TEMPO SCADUTO!";
             this.Update();
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
         }
         public void final_scenario()
         {
