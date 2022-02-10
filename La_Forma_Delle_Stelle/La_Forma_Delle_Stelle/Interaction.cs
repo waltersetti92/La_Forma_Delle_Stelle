@@ -836,8 +836,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         this.Hide();
                         parentForm.Abort_UDA();
-                        break;
-                    }
+                        break;                    }
                     if (status==10||status==7||status==6 || status==14)
                     {
                         await uda_server_communication.Server_Request(put_wait_data);
