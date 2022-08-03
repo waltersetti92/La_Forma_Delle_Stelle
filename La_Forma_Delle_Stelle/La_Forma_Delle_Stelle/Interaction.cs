@@ -5,9 +5,12 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
+using System.Media;
+using System.IO;
+using Newtonsoft.Json.Linq;
 
 namespace La_Forma_Delle_Stelle
 {
@@ -19,8 +22,8 @@ namespace La_Forma_Delle_Stelle
         public int counter_responses = 0;
         public int timer_game = 0;
         private int total_seconds;
-        public int seconds =0;
-        public int minutes=5;
+        public int seconds =15;
+        public int minutes=0;
         public int number_star=1;
         public string put_started;
         public string put_wait_data;
@@ -28,18 +31,25 @@ namespace La_Forma_Delle_Stelle
         public int round_correct;
         public int correct_answers;
         public int control = 1;
+        public string completed;
+
+        public async void PutStarted()
+        {
+            await uda_server_communication.Server_Request("api/uda/put/?i=2&k=7&data=" + parentForm.data_start);
+
+        }
         public Interaction()
         {
             InitializeComponent();
             correct_answers = 0;
             resetOperations();
-            round_correct = 1;
-            put_started = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2&k=7";
-            put_wait_data = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2&k=14" + "&data=" + "{\"question\": \"Inserisci il risultato corretto\", \"input_type\":\"\"}";
-            get_status_uda = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/get/?i=2";
+            get_status_uda = "api/uda/get/?i=2";
+           // put_started = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2&k=7";
+            //put_wait_data = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2&k=14" + "&data=" + "{\"question\": \"Inserisci il risultato corretto\", \"input_type\":\"\"}";
+ 
         }
 
-        private void resetOperations()
+        public void resetOperations()
         {
             lbl_minutes.Visible = false;
             //btn_conferma.Visible = false;
@@ -84,6 +94,7 @@ namespace La_Forma_Delle_Stelle
             op4.Location = up;
             op5.Location = middle;
             op6.Location = bottom;
+ 
         }
         public void setPos(int w, int h)
         {
@@ -95,614 +106,412 @@ namespace La_Forma_Delle_Stelle
 
         }
 
-        private void Interaction_Load(object sender, EventArgs e)
+        public void resetTimer()
         {
             timer1.Enabled = true;
-            total_seconds = (minutes * 60) + seconds;
+            total_seconds = (parentForm.minutes1 * 60) + parentForm.seconds1;
+            int timer11= parentForm.timeleft1 = 6;         
+            timerLabel.Text = timer11.ToString();
+            timerLabel.Enabled = true;
+            timerLabel.Visible = true;         
             timer1.Start();
+        }
+        public void Interaction_Load(object sender, EventArgs e)
+        {
+            resetOperations();
+            resetTimer();
         }
         public void circles()
         {
             timer2.Start();
-            switch (number_star)
+            switch (parentForm.number_star1)
             {
                 case 1:
-                    if (round_correct == 1)
+                    if (parentForm.round_correct1 == 1)
                     { //12 
                         op1.Text = "15-3";
-                        this.Update();
                         op2.Text = "6+2";
-                        this.Update();
                         op3.Text = "17-1";
-                        this.Update();
                         op4.Text = "7-3";
-                        this.Update();
                         op5.Text = "5+1";
-                        this.Update();
                         op6.Text = "10+2";
-                        this.Update();
                     }
-                    else if (round_correct == 2)
+                    else if (parentForm.round_correct1 == 2)
                     { //21 
                         op1.Text = "19+2";
-                        this.Update();
                         op2.Text = "15-6";
-                        this.Update();
                         op3.Text = "14+8";
-                        this.Update();
                         op4.Text = "9+13";
-                        this.Update();
                         op5.Text = "25-4";
-                        this.Update();
                         op6.Text = "10+2";
-                        this.Update();
                     }
-                    else if (round_correct == 3)
+                    else if (parentForm.round_correct1 == 3)
                     { //17 
                         op1.Text = "5+4";
-                        this.Update();
                         op2.Text = "8+9";
-                        this.Update();
                         op3.Text = "17-6";
-                        this.Update();
                         op4.Text = "13+7";
-                        this.Update();
                         op5.Text = "21-5";
-                        this.Update();
                         op6.Text = "11+6";
-                        this.Update();
                     }
-                    else if (round_correct == 4)
+                    else if (parentForm.round_correct1 == 4)
                     { //13 
                         op1.Text = "15-5";
-                        this.Update();
                         op2.Text = "7+6";
-                        this.Update();
                         op3.Text = "9+3";
-                        this.Update();
                         op4.Text = "16+4";
-                        this.Update();
                         op5.Text = "3+11";
-                        this.Update();
                         op6.Text = "19-6";
-                        this.Update();
                     }
-                    else if (round_correct == 5)
+                    else if (parentForm.round_correct1 == 5)
                     { //9 
                         op1.Text = "5+1";
-                        this.Update();
                         op2.Text = "12+9";
-                        this.Update();
                         op3.Text = "6+3";
-                        this.Update();
                         op4.Text = "19-7";
-                        this.Update();
                         op5.Text = "14+5";
-                        this.Update();
                         op6.Text = "15-6";
-                        this.Update();
                     }
                     break;
                 case 2:
-                    if (round_correct == 1)
+                    if (parentForm.round_correct1 == 1)
                     {
                         //9
                         op1.Text = "4+5";
-                        this.Update();
                         op2.Text = "3-2";
-                        this.Update();
                         op3.Text = "11+1";
-                        this.Update();
                         op4.Text = "2+2";
-                        this.Update();
                         op5.Text = "7-4";
-                        this.Update();
                         op6.Text = "14-5";
-                        this.Update();
                         break;
                     }
-                    else if (round_correct == 2)
+                    else if (parentForm.round_correct1 == 2)
                     {
                         //8
                         op1.Text = "13-9";
-                        this.Update();
                         op2.Text = "5+3";
-                        this.Update();
                         op3.Text = "17-7";
-                        this.Update();
                         op4.Text = "22-14";
-                        this.Update();
                         op5.Text = "15+8";
-                        this.Update();
                         op6.Text = "10-3";
-                        this.Update();
                         break;
                     }
-                    else if (round_correct == 3)
+                    else if (parentForm.round_correct1 == 3)
                     {
                         //15
                         op1.Text = "17+3";
-                        this.Update();
                         op2.Text = "8-5";
-                        this.Update();
                         op3.Text = "8+7";
-                        this.Update();
-                        op4.Text = "20-5";
-                        this.Update();
                         op5.Text = "4+7";
-                        this.Update();
                         op6.Text = "18-16";
-                        this.Update();
                         break;
                     }
-                    else if (round_correct == 4)
+                    else if (parentForm.round_correct1 == 4)
                     {
                         //11
                         op1.Text = "7+2";
-                        this.Update();
                         op2.Text = "5+3";
-                        this.Update();
                         op3.Text = "10+1";
-                        this.Update();
                         op4.Text = "9+5";
-                        this.Update();
                         op5.Text = "14-3";
-                        this.Update();
                         op6.Text = "21-4";
-                        this.Update();
                         break;
                     }
-                    else if (round_correct == 5)
+                    else if (parentForm.round_correct1 == 5)
                     {
                         //10
                         op1.Text = "16-12";
-                        this.Update();
                         op2.Text = "2+4";
-                        this.Update();
                         op3.Text = "5+5";
-                        this.Update();
                         op4.Text = "19+7";
-                        this.Update();
                         op5.Text = "13-4";
-                        this.Update();
                         op6.Text = "10+0";
-                        this.Update();
                         break;
                     }
                     break;
                 case 3:
-                    if (round_correct == 1)
+                    if (parentForm.round_correct1 == 1)
                     {
                         //14
                         op1.Text = "15-1";
-                        this.Update();
                         op2.Text = "20-18";
-                        this.Update();
                         op3.Text = "17-11";
-                        this.Update();
                         op4.Text = "9-3";
-                        this.Update();
                         op5.Text = "15+7";
-                        this.Update();
                         op6.Text = "7+7";
-                        this.Update();
                         break;
                     }
-                   else if (round_correct == 2)
+                   else if (parentForm.round_correct1 == 2)
                     {
                         //16
                         op1.Text = "24-21";
-                        this.Update();
                         op2.Text = "5+25";
-                        this.Update();
                         op3.Text = "26-10";
-                        this.Update();
                         op4.Text = "11+5";
-                        this.Update();
                         op5.Text = "16+20";
-                        this.Update();
                         op6.Text = "13+5";
-                        this.Update();
                         break;
                     }
 
-                    else if (round_correct == 3)
+                    else if (parentForm.round_correct1 == 3)
                     {
                         //7
                         op1.Text = "30-20";
-                        this.Update();
                         op2.Text = "17-10";
-                        this.Update();
                         op3.Text = "24+2";
-                        this.Update();
                         op4.Text = "14+5";
-                        this.Update();
                         op5.Text = "3+4";
-                        this.Update();
                         op6.Text = "13-2";
-                        this.Update();
                         break;
                     }
-                    else if (round_correct == 4)
+                    else if (parentForm.round_correct1 == 4)
                     {
                         //4
                         op1.Text = "6+5";
-                        this.Update();
                         op2.Text = "14-4";
-                        this.Update();
                         op3.Text = "2+2";
-                        this.Update();
                         op4.Text = "11+5";
-                        this.Update();
                         op5.Text = "8-4";
-                        this.Update();
                         op6.Text = "10+2";
-                        this.Update();
                         break;
                     }
-                    else if (round_correct == 5)
+                    else if (parentForm.round_correct1 == 5)
                     {
                         //6
                         op1.Text = "10+3";
-                        this.Update();
                         op2.Text = "15-3";
-                        this.Update();
                         op3.Text = "4+2";
-                        this.Update();
                         op4.Text = "5+1";
-                        this.Update();
                         op5.Text = "14+2";
-                        this.Update();
                         op6.Text = "9+0";
-                        this.Update();
                         break;
                     }
                     break;
                 case 4:
-                    if (round_correct == 1)
+                    if (parentForm.round_correct1 == 1)
                     {
                         //15
                         op1.Text = "4x6";
-                        this.Update();
                         op2.Text = "9+6";
-                        this.Update();
                         op3.Text = "2x5";
-                        this.Update();
                         op4.Text = "16-5";
-                        this.Update();
                         op5.Text = "4+4";
-                        this.Update();
                         op6.Text = "3x5";
-                        this.Update();
                         break;
                     }
-                    if (round_correct == 2)
+                    if (parentForm.round_correct1 == 2)
                     {
                         //10
                         op1.Text = "5x2";
-                        this.Update();
                         op2.Text = "6+2";
-                        this.Update();
                         op3.Text = "10-3";
-                        this.Update();
                         op4.Text = "5+5";
-                        this.Update();
                         op5.Text = "4x4";
-                        this.Update();
                         op6.Text = "7x5";
-                        this.Update();
                         break;
                     }
-                    if (round_correct == 3)
+                    if (parentForm.round_correct1 == 3)
                     {
                         //8
                         op1.Text = "5x5";
-                        this.Update();
                         op2.Text = "3x7";
-                        this.Update();
                         op3.Text = "4+4";
-                        this.Update();
                         op4.Text = "17+2";
-                        this.Update();
                         op5.Text = "4x2";
-                        this.Update();
                         op6.Text = "6x6";
-                        this.Update();
                         break;
                     }
-                    if (round_correct == 4)
+                    if (parentForm.round_correct1 == 4)
                     {
                         //20
                         op1.Text = "8x8";
-                        this.Update();
                         op2.Text = "3x3";
-                        this.Update();
                         op3.Text = "10x2";
-                        this.Update();
                         op4.Text = "12+12";
-                        this.Update();
                         op5.Text = "11+11";
-                        this.Update();
                         op6.Text = "25-5";
-                        this.Update();
                         break;
                     }
-                    if (round_correct == 5)
+                    if (parentForm.round_correct1 == 5)
                     {
                         //12
                         op1.Text = "18-6";
-                        this.Update();
                         op2.Text = "3+2";
-                        this.Update();
                         op3.Text = "9+4";
-                        this.Update();
                         op4.Text = "20+2";
-                        this.Update();
                         op5.Text = "3x4";
-                        this.Update();
                         op6.Text = "10-6";
-                        this.Update();
                         break;
                     }
                     break;
                 case 5:
-                    if (round_correct == 1)
+                    if (parentForm.round_correct1 == 1)
                     {
                         //20
                         op1.Text = "7x5";
-                        this.Update();
                         op2.Text = "3x3";
-                        this.Update();
                         op3.Text = "5x4";
-                        this.Update();
                         op4.Text = "12+3";
-                        this.Update();
                         op5.Text = "10x2";
-                        this.Update();
                         op6.Text = "9x4";
-                        this.Update();
                         break;
                     }
-                    if (round_correct == 2)
+                    if (parentForm.round_correct1 == 2)
                     {
                         //7
                         op1.Text = "9x3";
-                        this.Update();
                         op2.Text = "9-2";
-                        this.Update();
                         op3.Text = "9-9";
-                        this.Update();
                         op4.Text = "6x8";
-                        this.Update();
                         op5.Text = "1+6";
-                        this.Update();
                         op6.Text = "7+10";
-                        this.Update();
                         break;
                     }
-                    if (round_correct == 3)
+                    if (parentForm.round_correct1 == 3)
                     {
                         //9
                         op1.Text = "21+8";
-                        this.Update();
                         op2.Text = "8+3";
-                        this.Update();
                         op3.Text = "3x3";
-                        this.Update();
                         op4.Text = "7x2";
-                        this.Update();
                         op5.Text = "10x3";
-                        this.Update();
                         op6.Text = "16-7";
-                        this.Update();
                         break;
                     }
-                    if (round_correct == 4)
+                    if (parentForm.round_correct1 == 4)
                     {
                         //18
                         op1.Text = "11-5";
-                        this.Update();
                         op2.Text = "9x5";
-                        this.Update();
                         op3.Text = "9x2";
-                        this.Update();
                         op4.Text = "6x4";
-                        this.Update();
                         op5.Text = "8x8";
-                        this.Update();
                         op6.Text = "16+2";
-                        this.Update();
                         break;
                     }
-                    if (round_correct == 5)
+                    if (parentForm.round_correct1 == 5)
                     {
                         //30
                         op1.Text = "28+2";
-                        this.Update();
                         op2.Text = "5x9";
-                        this.Update();
                         op3.Text = "2x20";
-                        this.Update();
                         op4.Text = "6x5";
-                        this.Update();
                         op5.Text = "19-6";
-                        this.Update();
                         op6.Text = "8x9";
-                        this.Update();
                         break;
                     }
                     break;
                 case 6:
-                    if (round_correct == 1)
+                    if (parentForm.round_correct1 == 1)
                     { 
                         //8
                      op1.Text = "8x3";
-                    this.Update();
                     op2.Text = "30/5";
-                    this.Update();
                     op3.Text = "64/8";
-                    this.Update();
                     op4.Text = "28/7";
-                    this.Update();
                     op5.Text = "22x3";
-                    this.Update();
                     op6.Text = "72/9";
-                    this.Update();
                      break;
                     }
-                    if (round_correct == 2)
+                    if (parentForm.round_correct1 == 2)
                     {
                         //6
                         op1.Text = "35/7";
-                        this.Update();
                         op2.Text = "3x2";
-                        this.Update();
                         op3.Text = "90/10";
-                        this.Update();
                         op4.Text = "6x1";
-                        this.Update();
                         op5.Text = "27/9";
-                        this.Update();
                         op6.Text = "4x2";
-                        this.Update();
                         break;
                     }
-                    if (round_correct == 3)
+                    if (parentForm.round_correct1 == 3)
                     {
                         //14
                         op1.Text = "18/9";
-                        this.Update();
                         op2.Text = "140/10";
-                        this.Update();
                         op3.Text = "6x2";
-                        this.Update();
                         op4.Text = "7x2";
-                        this.Update();
                         op5.Text = "81/9";
-                        this.Update();
                         op6.Text = "5x5";
-                        this.Update();
                         break;
                     }
-                    if (round_correct == 4)
+                    if (parentForm.round_correct1 == 4)
                     {
                         //24
                         op1.Text = "4x7";
-                        this.Update();
                         op2.Text = "55/5";
-                        this.Update();
                         op3.Text = "3x8";
-                        this.Update();
                         op4.Text = "56/7";
-                        this.Update();
                         op5.Text = "12x2";
-                        this.Update();
                         op6.Text = "36/4";
-                        this.Update();
                         break;
                     }
-                    if (round_correct == 5)
+                    if (parentForm.round_correct1 == 5)
                     {
                         //45
                         op1.Text = "5x9";
-                        this.Update();
                         op2.Text = "42/6";
-                        this.Update();
                         op3.Text = "40/2";
-                        this.Update();
                         op4.Text = "7x9";
-                        this.Update();
                         op5.Text = "3x7";
-                        this.Update();
                         op6.Text = "90/2";
-                        this.Update();
                         break;
                     }
                     break;
                 case 7:
-                    if (round_correct == 1)
+                    if (parentForm.round_correct1 == 1)
                     {
                     //24
                     op1.Text = "36/4";
-                    this.Update();
                     op2.Text = "23+1";
-                    this.Update();
                     op3.Text = "9x7";
-                    this.Update();
                     op4.Text = "6x7";
-                    this.Update();
                     op5.Text = "3x8";
-                    this.Update();
                     op6.Text = "42/6";
-                    this.Update();
                         break;
                     }
-                    if (round_correct == 2)
+                    if (parentForm.round_correct1 == 2)
                     {
                         //12
                         op1.Text = "42/6";
-                        this.Update();
                         op2.Text = "18/6";
-                        this.Update();
                         op3.Text = "2x6";
-                        this.Update();
                         op4.Text = "8x9";
-                        this.Update();
                         op5.Text = "2x7";
-                        this.Update();
                         op6.Text = "4x3";
-                        this.Update();
                         break;
                     }
-                    if (round_correct == 3)
+                    if (parentForm.round_correct1 == 3)
                     {
                         //28
                         op1.Text = "7x4";
-                        this.Update();
                         op2.Text = "4/2";
-                        this.Update();
                         op3.Text = "10x5";
-                        this.Update();
                         op4.Text = "14x2";
-                        this.Update();
                         op5.Text = "70/7";
-                        this.Update();
                         op6.Text = "5x3";
-                        this.Update();
                         break;
                     }
-                    if (round_correct == 4)
+                    if (parentForm.round_correct1 == 4)
                     {
                         //16
                         op1.Text = "15/5";
-                        this.Update();
                         op2.Text = "2x8";
-                        this.Update();
                         op3.Text = "11x4";
-                        this.Update();
                         op4.Text = "27/9";
-                        this.Update();
                         op5.Text = "32/2";
-                        this.Update();
                         op6.Text = "9x5";
-                        this.Update();
                         break;
                     }
-                    if (round_correct == 5)
+                    if (parentForm.round_correct1 == 5)
                     {
                         //10
                         op1.Text = "4x8";
-                        this.Update();
                         op2.Text = "36/4";
-                        this.Update();
                         op3.Text = "60/6";
-                        this.Update();
                         op4.Text = "5x2";
-                        this.Update();
                         op5.Text = "28x3";
-                        this.Update();
                         op6.Text = "63/9";
-                        this.Update();
                         break;
                     }
                     break;
@@ -714,6 +523,7 @@ namespace La_Forma_Delle_Stelle
             op4.Visible = true;
             op5.Visible = true;
             op6.Visible = true;
+            this.Update();
         }
 
         private void timerLabel_Click(object sender, EventArgs e)
@@ -738,10 +548,10 @@ namespace La_Forma_Delle_Stelle
             this.Update();
             Thread.Sleep(1000);
             Feedback.Visible = false;
-            round_correct++;
-            if (round_correct == 5)
+            parentForm.round_correct1++;
+            if (parentForm.round_correct1 == 5)
             {
-                round_correct = 1;
+                parentForm.round_correct1 = 1;
             }
             circles();
             timer2.Start();
@@ -749,7 +559,7 @@ namespace La_Forma_Delle_Stelle
 
         private async void timer1_Tick(object sender, EventArgs e)
         {
-            if (timeleft > 0)
+            if (parentForm.timeleft1 > 0)
             {
                 while (true)
                 {
@@ -770,16 +580,15 @@ namespace La_Forma_Delle_Stelle
                         }
                         if (status == 10)
                         {
-                         await uda_server_communication.Server_Request(put_started);
+                         PutStarted();
                         }
-                        Thread.Sleep(1000);
-                        timeleft--;                        
-                        timerLabel.Text = timeleft.ToString();
+                       int timerl= parentForm.timeleft1--;                        
+                        timerLabel.Text = timerl.ToString();
                     }
                     break;
                 }
             }
-            else if (timeleft == 0)
+            else if (parentForm.timeleft1 == 0)
             {
                 while (true)
                 {
@@ -800,14 +609,14 @@ namespace La_Forma_Delle_Stelle
                         }
                         if (status == 10)
                         {
-                            await uda_server_communication.Server_Request(put_wait_data);
+                            await uda_server_communication.Server_Request(parentForm.wait_data());
                         }
                         this.timer1.Stop();
                         timerLabel.Enabled = false;
                         timerLabel.Visible = false;
                         timer_game = 1;
                         timer2.Enabled = true;
-                        await uda_server_communication.Server_Request(put_wait_data);
+                        await uda_server_communication.Server_Request(parentForm.wait_data());
                         circles();
                     }
                     break;
@@ -826,100 +635,114 @@ namespace La_Forma_Delle_Stelle
                 {
                     string k = parentForm.Status_Changed(parentForm.activity_form);
                     int status = int.Parse(k);
-                   
-                    if (status == 11 || status == 12)
+                    string response = null;
+                    if (status != 9 && status != 8)
                     {
-                        Application.Exit();
-                        Environment.Exit(0);
-                    }
-                    if (status == 13)
-                    {
-                        this.Hide();
-                        parentForm.Abort_UDA();
-                        break;                    }
-                    if (status==10||status==7||status==6 || status==14)
-                    {
-                        await uda_server_communication.Server_Request(put_wait_data);
-                        lbl_minutes.Visible = true;
-                        Circle1.Visible = true;
-                        Circle2.Visible = true;
-                        total_seconds--;
-                        int minutes = total_seconds / 60;
-                        int seconds = total_seconds - (minutes * 60);
-                        if (seconds >= 10)
-                            this.lbl_minutes.Text = minutes.ToString() + ":" + seconds.ToString();
-                        else if (seconds < 10)
-                            this.lbl_minutes.Text = minutes.ToString() + ":" + "0" + seconds.ToString();
-                        circles();
-                        while (true)
+                        if (status == 11 || status == 12)
                         {
-      
-                                if (status == 15)
+                            Application.Exit();
+                            Environment.Exit(0);
+                        }
+                        if (status == 13)
+                        {
+                            this.Hide();
+                            parentForm.Abort_UDA();
+                            break;
+                        }
+                        if (status == 10 || status == 7 || status == 14)
+                        {
+                            if (status != 14)
+                            {
+                                await uda_server_communication.Server_Request(parentForm.wait_data());
+
+                            }
+                            lbl_minutes.Visible = true;
+                            Circle1.Visible = true;
+                            Circle2.Visible = true;
+                            total_seconds--;
+                            updateCountdown();
+                            circles();
+                            while (true)
                             {
 
-                                    await uda_server_communication.Server_Request(put_wait_data);
-                                    string data = await uda_server_communication.Server_Request_datasent(get_status_uda);
-                                    switch (number_star)
+                                if (status == 14)
+                                {
+
+                                    JToken data = await uda_server_communication.Server_Request_datasent(get_status_uda);
+                                    if (!(data is JArray))
+                                    {
+                                        continue;
+                                    }
+                                    var explorers = data.ToObject<JArray>();
+
+                                    foreach (var explorer in data)
+                                    {
+                                        Dictionary<string, object> exp = explorer.ToObject<Dictionary<string, object>>();
+                                        string timestamp = (string)explorer["timestamp"];
+                                        if (timestamp == null || timestamp == "0000-00-00 00:00:00")
+                                        {
+                                            continue;
+                                        }
+                                        response = (string)explorer["answer"];
+                                        break;
+                                    }
+                                    if (response == null) { break; }
+                                    switch (parentForm.number_star1)
                                     {
                                         case 1:
-                                            if (String.Equals(data, "12") && round_correct == 1)
+                                            if (String.Equals(response, "12") && parentForm.round_correct1 == 1)
                                             {
 
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star1.Visible = true;
-                                                this.Update();
                                                 lbl_Alkaid.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "21") && round_correct == 2 && control == 1)
+                                            if (String.Equals(response, "21") && parentForm.round_correct1 == 2 && control == 1)
                                             {
 
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star1.Visible = true;
-                                                this.Update();
                                                 lbl_Alkaid.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "17") && round_correct == 3 && control == 1)
+                                            if (String.Equals(response, "17") && parentForm.round_correct1 == 3 && control == 1)
                                             {
 
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star1.Visible = true;
-                                                this.Update();
                                                 lbl_Alkaid.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "13") && round_correct == 4 && control == 1)
+                                            if (String.Equals(response, "13") && parentForm.round_correct1 == 4 && control == 1)
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star1.Visible = true;
-                                                this.Update();
                                                 lbl_Alkaid.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "9") && round_correct == 5 && control == 1)
+                                            if (String.Equals(response, "9") && parentForm.round_correct1 == 5 && control == 1)
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star1.Visible = true;
-                                                this.Update();
                                                 lbl_Alkaid.Visible = true;
                                                 this.Update();
                                                 circles();
@@ -927,72 +750,69 @@ namespace La_Forma_Delle_Stelle
                                             }
                                             else
                                             {
-                                                Wrong_Answer();                                        
+                                                Wrong_Answer();
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 break;
                                             }
                                         case 2:
-                                            if (String.Equals(data, "9") && round_correct == 1)
+                                            if (String.Equals(response, "9") && parentForm.round_correct1 == 1)
 
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star2.Visible = true;
-                                                this.Update();
                                                 lbl_Mizar.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "8") && round_correct == 2)
+                                            if (String.Equals(response, "8") && parentForm.round_correct1 == 2)
 
                                             {
 
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star2.Visible = true;
-                                                this.Update();
                                                 lbl_Mizar.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "15") && round_correct == 3)
+                                            if (String.Equals(response, "15") && parentForm.round_correct1 == 3)
 
                                             {
 
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star2.Visible = true;
-                                                this.Update();
                                                 lbl_Mizar.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "11") && round_correct == 4)
+                                            if (String.Equals(response, "11") && parentForm.round_correct1 == 4)
 
                                             {
 
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star2.Visible = true;
-                                                this.Update();
                                                 lbl_Mizar.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "10") && round_correct == 5)
+                                            if (String.Equals(response, "10") && parentForm.round_correct1 == 5)
 
                                             {
 
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star2.Visible = true;
                                                 this.Update();
                                                 lbl_Mizar.Visible = true;
@@ -1002,70 +822,66 @@ namespace La_Forma_Delle_Stelle
                                             }
                                             else
                                             {
-                                            Wrong_Answer();
-                                             break;
+                                                Wrong_Answer();
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
+                                                break;
                                             }
                                         case 3:
-                                            if (String.Equals(data, "14") && round_correct == 1)
+                                            if (String.Equals(response, "14") && parentForm.round_correct1 == 1)
 
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star3.Visible = true;
-                                                this.Update();
                                                 lbl_alioth.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "16") && round_correct == 2)
+                                            if (String.Equals(response, "16") && parentForm.round_correct1 == 2)
 
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star3.Visible = true;
-                                                this.Update();
                                                 lbl_alioth.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "7") && round_correct == 3)
+                                            if (String.Equals(response, "7") && parentForm.round_correct1 == 3)
 
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star3.Visible = true;
-                                                this.Update();
                                                 lbl_alioth.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "4") && round_correct == 4)
+                                            if (String.Equals(response, "4") && parentForm.round_correct1 == 4)
 
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star3.Visible = true;
-                                                this.Update();
                                                 lbl_alioth.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "6") && round_correct == 5)
+                                            if (String.Equals(response, "6") && parentForm.round_correct1 == 5)
 
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star3.Visible = true;
-                                                this.Update();
                                                 lbl_alioth.Visible = true;
                                                 this.Update();
                                                 circles();
@@ -1073,66 +889,62 @@ namespace La_Forma_Delle_Stelle
                                             }
                                             else
                                             {
-                                            Wrong_Answer();
+                                                Wrong_Answer();
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 break;
                                             }
 
                                         case 4:
-                                            if (String.Equals(data, "15") && round_correct == 1)
+                                            if (String.Equals(response, "15") && parentForm.round_correct1 == 1)
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star4.Visible = true;
-                                                this.Update();
                                                 lbl_Megrez.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "10") && round_correct == 2)
+                                            if (String.Equals(response, "10") && parentForm.round_correct1 == 2)
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star4.Visible = true;
-                                                this.Update();
                                                 lbl_Megrez.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "8") && round_correct == 3)
+                                            if (String.Equals(response, "8") && parentForm.round_correct1 == 3)
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star4.Visible = true;
-                                                this.Update();
                                                 lbl_Megrez.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "20") && round_correct == 4)
+                                            if (String.Equals(response, "20") && parentForm.round_correct1 == 4)
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star4.Visible = true;
-                                                this.Update();
                                                 lbl_Megrez.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "12") && round_correct == 5)
+                                            if (String.Equals(response, "12") && parentForm.round_correct1 == 5)
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star4.Visible = true;
-                                                this.Update();
                                                 lbl_Megrez.Visible = true;
                                                 this.Update();
                                                 circles();
@@ -1140,70 +952,65 @@ namespace La_Forma_Delle_Stelle
                                             }
                                             else
                                             {
-                                            Wrong_Answer();
+                                                Wrong_Answer();
                                                 break;
                                             }
                                         case 5:
-                                            if (String.Equals(data, "20") && round_correct == 1)
+                                            if (String.Equals(response, "20") && parentForm.round_correct1 == 1)
 
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star5.Visible = true;
-                                                this.Update();
                                                 lbl_Dubhe.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "7") && round_correct == 2)
+                                            if (String.Equals(response, "7") && parentForm.round_correct1 == 2)
 
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star5.Visible = true;
-                                                this.Update();
                                                 lbl_Dubhe.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "9") && round_correct == 3)
+                                            if (String.Equals(response, "9") && parentForm.round_correct1 == 3)
 
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star5.Visible = true;
-                                                this.Update();
                                                 lbl_Dubhe.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "18") && round_correct == 4)
+                                            if (String.Equals(response, "18") && parentForm.round_correct1 == 4)
 
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star5.Visible = true;
-                                                this.Update();
                                                 lbl_Dubhe.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "30") && round_correct == 5)
+                                            if (String.Equals(response, "30") && parentForm.round_correct1 == 5)
 
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star5.Visible = true;
-                                                this.Update();
                                                 lbl_Dubhe.Visible = true;
                                                 this.Update();
                                                 circles();
@@ -1211,70 +1018,66 @@ namespace La_Forma_Delle_Stelle
                                             }
                                             else
                                             {
-                                            Wrong_Answer();
+                                                Wrong_Answer();
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 break;
                                             }
                                         case 6:
-                                            if (String.Equals(data, "8") && round_correct == 1)
+                                            if (String.Equals(response, "8") && parentForm.round_correct1 == 1)
 
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star6.Visible = true;
-                                                this.Update();
                                                 lbl_Merak.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "6") && round_correct == 2)
+                                            if (String.Equals(response, "6") && parentForm.round_correct1 == 2)
 
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star6.Visible = true;
-                                                this.Update();
                                                 lbl_Merak.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "14") && round_correct == 3)
+                                            if (String.Equals(response, "14") && parentForm.round_correct1 == 3)
 
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star6.Visible = true;
-                                                this.Update();
                                                 lbl_Merak.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "24") && round_correct == 4)
+                                            if (String.Equals(response, "24") && parentForm.round_correct1 == 4)
 
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star6.Visible = true;
-                                                this.Update();
                                                 lbl_Merak.Visible = true;
                                                 this.Update();
                                                 circles();
                                                 break;
                                             }
-                                            if (String.Equals(data, "45") && round_correct == 5)
+                                            if (String.Equals(response, "45") && parentForm.round_correct1 == 5)
 
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star6.Visible = true;
-                                                this.Update();
                                                 lbl_Merak.Visible = true;
                                                 this.Update();
                                                 circles();
@@ -1286,102 +1089,97 @@ namespace La_Forma_Delle_Stelle
                                                 break;
                                             }
                                         case 7:
-                                            if (String.Equals(data, "24") && round_correct == 1)
-
-                                            {
-                                            answer(1);
-                                            Thread.Sleep(1000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            star7.Visible = true;
-                                            this.Update();
-                                            lbl_Phecda.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            Thread.Sleep(1000);
-                                            Feedback.ForeColor = Color.Gold;
-                                            Feedback.Visible = true;
-                                            Feedback.Text = "GIOCO COMPLETATO!!";
-                                            this.Update();
-                                            parentForm.activity();
-                                            parentForm.playbackResourceAudio("clapping1");
-                                            Thread.Sleep(5000);
-                                            parentForm.indizio_finale();
-                                            break;
-                                        }
-                                            if (String.Equals(data, "12") && round_correct == 2)
-
-                                            {
-                                            answer(1);
-                                            Thread.Sleep(1000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            star7.Visible = true;
-                                            this.Update();
-                                            lbl_Phecda.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            Thread.Sleep(1000);
-                                            Feedback.ForeColor = Color.Gold;
-                                            Feedback.Visible = true;
-                                            Feedback.Text = "GIOCO COMPLETATO!!";
-                                            this.Update();
-                                            parentForm.activity();
-                                            parentForm.playbackResourceAudio("clapping1");
-                                            Thread.Sleep(5000);
-                                            parentForm.indizio_finale();
-                                            break;
-                                        }
-                                            if (String.Equals(data, "28") && round_correct == 3)
-
-                                            {
-                                            answer(1);
-                                            Thread.Sleep(1000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            star7.Visible = true;
-                                            this.Update();
-                                            lbl_Phecda.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            Thread.Sleep(1000);
-                                            Feedback.ForeColor = Color.Gold;
-                                            Feedback.Visible = true;
-                                            Feedback.Text = "GIOCO COMPLETATO!!";
-                                            this.Update();
-                                            parentForm.activity();
-                                            parentForm.playbackResourceAudio("clapping1");
-                                            Thread.Sleep(5000);
-                                            parentForm.indizio_finale();
-                                            break;
-                                        }
-                                            if (String.Equals(data, "16") && round_correct == 4)
-                                            {
-                                            answer(1);
-                                            Thread.Sleep(1000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
-                                            star7.Visible = true;
-                                            this.Update();
-                                            lbl_Phecda.Visible = true;
-                                            this.Update();
-                                            circles();
-                                            Thread.Sleep(1000);
-                                            Feedback.ForeColor = Color.Gold;
-                                            Feedback.Visible = true;
-                                            Feedback.Text = "GIOCO COMPLETATO!!";
-                                            this.Update();
-                                            parentForm.activity();
-                                            parentForm.playbackResourceAudio("clapping1");
-                                            Thread.Sleep(5000);
-                                            parentForm.indizio_finale();
-                                            break;
-                                        }
-
-                                            if (String.Equals(data, "10") && round_correct == 5)
+                                            if (String.Equals(response, "24") && parentForm.round_correct1 == 1)
 
                                             {
                                                 answer(1);
                                                 Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(put_wait_data);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 star7.Visible = true;
+                                                lbl_Phecda.Visible = true;
                                                 this.Update();
+                                                circles();
+                                                Thread.Sleep(1000);
+                                                Feedback.ForeColor = Color.Gold;
+                                                Feedback.Visible = true;
+                                                Feedback.Text = "GIOCO COMPLETATO!!";
+                                                this.Update();
+                                                parentForm.activity();
+                                                parentForm.playbackResourceAudio("clapping1");
+                                                Thread.Sleep(5000);
+                                                parentForm.indizio_finale();
+                                                break;
+                                            }
+                                            if (String.Equals(response, "12") && parentForm.round_correct1 == 2)
+
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
+                                                star7.Visible = true;
+                                                lbl_Phecda.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                Thread.Sleep(1000);
+                                                Feedback.ForeColor = Color.Gold;
+                                                Feedback.Visible = true;
+                                                Feedback.Text = "GIOCO COMPLETATO!!";
+                                                this.Update();
+                                                parentForm.activity();
+                                                parentForm.playbackResourceAudio("clapping1");
+                                                Thread.Sleep(5000);
+                                                parentForm.indizio_finale();
+                                                break;
+                                            }
+                                            if (String.Equals(response, "28") && parentForm.round_correct1 == 3)
+
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
+                                                star7.Visible = true;
+                                                lbl_Phecda.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                Thread.Sleep(1000);
+                                                Feedback.ForeColor = Color.Gold;
+                                                Feedback.Visible = true;
+                                                Feedback.Text = "GIOCO COMPLETATO!!";
+                                                this.Update();
+                                                parentForm.activity();
+                                                parentForm.playbackResourceAudio("clapping1");
+                                                Thread.Sleep(5000);
+                                                parentForm.indizio_finale();
+                                                break;
+                                            }
+                                            if (String.Equals(response, "16") && parentForm.round_correct1 == 4)
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
+                                                star7.Visible = true;
+                                                lbl_Phecda.Visible = true;
+                                                this.Update();
+                                                circles();
+                                                Thread.Sleep(1000);
+                                                Feedback.ForeColor = Color.Gold;
+                                                Feedback.Visible = true;
+                                                Feedback.Text = "GIOCO COMPLETATO!!";
+                                                this.Update();
+                                                parentForm.activity();
+                                                parentForm.playbackResourceAudio("clapping1");
+                                                Thread.Sleep(5000);
+                                                parentForm.indizio_finale();
+                                                break;
+                                            }
+
+                                            if (String.Equals(response, "10") && parentForm.round_correct1 == 5)
+
+                                            {
+                                                answer(1);
+                                                Thread.Sleep(1000);
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
+                                                star7.Visible = true;
                                                 lbl_Phecda.Visible = true;
                                                 this.Update();
                                                 circles();
@@ -1398,17 +1196,19 @@ namespace La_Forma_Delle_Stelle
                                             }
                                             else
                                             {
-                                            Wrong_Answer();
+                                                Wrong_Answer();
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 break;
                                             }
                                     }
-                                
 
+
+                                }
+                                break;
                             }
-                            break;
                         }
-                        }
-                    break;
+                        break;
+                    }
                 }
             }
 
@@ -1429,31 +1229,49 @@ namespace La_Forma_Delle_Stelle
                         parentForm.Abort_UDA();
                         break;
                     }
-                    if (status==10|| status==14 || status==6 || status==7)
+                    if (status==10|| status==7 || status==6|| status==14)
                     {
-                       
-                            await uda_server_communication.Server_Request(put_wait_data);
-                        
+                        if (status != 14)
+                        {
+                            await uda_server_communication.Server_Request(parentForm.wait_data());
+
+                        }
                         Thread.Sleep(1000);
                         total_seconds--;
-                        int minutes = total_seconds / 60;
-                        int seconds = total_seconds - (minutes * 60);
-                        this.lbl_minutes.ForeColor = Color.Red;
-                        this.lbl_minutes.Text = minutes.ToString() + ":" + "0" + seconds.ToString();
+                        updateCountdown();
+
                         circles();
+                           string response = null;
                         while (true)
                         {
-                            if (status == 15)
+                            if (status == 14)
                             {
-                                string data = await uda_server_communication.Server_Request_datasent(get_status_uda);
-                                switch (number_star)
+                                JToken data = await uda_server_communication.Server_Request_datasent(get_status_uda);
+                                if (!(data is JArray))
+                                {
+                                    continue;
+                                }
+                                var explorers = data.ToObject<JArray>();
+                                foreach (var explorer in data)
+                                {
+                                    Dictionary<string, object> exp = explorer.ToObject<Dictionary<string, object>>();
+                                    string timestamp = (string)explorer["timestamp"];
+                                    if (timestamp == null || timestamp == "0000-00-00 00:00:00")
+                                    {
+                                        continue;
+                                    }
+                                    response = (string)explorer["answer"];
+                                    break;
+                                }
+                                if (response == null) { break; }
+                                switch (parentForm.number_star1)
                                 {
                                     case 1:
-                                        if (String.Equals(data, "12") && round_correct == 1)
+                                        if (String.Equals(response, "12") && parentForm.round_correct1 == 1)
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star1.Visible = true;
                                             this.Update();
                                             lbl_Alkaid.Visible = true;
@@ -1461,11 +1279,11 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "21") && round_correct == 2)
+                                        if (String.Equals(response, "21") && parentForm.round_correct1 == 2)
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star1.Visible = true;
                                             this.Update();
                                             lbl_Alkaid.Visible = true;
@@ -1473,11 +1291,11 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "17") && round_correct == 3)
+                                        if (String.Equals(response, "17") && parentForm.round_correct1 == 3)
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star1.Visible = true;
                                             this.Update();
                                             lbl_Alkaid.Visible = true;
@@ -1485,11 +1303,11 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "13") && round_correct == 4)
+                                        if (String.Equals(response, "13") && parentForm.round_correct1 == 4)
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star1.Visible = true;
                                             this.Update();
                                             lbl_Alkaid.Visible = true;
@@ -1497,11 +1315,11 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "9") && round_correct == 5)
+                                        if (String.Equals(response, "9") && parentForm.round_correct1 == 5)
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star1.Visible = true;
                                             this.Update();
                                             lbl_Alkaid.Visible = true;
@@ -1515,66 +1333,61 @@ namespace La_Forma_Delle_Stelle
                                             break;
                                         }
                                     case 2:
-                                        if (String.Equals(data, "9") && round_correct == 1)
+                                        if (String.Equals(response, "9") && parentForm.round_correct1 == 1)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star2.Visible = true;
-                                            this.Update();
                                             lbl_Mizar.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "8") && round_correct == 2)
+                                        if (String.Equals(response, "8") && parentForm.round_correct1 == 2)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star2.Visible = true;
-                                            this.Update();
                                             lbl_Mizar.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "15") && round_correct == 3)
+                                        if (String.Equals(response, "15") && parentForm.round_correct1 == 3)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star2.Visible = true;
-                                            this.Update();
                                             lbl_Mizar.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "11") && round_correct == 4)
+                                        if (String.Equals(response, "11") && parentForm.round_correct1 == 4)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star2.Visible = true;
-                                            this.Update();
                                             lbl_Mizar.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "10") && round_correct == 5)
+                                        if (String.Equals(response, "10") && parentForm.round_correct1 == 5)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star2.Visible = true;
-                                            this.Update();
                                             lbl_Mizar.Visible = true;
                                             this.Update();
                                             circles();
@@ -1583,70 +1396,66 @@ namespace La_Forma_Delle_Stelle
                                         else
                                         {
                                             Wrong_Answer();
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             break;
                                         }
 
                                     case 3:
-                                        if (String.Equals(data, "14") && round_correct == 1)
+                                        if (String.Equals(response, "14") && parentForm.round_correct1 == 1)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star3.Visible = true;
-                                            this.Update();
                                             lbl_alioth.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "16") && round_correct == 2)
+                                        if (String.Equals(response, "16") && parentForm.round_correct1 == 2)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star3.Visible = true;
-                                            this.Update();
                                             lbl_alioth.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "7") && round_correct == 3)
+                                        if (String.Equals(response, "7") && parentForm.round_correct1 == 3)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star3.Visible = true;
-                                            this.Update();
                                             lbl_alioth.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "4") && round_correct == 4)
+                                        if (String.Equals(response, "4") && parentForm.round_correct1 == 4)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star3.Visible = true;
-                                            this.Update();
                                             lbl_alioth.Visible = true;
                                             this.Update();
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "6") && round_correct == 5)
+                                        if (String.Equals(response, "6") && parentForm.round_correct1 == 5)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star3.Visible = true;
-                                            this.Update();
                                             lbl_alioth.Visible = true;
                                             this.Update();
                                             circles();
@@ -1655,14 +1464,15 @@ namespace La_Forma_Delle_Stelle
                                         else
                                         {
                                             Wrong_Answer();
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             break;
                                         }
                                     case 4:
-                                        if (String.Equals(data, "15") && round_correct == 1)
+                                        if (String.Equals(response, "15") && parentForm.round_correct1 == 1)
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star4.Visible = true;
                                             this.Update();
                                             lbl_Megrez.Visible = true;
@@ -1670,11 +1480,11 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "10") && round_correct == 2)
+                                        if (String.Equals(response, "10") && parentForm.round_correct1 == 2)
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star4.Visible = true;
                                             this.Update();
                                             lbl_Megrez.Visible = true;
@@ -1682,11 +1492,11 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "8") && round_correct == 3)
+                                        if (String.Equals(response, "8") && parentForm.round_correct1 == 3)
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star4.Visible = true;
                                             this.Update();
                                             lbl_Megrez.Visible = true;
@@ -1694,11 +1504,11 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "20") && round_correct == 4)
+                                        if (String.Equals(response, "20") && parentForm.round_correct1 == 4)
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star4.Visible = true;
                                             this.Update();
                                             lbl_Megrez.Visible = true;
@@ -1706,11 +1516,11 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "12") && round_correct == 5)
+                                        if (String.Equals(response, "12") && parentForm.round_correct1 == 5)
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star4.Visible = true;
                                             this.Update();
                                             lbl_Megrez.Visible = true;
@@ -1721,15 +1531,16 @@ namespace La_Forma_Delle_Stelle
                                         else
                                         {
                                             Wrong_Answer();
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             break;
                                         }
                                     case 5:
-                                        if (String.Equals(data, "20") && round_correct == 1)
+                                        if (String.Equals(response, "20") && parentForm.round_correct1 == 1)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star5.Visible = true;
                                             this.Update();
                                             lbl_Dubhe.Visible = true;
@@ -1737,12 +1548,12 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "7") && round_correct == 2)
+                                        if (String.Equals(response, "7") && parentForm.round_correct1 == 2)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star5.Visible = true;
                                             this.Update();
                                             lbl_Dubhe.Visible = true;
@@ -1750,12 +1561,12 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "9") && round_correct == 3)
+                                        if (String.Equals(response, "9") && parentForm.round_correct1 == 3)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star5.Visible = true;
                                             this.Update();
                                             lbl_Dubhe.Visible = true;
@@ -1763,12 +1574,12 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "18") && round_correct == 4)
+                                        if (String.Equals(response, "18") && parentForm.round_correct1 == 4)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star5.Visible = true;
                                             this.Update();
                                             lbl_Dubhe.Visible = true;
@@ -1776,12 +1587,12 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "30") && round_correct == 5)
+                                        if (String.Equals(response, "30") && parentForm.round_correct1 == 5)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star5.Visible = true;
                                             this.Update();
                                             lbl_Dubhe.Visible = true;
@@ -1792,15 +1603,16 @@ namespace La_Forma_Delle_Stelle
                                         else
                                         {
                                             Wrong_Answer();
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             break;
                                         }
                                     case 6:
-                                        if (String.Equals(data, "8") && round_correct == 1)
+                                        if (String.Equals(response, "8") && parentForm.round_correct1 == 1)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star6.Visible = true;
                                             this.Update();
                                             lbl_Merak.Visible = true;
@@ -1808,12 +1620,12 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "6") && round_correct == 2)
+                                        if (String.Equals(response, "6") && parentForm.round_correct1 == 2)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star6.Visible = true;
                                             this.Update();
                                             lbl_Merak.Visible = true;
@@ -1821,12 +1633,12 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "14") && round_correct == 3)
+                                        if (String.Equals(response, "14") && parentForm.round_correct1 == 3)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star6.Visible = true;
                                             this.Update();
                                             lbl_Merak.Visible = true;
@@ -1834,12 +1646,12 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "24") && round_correct == 4)
+                                        if (String.Equals(response, "24") && parentForm.round_correct1 == 4)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star6.Visible = true;
                                             this.Update();
                                             lbl_Merak.Visible = true;
@@ -1847,12 +1659,12 @@ namespace La_Forma_Delle_Stelle
                                             circles();
                                             break;
                                         }
-                                        if (String.Equals(data, "45") && round_correct == 5)
+                                        if (String.Equals(response, "45") && parentForm.round_correct1 == 5)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star6.Visible = true;
                                             this.Update();
                                             lbl_Merak.Visible = true;
@@ -1863,15 +1675,16 @@ namespace La_Forma_Delle_Stelle
                                         else
                                         {
                                             Wrong_Answer();
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             break;
                                         }
                                     case 7:
-                                        if (String.Equals(data, "24") && round_correct == 1)
+                                        if (String.Equals(response, "24") && parentForm.round_correct1 == 1)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star7.Visible = true;
                                             this.Update();
                                             lbl_Phecda.Visible = true;
@@ -1885,12 +1698,12 @@ namespace La_Forma_Delle_Stelle
                                             parentForm.activity();
                                             //parentForm.playbackResourceAudio("clapping1");
                                         }
-                                        if (String.Equals(data, "12") && round_correct == 2)
+                                        if (String.Equals(response, "12") && parentForm.round_correct1 == 2)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star7.Visible = true;
                                             this.Update();
                                             lbl_Phecda.Visible = true;
@@ -1904,12 +1717,12 @@ namespace La_Forma_Delle_Stelle
                                             parentForm.activity();
                                             //parentForm.playbackResourceAudio("clapping1");
                                         }
-                                        if (String.Equals(data, "28") && round_correct == 3)
+                                        if (String.Equals(response, "28") && parentForm.round_correct1 == 3)
 
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             star7.Visible = true;
                                             this.Update();
                                             lbl_Phecda.Visible = true;
@@ -1923,10 +1736,10 @@ namespace La_Forma_Delle_Stelle
                                             parentForm.activity();
                                             //parentForm.playbackResourceAudio("clapping1");
                                         }
-                                        if (String.Equals(data, "16") && round_correct == 4)
+                                        if (String.Equals(response, "16") && parentForm.round_correct1 == 4)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             answer(1);
                                             star7.Visible = true;
                                             this.Update();
@@ -1941,10 +1754,10 @@ namespace La_Forma_Delle_Stelle
                                             parentForm.activity();
                                             //parentForm.playbackResourceAudio("clapping1");
                                         }
-                                        if (String.Equals(data, "10") && round_correct == 5)
+                                        if (String.Equals(response, "10") && parentForm.round_correct1 == 5)
 
                                         {
-                                            await uda_server_communication.Server_Request(put_wait_data);
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             answer(1);
                                             star7.Visible = true;
                                             this.Update();
@@ -1962,6 +1775,7 @@ namespace La_Forma_Delle_Stelle
                                         else
                                         {
                                             Wrong_Answer();
+                                            await uda_server_communication.Server_Request(parentForm.wait_data());
                                             break;
                                         }
                                         break;
@@ -1980,28 +1794,43 @@ namespace La_Forma_Delle_Stelle
                 parentForm.activity();
             }
         }
+        public void updateCountdown()
+        {
+            int minutes = total_seconds / 60;
+            int seconds = total_seconds - (minutes * 60);
+            if (total_seconds <= 5)
+            {
+                this.lbl_minutes.ForeColor = Color.Red;
+            } else {
+                this.lbl_minutes.ForeColor = Color.White;
+            }
+            if (seconds >= 10)
+                this.lbl_minutes.Text = minutes.ToString() + ":" + seconds.ToString();
+            else
+                this.lbl_minutes.Text = minutes.ToString() + ":" + "0" + seconds.ToString();
+        }
 
         public async void answer(int i)
         {
             if (i == 1)
             {
                 Correct_Answer();
-                await uda_server_communication.Server_Request(put_started);
-                round_correct = 1;
-                number_star++;
-                correct_answers++;
+               PutStarted();
+                parentForm.round_correct1 = 1;
+                parentForm.number_star1++;
+                parentForm.correct_answers1++;
                 Feedback.Visible = false;
                 parentForm.onStart(parentForm.activity_form);           
             }
             else if (i==0)
             {
                 Wrong_Answer();
-                await uda_server_communication.Server_Request(put_started);
+               PutStarted();
                 Feedback.Visible = false;
-                round_correct++;
-                if (round_correct == 5)
+                parentForm.round_correct1++;
+                if (parentForm.round_correct1 == 5)
                 {
-                    round_correct = 1;
+                    parentForm.round_correct1 = 1;
                 } 
                 circles();
                 timer2.Start();

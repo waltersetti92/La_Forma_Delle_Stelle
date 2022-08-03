@@ -18,7 +18,7 @@ namespace La_Forma_Delle_Stelle
         public Ursa()
         {
             InitializeComponent();
-            completed = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=2&k=16";
+            completed = "api/uda/put/?i=2&k=16";
         }
         public  void setPos(int w, int h)
         {
@@ -29,19 +29,46 @@ namespace La_Forma_Delle_Stelle
             Height = h - 1 * offset;
 
         }
+        public async void Image_Indizio(string a)
+        {
+            while (true)
+            {
+              string  k = parentForm.Status_Changed(parentForm.activity_form);
+                int status = int.Parse(k);
+                if (status != 9 && status != 8)
+                {
+                    if (status == 11 || status == 12)
+                    {
+                        Application.Exit();
+                        Environment.Exit(0);
+                    }
+                    if (status == 13)
+                    {
+                        this.Hide();
+                        parentForm.Abort_UDA();
+                        break;
+                    }
+                    else if (status == 10 || status == 7 || status == 16)
+                    {
+
+                        indizio_box.WaitOnLoad = true;
+                        indizio_box.ImageLocation = Main.resourcesPath + "\\" + a + ".png";
+                        indizio_box.Visible = true;
+                        lbl_Error.Text = "ECCO L'INDIZIO!";
+                        lbl_Error.Visible = true;
+                        this.Update();
+                        break;
+                    }
+                }
+            }
+        }
 
         public async void indizio()
         {
-            Thread.Sleep(1000);
             reset_operations();
-            this.Update();
-            lbl_Error.Text = "ECCO L'INDIZIO!";
-            lbl_Error.ForeColor = Color.Gold;
-            lbl_Error.Visible = true;
-            this.Update();
-            indizio_box.Visible = true;
-            this.Update();
             await uda_server_communication.Server_Request(completed);
+            Image_Indizio(uda_server_communication.indizio + "_" + uda_server_communication.turno);
+            Thread.Sleep(2000);
         }
         public void reset_operations()
         {
