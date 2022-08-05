@@ -18,7 +18,7 @@ namespace La_Forma_Delle_Stelle
         public Ursa()
         {
             InitializeComponent();
-            completed = "api/uda/put/?i=2&k=16";
+            completed = "api/uda/put/?i=1&k=16";
         }
         public  void setPos(int w, int h)
         {

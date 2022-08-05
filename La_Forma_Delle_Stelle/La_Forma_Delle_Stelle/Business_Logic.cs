@@ -39,7 +39,7 @@ namespace La_Forma_Delle_Stelle
         }
         public async void New_Status_UDA(object source, ElapsedEventArgs e)
         {
-            string get_status_uda = "api/uda/get/?i=2";  // url per ottenere lo stato dell'UDA  
+            string get_status_uda = "api/uda/get/?i=1";  // url per ottenere lo stato dell'UDA  
             try
             {
                 string uda_status = await uda_server_communication.Server_Request(get_status_uda); //stato dell'UDA ottenuto con la classe UDA_server_communication
@@ -99,11 +99,11 @@ namespace La_Forma_Delle_Stelle
             if (ik >= 0 && ik < 20)
             {
                 if (ik == 11 || ik == 8)
-                    return "/api/uda/put/?i=2" + "&k=" + ik1.ToString();
+                    return "/api/uda/put/?i=1" + "&k=" + ik1.ToString();
                 else if (ik == 6)
-                    return "/api/uda/put/?i=2" + "&k=" + ik1.ToString() + "&data=" + mn.data_start;
+                    return "/api/uda/put/?i=1" + "&k=" + ik1.ToString() + "&data=" + mn.data_start;
                 else
-                    return "/api/uda/put/?i=2" + "&k=" + ik.ToString();
+                    return "/api/uda/put/?i=1" + "&k=" + ik.ToString();
             }
 
             else
