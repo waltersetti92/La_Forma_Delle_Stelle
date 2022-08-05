@@ -565,6 +565,7 @@ namespace La_Forma_Delle_Stelle
                 {
                     string k = parentForm.Status_Changed(parentForm.activity_form);
                     int status = int.Parse(k);
+
                     if (status != 9 && status != 8)
                     {
                         if (status == 11 || status == 12)
