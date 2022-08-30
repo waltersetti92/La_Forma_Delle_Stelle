@@ -70,8 +70,8 @@ namespace La_Forma_Delle_Stelle
             round_correct1 = 1;
             correct_answers1 = 0;
             timeleft1 = 6;
-            seconds1 = 10;
-            minutes1 = 0;
+            seconds1 = 15;
+            minutes1 = 1;
         }
         public Main()
         {

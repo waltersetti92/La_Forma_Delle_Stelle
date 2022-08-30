@@ -650,13 +650,17 @@ namespace La_Forma_Delle_Stelle
                             parentForm.Abort_UDA();
                             break;
                         }
-                        if (status == 10 || status == 7 || status == 14)
+                        //if (status == 10 || status == 7 || status == 14)
+                        if (status == 10)
                         {
-                            if (status != 14)
+                            await uda_server_communication.Server_Request(parentForm.wait_data());
+                            Thread.Sleep(250);
+                        }
+
+                       /*if (status != 14 && status!= 13 && status != 11 && status != 12)
                             {
                                 await uda_server_communication.Server_Request(parentForm.wait_data());
-
-                            }
+                            }*/
                             lbl_minutes.Visible = true;
                             Circle1.Visible = true;
                             Circle2.Visible = true;
@@ -1207,7 +1211,7 @@ namespace La_Forma_Delle_Stelle
                                 }
                                 break;
                             }
-                        }
+                        
                         break;
                     }
                 }
@@ -1230,13 +1234,15 @@ namespace La_Forma_Delle_Stelle
                         parentForm.Abort_UDA();
                         break;
                     }
-                    if (status==10|| status==7 || status==6|| status==14)
+                    if (status==10)
+
+                        await uda_server_communication.Server_Request(parentForm.wait_data());
                     {
-                        if (status != 14)
+                        /*if (status != 14)
                         {
                             await uda_server_communication.Server_Request(parentForm.wait_data());
 
-                        }
+                        }*/
                         Thread.Sleep(1000);
                         total_seconds--;
                         updateCountdown();
