@@ -205,18 +205,21 @@ namespace La_Forma_Delle_Stelle
             return k;
         }
 
-        public async void Abort_UDA()
+        public void Abort_UDA()
         {
-            await uda_server_communication.Server_Request(idle_status);
-            if (currUC != null) currUC.Visible = false;
-            initial1.Show();
-            currUC = initial1;
+            //await uda_server_communication.Server_Request(idle_status);
+            //if (currUC != null) currUC.Visible = false;
+            //initial1.Show();
+            this.Visible = false;
+            //currUC = initial1;
             while (true)
             {
                 string k = activity_form;
                 int status = int.Parse(k);
                 if (status == 6 || status == 7)
                 {
+                    Application.Exit();
+                    Environment.Exit(0);
                     break;
                 }
             }

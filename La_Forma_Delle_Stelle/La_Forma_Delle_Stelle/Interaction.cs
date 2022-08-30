@@ -119,6 +119,7 @@ namespace La_Forma_Delle_Stelle
         public void Interaction_Load(object sender, EventArgs e)
         {
             resetOperations();
+
             //resetTimer();
         }
         public void circles()
@@ -570,8 +571,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         if (status == 11 || status == 12)
                         {
-                            Application.Exit();
-                            Environment.Exit(0);
+                            parentForm.Abort_UDA();
                         }
                         if (status == 13)
                         {
@@ -641,8 +641,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         if (status == 11 || status == 12)
                         {
-                            Application.Exit();
-                            Environment.Exit(0);
+                            parentForm.Abort_UDA();
                         }
                         if (status == 13)
                         {
