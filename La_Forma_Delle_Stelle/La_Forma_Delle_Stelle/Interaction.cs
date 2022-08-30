@@ -119,7 +119,7 @@ namespace La_Forma_Delle_Stelle
         public void Interaction_Load(object sender, EventArgs e)
         {
             resetOperations();
-            resetTimer();
+            //resetTimer();
         }
         public void circles()
         {
