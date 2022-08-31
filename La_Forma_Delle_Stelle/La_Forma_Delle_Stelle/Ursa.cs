@@ -15,10 +15,12 @@ namespace La_Forma_Delle_Stelle
     {
         public string completed;
         public Main parentForm { get; set; }
+        public int contatore_ts;
         public Ursa()
         {
             InitializeComponent();
             completed = "api/uda/put/?i=1&k=16";
+            contatore_ts = 7;
         }
         public  void setPos(int w, int h)
         {
@@ -96,6 +98,11 @@ namespace La_Forma_Delle_Stelle
             lbl_Phecda.Visible = false;
             lbl_Error.Visible = false;
         }
+        public async void PutStarted()
+        {
+            await uda_server_communication.Server_Request("api/uda/put/?i=1&k=7&data=" + parentForm.data_start);
+
+        }
         public void Ursa_Final()
         {
             indizio_box.Visible = false;
@@ -124,7 +131,25 @@ namespace La_Forma_Delle_Stelle
             lbl_Error.Visible = true;
             lbl_Error.Visible = true;
             this.Update();
-            Thread.Sleep(5000);
+            while (contatore_ts >= 0)
+            {
+                string k = parentForm.Status_Changed(parentForm.activity_form);
+                int status = int.Parse(k);
+
+                if (status != 9 && status != 8)
+                {
+                    if (status == 11 || status == 12)
+                    {
+                        parentForm.Abort_UDA();
+                    }
+                    if (status == 10)
+                    {
+                        PutStarted();
+                    }
+                    contatore_ts--;
+                    Thread.Sleep(1000);
+                }
+            }
         }
         private void Ursa_Load(object sender, EventArgs e)
         {
