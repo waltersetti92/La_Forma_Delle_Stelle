@@ -22,8 +22,8 @@ namespace La_Forma_Delle_Stelle
         public int counter_responses = 0;
         public int timer_game = 0;
         private int total_seconds;
-        public int seconds =15;
-        public int minutes=2;
+        public int seconds =4;
+        public int minutes=0;
         public int number_star=1;
         public string put_started;
         public string put_wait_data;
@@ -32,6 +32,7 @@ namespace La_Forma_Delle_Stelle
         public int correct_answers;
         public int control = 1;
         public string completed;
+        public int contatore_ts = 5;
 
         public async void PutStarted()
         {
@@ -589,7 +590,7 @@ namespace La_Forma_Delle_Stelle
                          PutStarted();
                         }
                        int timerl= parentForm.timeleft1--;                        
-                        timerLabel.Text = timerl.ToString();
+                       timerLabel.Text = timerl.ToString();
                     }
                     break;
                 }
@@ -618,7 +619,8 @@ namespace La_Forma_Delle_Stelle
                             PutStarted();
                         }
                         this.timer1.Stop();
-                        timerLabel.Enabled = false;
+                        int timerl = parentForm.timeleft1--;
+                        timerLabel.Text = timerl.ToString();
                         timerLabel.Visible = false;
                         timer_game = 1;
                         timer2.Enabled = true;
@@ -1767,8 +1769,7 @@ namespace La_Forma_Delle_Stelle
                                             Feedback.Visible = true;
                                             Feedback.Text = "GIOCO COMPLETATO!!";
                                             parentForm.contatore_iniziale = 0;
-                                            this.Update();
-                                            
+                                            this.Update();                                            
                                             parentForm.activity();
                                             Thread.Sleep(5000);
                                             parentForm.playbackResourceAudio("clapping1");
@@ -1839,8 +1840,30 @@ namespace La_Forma_Delle_Stelle
             else if (total_seconds < 1)
             {
                 parentForm.contatore_iniziale = 0;
+                PutStarted();
                 final_scenario_time();
-                Thread.Sleep(1500);
+                while (contatore_ts>=0)
+                {
+                    string k = parentForm.Status_Changed(parentForm.activity_form);
+                    int status = int.Parse(k);
+
+                    if (status != 9 && status != 8)
+                    {
+                        if (status == 11 || status == 12)
+                        {
+                            parentForm.Abort_UDA();
+                        }
+                        if (status == 10)
+                        {
+                            PutStarted();
+                        }
+                        contatore_ts--;
+                        Thread.Sleep(1000);
+                    }
+                 
+                  //  break;
+                }
+
                 parentForm.activity();
             }
         }
@@ -1918,7 +1941,7 @@ namespace La_Forma_Delle_Stelle
             Feedback.Visible = false;
             Feedback.Text = "TEMPO SCADUTO!";
             this.Update();
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
         }
         public void final_scenario()
         {

@@ -60,8 +60,8 @@ namespace La_Forma_Delle_Stelle
                         mn.round_correct1 = 1;
                         mn.correct_answers1 = 1;
                         mn.timeleft1 = 6;
-                        mn.seconds1 = 15;
-                        mn.minutes1 = 1;
+                        mn.seconds1 = 8;
+                        mn.minutes1 = 0;
                         put_server = Url_Put("5"); // creo la stringa per il put al server che notifica il cambio di stato dell'UDA
                         firststart = false;
 
