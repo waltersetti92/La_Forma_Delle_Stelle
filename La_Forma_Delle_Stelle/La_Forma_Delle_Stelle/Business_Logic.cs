@@ -102,6 +102,8 @@ namespace La_Forma_Delle_Stelle
                     return "/api/uda/put/?i=1" + "&k=" + ik1.ToString();
                 else if (ik == 6)
                     return "/api/uda/put/?i=1" + "&k=" + ik1.ToString() + "&data=" + mn.data_start;
+                else if (ik == 10)
+                    return "/api/uda/put/?i=1" + "&k=14" + "&data=" + mn.data_start;
                 else
                     return "/api/uda/put/?i=1" + "&k=" + ik.ToString();
             }

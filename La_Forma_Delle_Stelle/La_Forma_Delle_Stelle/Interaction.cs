@@ -38,6 +38,11 @@ namespace La_Forma_Delle_Stelle
             await uda_server_communication.Server_Request("api/uda/put/?i=1&k=7&data=" + parentForm.data_start);
 
         }
+        public async void Putwaitdata()
+        {
+            await uda_server_communication.Server_Request("api/uda/put/?i=1&k=14&data=" + parentForm.data_start);
+
+        }
         public Interaction()
         {
             InitializeComponent();
@@ -610,7 +615,7 @@ namespace La_Forma_Delle_Stelle
                         }
                         if (status == 10)
                         {
-                            await uda_server_communication.Server_Request(parentForm.wait_data());
+                            PutStarted();
                         }
                         this.timer1.Stop();
                         timerLabel.Enabled = false;
@@ -652,14 +657,12 @@ namespace La_Forma_Delle_Stelle
                         //if (status == 10 || status == 7 || status == 14)
                         if (status == 10)
                         {
-                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                            Thread.Sleep(250);
+                            Putwaitdata();
+                            //await uda_server_communication.Server_Request(parentForm.wait_data());
+                         
                         }
 
-                       /*if (status != 14 && status!= 13 && status != 11 && status != 12)
-                            {
-                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                            }*/
+
                             lbl_minutes.Visible = true;
                             Circle1.Visible = true;
                             Circle2.Visible = true;
@@ -668,7 +671,7 @@ namespace La_Forma_Delle_Stelle
                             circles();
                             while (true)
                             {
-
+                            
                                 if (status == 14)
                                 {
 
@@ -1233,9 +1236,9 @@ namespace La_Forma_Delle_Stelle
                         parentForm.Abort_UDA();
                         break;
                     }
-                    if (status==10)
-
-                        await uda_server_communication.Server_Request(parentForm.wait_data());
+                    if (status == 10)
+                        Putwaitdata();
+                        //await uda_server_communication.Server_Request(parentForm.wait_data());
                     {
                         /*if (status != 14)
                         {

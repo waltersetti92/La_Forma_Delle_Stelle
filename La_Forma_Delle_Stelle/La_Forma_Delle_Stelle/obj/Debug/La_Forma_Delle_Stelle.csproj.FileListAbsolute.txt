@@ -269,7 +269,6 @@ C:\Users\wsetti\Source\Repos\La_Forma_Delle_Stellem-hòlhj\La_Forma_Delle_Stelle
 C:\Users\wsetti\Source\Repos\La_Forma_Delle_Stellem-hòlhj\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\bin\Debug\System.Text.Json.xml
 C:\Users\wsetti\Source\Repos\La_Forma_Delle_Stellem-hòlhj\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\wsetti\Source\Repos\La_Forma_Delle_Stellem-hòlhj\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\bin\Debug\System.ValueTuple.xml
-C:\Users\wsetti\Source\Repos\La_Forma_Delle_Stellem-hòlhj\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.csproj.AssemblyReference.cache
 C:\Users\wsetti\Source\Repos\La_Forma_Delle_Stellem-hòlhj\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.csproj.SuggestedBindingRedirects.cache
 C:\Users\wsetti\Source\Repos\La_Forma_Delle_Stellem-hòlhj\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.activity.resources
 C:\Users\wsetti\Source\Repos\La_Forma_Delle_Stellem-hòlhj\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.Initial.resources
@@ -282,3 +281,4 @@ C:\Users\wsetti\Source\Repos\La_Forma_Delle_Stellem-hòlhj\La_Forma_Delle_Stelle
 C:\Users\wsetti\Source\Repos\La_Forma_Delle_Stellem-hòlhj\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.csproj.CopyComplete
 C:\Users\wsetti\Source\Repos\La_Forma_Delle_Stellem-hòlhj\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.exe
 C:\Users\wsetti\Source\Repos\La_Forma_Delle_Stellem-hòlhj\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.pdb
+C:\Users\wsetti\source\repos\La_Forma_Delle_Stellem-hòlhj\La_Forma_Delle_Stelle\La_Forma_Delle_Stelle\obj\Debug\La_Forma_Delle_Stelle.csproj.AssemblyReference.cache
