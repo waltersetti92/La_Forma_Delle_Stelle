@@ -25,7 +25,7 @@ namespace La_Forma_Delle_Stelle
         public string data_start;
         public string started_uda;
         public static System.Diagnostics.Process proc;
-        public int turno ;
+        public int turno;
          public int number_star1;
         public int round_correct1 ;
         public int correct_answers1;
@@ -33,6 +33,7 @@ namespace La_Forma_Delle_Stelle
         public int seconds1;
         public int minutes1;
         public bool ShouldPause = true;
+        public int contatore_iniziale = 0;
 
         private Business_Logic BL;
         public string wait_data()

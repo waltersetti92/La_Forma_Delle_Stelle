@@ -622,6 +622,7 @@ namespace La_Forma_Delle_Stelle
                         timerLabel.Visible = false;
                         timer_game = 1;
                         timer2.Enabled = true;
+                        parentForm.contatore_iniziale = 1;
                         await uda_server_communication.Server_Request(parentForm.wait_data());
                         circles();
                     }
@@ -1110,11 +1111,12 @@ namespace La_Forma_Delle_Stelle
                                                 Feedback.ForeColor = Color.Gold;
                                                 Feedback.Visible = true;
                                                 Feedback.Text = "GIOCO COMPLETATO!!";
-                                                this.Update();
+                                            parentForm.contatore_iniziale = 0;
+                                            this.Update();
                                                 parentForm.activity();
                                                 parentForm.playbackResourceAudio("clapping1");
-                                                Thread.Sleep(5000);
-                                                parentForm.indizio_finale();
+                                                Thread.Sleep(5000);                                         
+                                            parentForm.indizio_finale();
                                                 break;
                                             }
                                             if (String.Equals(response, "12") && parentForm.round_correct1 == 2)
@@ -1131,10 +1133,12 @@ namespace La_Forma_Delle_Stelle
                                                 Feedback.ForeColor = Color.Gold;
                                                 Feedback.Visible = true;
                                                 Feedback.Text = "GIOCO COMPLETATO!!";
-                                                this.Update();
+                                            parentForm.contatore_iniziale = 0;
+                                            this.Update();
                                                 parentForm.activity();
+                                            Thread.Sleep(5000);
                                                 parentForm.playbackResourceAudio("clapping1");
-                                                Thread.Sleep(5000);
+                                            Thread.Sleep(5000);
                                                 parentForm.indizio_finale();
                                                 break;
                                             }
@@ -1152,11 +1156,14 @@ namespace La_Forma_Delle_Stelle
                                                 Feedback.ForeColor = Color.Gold;
                                                 Feedback.Visible = true;
                                                 Feedback.Text = "GIOCO COMPLETATO!!";
-                                                this.Update();
+                                            parentForm.contatore_iniziale = 0;
+                                            this.Update();
                                                 parentForm.activity();
+                                            Thread.Sleep(5000);
                                                 parentForm.playbackResourceAudio("clapping1");
-                                                Thread.Sleep(5000);
-                                                parentForm.indizio_finale();
+
+                                            Thread.Sleep(5000);
+                                            parentForm.indizio_finale();
                                                 break;
                                             }
                                             if (String.Equals(response, "16") && parentForm.round_correct1 == 4)
@@ -1172,11 +1179,14 @@ namespace La_Forma_Delle_Stelle
                                                 Feedback.ForeColor = Color.Gold;
                                                 Feedback.Visible = true;
                                                 Feedback.Text = "GIOCO COMPLETATO!!";
-                                                this.Update();
+                                            parentForm.contatore_iniziale = 0;
+                                            this.Update();
                                                 parentForm.activity();
+                                            Thread.Sleep(5000);
                                                 parentForm.playbackResourceAudio("clapping1");
-                                                Thread.Sleep(5000);
-                                                parentForm.indizio_finale();
+                                            Thread.Sleep(5000);
+                               
+                                            parentForm.indizio_finale();
                                                 break;
                                             }
 
@@ -1194,11 +1204,13 @@ namespace La_Forma_Delle_Stelle
                                                 Feedback.ForeColor = Color.Gold;
                                                 Feedback.Visible = true;
                                                 Feedback.Text = "GIOCO COMPLETATO!!";
-                                                this.Update();
+                                            parentForm.contatore_iniziale = 0;
+                                            this.Update();
                                                 parentForm.activity();
+                                            Thread.Sleep(5000);
                                                 parentForm.playbackResourceAudio("clapping1");
-                                                Thread.Sleep(5000);
-                                                parentForm.indizio_finale();
+                                            Thread.Sleep(5000);
+                                            parentForm.indizio_finale();
                                                 break;
                                             }
                                             else
@@ -1704,7 +1716,13 @@ namespace La_Forma_Delle_Stelle
                                             Feedback.Visible = true;
                                             Feedback.Text = "GIOCO COMPLETATO!!";
                                             this.Update();
+                                            parentForm.contatore_iniziale = 0;
                                             parentForm.activity();
+                                            Thread.Sleep(5000);
+                                            parentForm.playbackResourceAudio("clapping1");
+                                            Thread.Sleep(5000);
+                                            parentForm.indizio_finale();
+                                            break;
                                             //parentForm.playbackResourceAudio("clapping1");
                                         }
                                         if (String.Equals(response, "12") && parentForm.round_correct1 == 2)
@@ -1722,8 +1740,15 @@ namespace La_Forma_Delle_Stelle
                                             Feedback.ForeColor = Color.Gold;
                                             Feedback.Visible = true;
                                             Feedback.Text = "GIOCO COMPLETATO!!";
+                                            parentForm.contatore_iniziale = 0;
                                             this.Update();
+                                      
                                             parentForm.activity();
+                                            Thread.Sleep(5000);
+                                            parentForm.playbackResourceAudio("clapping1");
+                                            Thread.Sleep(5000);
+                                            parentForm.indizio_finale();
+                                            break;
                                             //parentForm.playbackResourceAudio("clapping1");
                                         }
                                         if (String.Equals(response, "28") && parentForm.round_correct1 == 3)
@@ -1741,8 +1766,15 @@ namespace La_Forma_Delle_Stelle
                                             Feedback.ForeColor = Color.Gold;
                                             Feedback.Visible = true;
                                             Feedback.Text = "GIOCO COMPLETATO!!";
+                                            parentForm.contatore_iniziale = 0;
                                             this.Update();
+                                            
                                             parentForm.activity();
+                                            Thread.Sleep(5000);
+                                            parentForm.playbackResourceAudio("clapping1");
+                                            Thread.Sleep(5000);
+                                            parentForm.indizio_finale();
+                                            break;
                                             //parentForm.playbackResourceAudio("clapping1");
                                         }
                                         if (String.Equals(response, "16") && parentForm.round_correct1 == 4)
@@ -1759,8 +1791,12 @@ namespace La_Forma_Delle_Stelle
                                             Feedback.ForeColor = Color.Gold;
                                             Feedback.Visible = true;
                                             Feedback.Text = "GIOCO COMPLETATO!!";
+                                            parentForm.contatore_iniziale = 0;
                                             this.Update();
                                             parentForm.activity();
+                                            Thread.Sleep(5000);
+                                            parentForm.indizio_finale();
+                                            break;
                                             //parentForm.playbackResourceAudio("clapping1");
                                         }
                                         if (String.Equals(response, "10") && parentForm.round_correct1 == 5)
@@ -1777,8 +1813,12 @@ namespace La_Forma_Delle_Stelle
                                             Feedback.ForeColor = Color.Gold;
                                             Feedback.Visible = true;
                                             Feedback.Text = "GIOCO COMPLETATO!!";
+                                            parentForm.contatore_iniziale = 0;
                                             this.Update();
                                             parentForm.activity();
+                                            Thread.Sleep(5000);
+                                            parentForm.indizio_finale();
+                                            break;
                                             //parentForm.playbackResourceAudio("clapping1");
                                         }
                                         else
@@ -1798,6 +1838,7 @@ namespace La_Forma_Delle_Stelle
             }
             else if (total_seconds < 1)
             {
+                parentForm.contatore_iniziale = 0;
                 final_scenario_time();
                 Thread.Sleep(1500);
                 parentForm.activity();
