@@ -58,11 +58,8 @@ namespace La_Forma_Delle_Stelle
         public void resetOperations()
         {
             lbl_minutes.Visible = false;
-            //btn_conferma.Visible = false;
-            //txt_answers.Visible = false;
             Circle1.Visible = false;
             Circle2.Visible = false;
-            //lbl_Error.Visible = false;
             op1.Visible = false;
             op2.Visible = false;
             op3.Visible = false;
@@ -1855,7 +1852,7 @@ namespace La_Forma_Delle_Stelle
                  
                   //  break;
                 }
-
+                contatore_ts = 5;
                 parentForm.activity();
             }
         }

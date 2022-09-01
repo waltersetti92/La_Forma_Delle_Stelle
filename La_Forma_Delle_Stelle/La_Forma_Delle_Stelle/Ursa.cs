@@ -150,6 +150,7 @@ namespace La_Forma_Delle_Stelle
                     Thread.Sleep(1000);
                 }
             }
+            contatore_ts = 5;
         }
         private void Ursa_Load(object sender, EventArgs e)
         {
