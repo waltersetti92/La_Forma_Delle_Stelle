@@ -186,8 +186,8 @@ namespace La_Forma_Delle_Stelle
                 if (status == 11 || status == 12)
                 {
 
-                    //Application.Exit();
-                   // Environment.Exit(0);
+                    System.Diagnostics.Process.GetCurrentProcess().Kill();
+
 
                 }
                 if (status == 8)
@@ -211,16 +211,17 @@ namespace La_Forma_Delle_Stelle
             //await uda_server_communication.Server_Request(idle_status);
             //if (currUC != null) currUC.Visible = false;
             //initial1.Show();
-            this.Visible = false;
+           // this.Visible = false;
+            //interaction1.Visible = false;
             //currUC = initial1;
             while (true)
             {
                 string k = activity_form;
                 int status = int.Parse(k);
-                if (status == 6 || status == 7)
+                if (status == 11 || status == 12)
                 {
-                    Application.Exit();
-                    Environment.Exit(0);
+                    System.Diagnostics.Process.GetCurrentProcess().Kill();
+                    // Environment.Exit(0);
                     break;
                 }
             }

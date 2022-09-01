@@ -605,8 +605,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         if (status == 11 || status == 12)
                         {
-                            Application.Exit();
-                            Environment.Exit(0);
+                            parentForm.Abort_UDA();
                         }
                         if (status == 13)
                         {
@@ -649,7 +648,7 @@ namespace La_Forma_Delle_Stelle
                     {
                         if (status == 11 || status == 12)
                         {
-                            parentForm.Abort_UDA();
+                            System.Diagnostics.Process.GetCurrentProcess().Kill();
                         }
                         if (status == 13)
                         {
@@ -1241,8 +1240,7 @@ namespace La_Forma_Delle_Stelle
                     int status = int.Parse(k);
                     if (status == 11 || status == 12)
                     {
-                        Application.Exit();
-                        Environment.Exit(0);
+                        System.Diagnostics.Process.GetCurrentProcess().Kill();
                     }
                     if (status == 13)
                     {
@@ -1252,13 +1250,7 @@ namespace La_Forma_Delle_Stelle
                     }
                     if (status == 10)
                         Putwaitdata();
-                        //await uda_server_communication.Server_Request(parentForm.wait_data());
                     {
-                        /*if (status != 14)
-                        {
-                            await uda_server_communication.Server_Request(parentForm.wait_data());
-
-                        }*/
                         Thread.Sleep(1000);
                         total_seconds--;
                         updateCountdown();

@@ -99,7 +99,7 @@ namespace La_Forma_Delle_Stelle
             if (ik >= 0 && ik < 20)
             {
                 if (ik == 11 || ik == 8)
-                    return "/api/uda/put/?i=1" + "&k=" + ik1.ToString();
+                    return "/api/uda/put/?i=1" + "&k=" + ik1.ToString() + "&data=" + mn.data_start;
                 else if (ik == 6)
                     return "/api/uda/put/?i=1" + "&k=" + ik1.ToString() + "&data=" + mn.data_start;
                 else if (ik == 10 && mn.contatore_iniziale==1)
