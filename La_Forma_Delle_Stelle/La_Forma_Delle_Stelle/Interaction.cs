@@ -32,7 +32,7 @@ namespace La_Forma_Delle_Stelle
         public int correct_answers;
         public int control = 1;
         public string completed;
-        public int contatore_ts = 5;
+        public int contatore_ts = 1;
 
         public async void PutStarted()
         {
@@ -596,6 +596,8 @@ namespace La_Forma_Delle_Stelle
             {
                 while (true)
                 {
+                    timerLabel.Text = timer1.ToString();
+                    this.Update();
                     string k = parentForm.Status_Changed(parentForm.activity_form);
                     int status = int.Parse(k);
                     if (status != 9 && status != 8)
@@ -614,10 +616,12 @@ namespace La_Forma_Delle_Stelle
                         {
                             PutStarted();
                         }
+                        timerLabel.Hide();
                         this.timer1.Stop();
                         int timerl = parentForm.timeleft1--;
-                        timerLabel.Text = timerl.ToString();
-                        timerLabel.Visible = false;
+                        // timerLabel.Text = timerl.ToString();
+                      
+                        this.Update();
                         timer_game = 1;
                         timer2.Enabled = true;
                         parentForm.contatore_iniziale = 1;
@@ -1852,7 +1856,7 @@ namespace La_Forma_Delle_Stelle
                  
                   //  break;
                 }
-                contatore_ts = 5;
+                contatore_ts = 1;
                 parentForm.activity();
             }
         }

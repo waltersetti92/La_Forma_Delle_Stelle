@@ -71,8 +71,8 @@ namespace La_Forma_Delle_Stelle
             round_correct1 = 1;
             correct_answers1 = 0;
             timeleft1 = 6;
-            seconds1 = 30;
-            minutes1 = 0;
+            seconds1 = 0;
+            minutes1 = 5;
         }
         public Main()
         {
@@ -229,14 +229,14 @@ namespace La_Forma_Delle_Stelle
         public void home()
         {
             if (currUC != null) currUC.Visible = false;
-            initial1.Show();
+            initial1.Visible=true;
             currUC = initial1;
         }
         public void onStart(string k)
         {
             initial1.Visible = false;
-            interaction1.Visible = true;
-           
+            this.Update();
+            interaction1.Visible = true;          
             currUC = interaction1;
             Thread.Sleep(1000);
         }

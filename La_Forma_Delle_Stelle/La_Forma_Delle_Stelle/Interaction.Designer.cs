@@ -71,12 +71,12 @@
             // timerLabel
             // 
             this.timerLabel.AutoSize = true;
-            this.timerLabel.Font = new System.Drawing.Font("Segoe Script", 150F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timerLabel.Font = new System.Drawing.Font("Times New Roman", 150F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timerLabel.ForeColor = System.Drawing.Color.Lime;
             this.timerLabel.Location = new System.Drawing.Point(838, 274);
             this.timerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.timerLabel.Name = "timerLabel";
-            this.timerLabel.Size = new System.Drawing.Size(418, 476);
+            this.timerLabel.Size = new System.Drawing.Size(289, 332);
             this.timerLabel.TabIndex = 1;
             this.timerLabel.Text = "6";
             this.timerLabel.Click += new System.EventHandler(this.timerLabel_Click);

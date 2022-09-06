@@ -20,7 +20,7 @@ namespace La_Forma_Delle_Stelle
         {
             InitializeComponent();
             completed = "api/uda/put/?i=1&k=16";
-            contatore_ts = 7;
+            contatore_ts = 5;
         }
         public  void setPos(int w, int h)
         {
