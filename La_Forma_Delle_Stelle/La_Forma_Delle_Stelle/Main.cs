@@ -9,6 +9,7 @@ using System.Text;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Diagnostics;
 
 namespace La_Forma_Delle_Stelle
 {
@@ -34,6 +35,8 @@ namespace La_Forma_Delle_Stelle
         public int minutes1;
         public bool ShouldPause = true;
         public int contatore_iniziale = 0;
+        public string MPV = resourcesPath + "\\" + "mpv.com";
+        public string initial_video = Path.GetDirectoryName(Application.ExecutablePath) + "\\..\\..\\..\\..\\..\\Video_GAMES\\La_Forma_Delle_Stelle\\iniziale.mov";
 
         private Business_Logic BL;
         public string wait_data()
@@ -98,66 +101,12 @@ namespace La_Forma_Delle_Stelle
         }
         public void video_reproduction(string video1)
         {
-            string video = "C:\\Users\\wsetti\\Documents\\Video_LUDA\\Forma_Delle_Stelle_Iniziale.mov"; 
-            var Nicolo = new NamedPipeClientStream("mpv-pipe");
-            Nicolo.Connect();
-            StreamReader reader = new StreamReader(Nicolo);
-            StreamWriter writer = new StreamWriter(Nicolo);
-            writer.WriteLine("set pause yes");
-            // System.Diagnostics.Debug.WriteLine(reader.ReadLine());
-            writer.WriteLine($"loadfile {video}");
-            // System.Diagnostics.Debug.WriteLine(reader.ReadLine());
-            writer.WriteLine("set seek 0 absolute");
-            //System.Diagnostics.Debug.WriteLine(reader.ReadLine());
-            writer.WriteLine("set fullscreen yes");
-            //System.Diagnostics.Debug.WriteLine(reader.ReadLine());
-            writer.WriteLine("set ontop yes");
-            //System.Diagnostics.Debug.WriteLine(reader.ReadLine());
-            writer.WriteLine("set pause no");
-            //System.Diagnostics.Debug.WriteLine(reader.ReadLine());
-            writer.Flush();
-            // while ()
-            Dictionary<string, object> getPos = new Dictionary<string, object>();
-            getPos.Add("command", new List<string> { "get_property", "percent-pos" });
-            getPos.Add("request_id", 88);
-
-
-            writer.WriteLine(JsonConvert.SerializeObject(getPos));
-            System.Diagnostics.Debug.WriteLine(JsonConvert.SerializeObject(getPos));
-            // System.Diagnostics.Debug.WriteLine(reader.ReadLine());
-            writer.Flush();
-            bool started = false;
-            bool wait_video = true;
-            while (wait_video)
-            {
-                writer.WriteLine(JsonConvert.SerializeObject(getPos));
-                System.Diagnostics.Debug.WriteLine(JsonConvert.SerializeObject(getPos));
-                writer.Flush();
-                string response = reader.ReadLine();
-                JObject json_parsed = JObject.Parse(response);
-
-                if (!started)
-                {
-                    var id = json_parsed["request_id"];
-                    if (id != null && (int)id == 88)
-                    {
-                        started = true;
-                    }
-                }
-                if (started)
-                {
-                    var id = json_parsed["request_id"];
-                    var error = json_parsed["error"];
-
-                    if (id != null && (int)id == 88 && error != null && (string)error == "property unavailable")
-                    {
-                        //     System.Diagnostics.Debug.WriteLine(response);
-                        wait_video = false;
-                        // and property not available
-                    }
-                }
-            }
-            System.Diagnostics.Debug.WriteLine(reader.ReadLine());
+            string mpvcommand = "--fullscreen --ontop " + video1;
+            ProcessStartInfo proc = new ProcessStartInfo(MPV);
+            proc.WindowStyle = ProcessWindowStyle.Hidden;
+            proc.Arguments = mpvcommand;
+            Process cmd = Process.Start(proc);
+            cmd.WaitForExit();
         }
         public string Status_Changed(string k)
         {
@@ -175,11 +124,12 @@ namespace La_Forma_Delle_Stelle
                 }
                 if (status == 6)
                 {
+                    
                     ursa1.Visible = false;
+                    video_reproduction(initial_video);
                     interaction1.resetOperations();
                     interaction1.resetTimer();
                     interaction1.updateCountdown();
-                    //video_reproduction("C:\\Users\\wsetti\\Documents\\Video_LUDA\\Forma_Delle_Stelle_Iniziale.mov");
                     onStart(activity_form);
                 }
 
