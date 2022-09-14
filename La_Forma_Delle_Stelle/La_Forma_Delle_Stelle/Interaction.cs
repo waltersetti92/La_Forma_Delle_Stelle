@@ -1120,7 +1120,7 @@ namespace La_Forma_Delle_Stelle
                                             parentForm.contatore_iniziale = 0;
                                             this.Update();
                                                 parentForm.activity();
-                                                parentForm.playbackResourceAudio("clapping1");
+                                                //parentForm.playbackResourceAudio("clapping1");
                                                 Thread.Sleep(5000);                                         
                                             parentForm.indizio_finale();
                                                 break;
@@ -1143,7 +1143,7 @@ namespace La_Forma_Delle_Stelle
                                             this.Update();
                                                 parentForm.activity();
                                             Thread.Sleep(5000);
-                                                parentForm.playbackResourceAudio("clapping1");
+                                                //parentForm.playbackResourceAudio("clapping1");
                                             Thread.Sleep(5000);
                                                 parentForm.indizio_finale();
                                                 break;
@@ -1166,7 +1166,7 @@ namespace La_Forma_Delle_Stelle
                                             this.Update();
                                                 parentForm.activity();
                                             Thread.Sleep(5000);
-                                                parentForm.playbackResourceAudio("clapping1");
+                                               // parentForm.playbackResourceAudio("clapping1");
 
                                             Thread.Sleep(5000);
                                             parentForm.indizio_finale();
@@ -1189,7 +1189,7 @@ namespace La_Forma_Delle_Stelle
                                             this.Update();
                                                 parentForm.activity();
                                             Thread.Sleep(5000);
-                                                parentForm.playbackResourceAudio("clapping1");
+                                               // parentForm.playbackResourceAudio("clapping1");
                                             Thread.Sleep(5000);
                                
                                             parentForm.indizio_finale();
@@ -1214,7 +1214,7 @@ namespace La_Forma_Delle_Stelle
                                             this.Update();
                                                 parentForm.activity();
                                             Thread.Sleep(5000);
-                                                parentForm.playbackResourceAudio("clapping1");
+                                               // parentForm.playbackResourceAudio("clapping1");
                                             Thread.Sleep(5000);
                                             parentForm.indizio_finale();
                                                 break;
@@ -1718,7 +1718,7 @@ namespace La_Forma_Delle_Stelle
                                             parentForm.contatore_iniziale = 0;
                                             parentForm.activity();
                                             Thread.Sleep(5000);
-                                            parentForm.playbackResourceAudio("clapping1");
+                                           // parentForm.playbackResourceAudio("clapping1");
                                             Thread.Sleep(5000);
                                             parentForm.indizio_finale();
                                             break;
@@ -1744,7 +1744,7 @@ namespace La_Forma_Delle_Stelle
                                       
                                             parentForm.activity();
                                             Thread.Sleep(5000);
-                                            parentForm.playbackResourceAudio("clapping1");
+                                           // parentForm.playbackResourceAudio("clapping1");
                                             Thread.Sleep(5000);
                                             parentForm.indizio_finale();
                                             break;
@@ -1769,7 +1769,7 @@ namespace La_Forma_Delle_Stelle
                                             this.Update();                                            
                                             parentForm.activity();
                                             Thread.Sleep(5000);
-                                            parentForm.playbackResourceAudio("clapping1");
+                                           // parentForm.playbackResourceAudio("clapping1");
                                             Thread.Sleep(5000);
                                             parentForm.indizio_finale();
                                             break;
@@ -1973,7 +1973,7 @@ namespace La_Forma_Delle_Stelle
         private void lbl_Error_Click(object sender, EventArgs e)
         {           
             parentForm.activity();
-            parentForm.playbackResourceAudio("clapping1");
+            //parentForm.playbackResourceAudio("clapping1");
             
         }
     }

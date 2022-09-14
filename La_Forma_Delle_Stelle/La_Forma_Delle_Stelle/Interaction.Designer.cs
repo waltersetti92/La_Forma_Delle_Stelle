@@ -149,7 +149,7 @@
             this.op4.BackColor = System.Drawing.Color.Transparent;
             this.op4.Font = new System.Drawing.Font("Segoe Script", 47.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.op4.ForeColor = System.Drawing.Color.Lime;
-            this.op4.Location = new System.Drawing.Point(1572, 194);
+            this.op4.Location = new System.Drawing.Point(1164, 203);
             this.op4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.op4.Name = "op4";
             this.op4.Size = new System.Drawing.Size(381, 158);
@@ -162,7 +162,7 @@
             this.op5.BackColor = System.Drawing.Color.Transparent;
             this.op5.Font = new System.Drawing.Font("Segoe Script", 47.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.op5.ForeColor = System.Drawing.Color.Lime;
-            this.op5.Location = new System.Drawing.Point(1636, 383);
+            this.op5.Location = new System.Drawing.Point(1176, 383);
             this.op5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.op5.Name = "op5";
             this.op5.Size = new System.Drawing.Size(381, 158);
@@ -175,7 +175,7 @@
             this.op6.BackColor = System.Drawing.Color.Transparent;
             this.op6.Font = new System.Drawing.Font("Segoe Script", 47.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.op6.ForeColor = System.Drawing.Color.Lime;
-            this.op6.Location = new System.Drawing.Point(1636, 598);
+            this.op6.Location = new System.Drawing.Point(1176, 581);
             this.op6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.op6.Name = "op6";
             this.op6.Size = new System.Drawing.Size(381, 158);
@@ -223,7 +223,7 @@
             this.lbl_Megrez.AutoSize = true;
             this.lbl_Megrez.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Megrez.ForeColor = System.Drawing.Color.Gold;
-            this.lbl_Megrez.Location = new System.Drawing.Point(1797, 266);
+            this.lbl_Megrez.Location = new System.Drawing.Point(1680, 242);
             this.lbl_Megrez.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Megrez.Name = "lbl_Megrez";
             this.lbl_Megrez.Size = new System.Drawing.Size(206, 57);
@@ -235,7 +235,7 @@
             this.lbl_Dubhe.AutoSize = true;
             this.lbl_Dubhe.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Dubhe.ForeColor = System.Drawing.Color.Gold;
-            this.lbl_Dubhe.Location = new System.Drawing.Point(1809, 569);
+            this.lbl_Dubhe.Location = new System.Drawing.Point(1697, 508);
             this.lbl_Dubhe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Dubhe.Name = "lbl_Dubhe";
             this.lbl_Dubhe.Size = new System.Drawing.Size(167, 57);
@@ -247,7 +247,7 @@
             this.lbl_Merak.AutoSize = true;
             this.lbl_Merak.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Merak.ForeColor = System.Drawing.Color.Gold;
-            this.lbl_Merak.Location = new System.Drawing.Point(1797, 872);
+            this.lbl_Merak.Location = new System.Drawing.Point(1707, 765);
             this.lbl_Merak.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Merak.Name = "lbl_Merak";
             this.lbl_Merak.Size = new System.Drawing.Size(179, 57);
@@ -280,7 +280,7 @@
             // star6
             // 
             this.star6.Image = global::La_Forma_Delle_Stelle.Properties.Resources.star;
-            this.star6.Location = new System.Drawing.Point(1830, 765);
+            this.star6.Location = new System.Drawing.Point(1731, 635);
             this.star6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.star6.Name = "star6";
             this.star6.Size = new System.Drawing.Size(120, 103);
@@ -291,7 +291,7 @@
             // star5
             // 
             this.star5.Image = global::La_Forma_Delle_Stelle.Properties.Resources.star;
-            this.star5.Location = new System.Drawing.Point(1830, 462);
+            this.star5.Location = new System.Drawing.Point(1717, 383);
             this.star5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.star5.Name = "star5";
             this.star5.Size = new System.Drawing.Size(120, 103);
@@ -302,7 +302,7 @@
             // star4
             // 
             this.star4.Image = global::La_Forma_Delle_Stelle.Properties.Resources.star;
-            this.star4.Location = new System.Drawing.Point(1830, 158);
+            this.star4.Location = new System.Drawing.Point(1707, 124);
             this.star4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.star4.Name = "star4";
             this.star4.Size = new System.Drawing.Size(120, 103);
@@ -346,7 +346,7 @@
             // Circle2
             // 
             this.Circle2.Image = global::La_Forma_Delle_Stelle.Properties.Resources.Circle;
-            this.Circle2.Location = new System.Drawing.Point(1220, 115);
+            this.Circle2.Location = new System.Drawing.Point(1076, 115);
             this.Circle2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Circle2.Name = "Circle2";
             this.Circle2.Size = new System.Drawing.Size(568, 678);
@@ -426,7 +426,7 @@
             this.Controls.Add(this.timerLabel);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Interaction";
-            this.Size = new System.Drawing.Size(2021, 1039);
+            this.Size = new System.Drawing.Size(2014, 1039);
             this.Load += new System.EventHandler(this.Interaction_Load);
             ((System.ComponentModel.ISupportInitialize)(this.star7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star6)).EndInit();

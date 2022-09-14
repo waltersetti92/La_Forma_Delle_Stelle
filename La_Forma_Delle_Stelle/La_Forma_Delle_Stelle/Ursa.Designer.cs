@@ -220,7 +220,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::La_Forma_Delle_Stelle.Properties.Resources.second1;
+            this.pictureBox2.Image = global::La_Forma_Delle_Stelle.Properties.Resources.second;
             this.pictureBox2.Location = new System.Drawing.Point(494, 386);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
@@ -271,6 +271,7 @@
             this.star1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.star1.TabIndex = 15;
             this.star1.TabStop = false;
+            this.star1.Click += new System.EventHandler(this.star1_Click);
             // 
             // pictureBox10
             // 
@@ -321,7 +322,7 @@
             // pictureBox13
             // 
             this.pictureBox13.Image = global::La_Forma_Delle_Stelle.Properties.Resources.Polar_Bear1;
-            this.pictureBox13.Location = new System.Drawing.Point(388, 688);
+            this.pictureBox13.Location = new System.Drawing.Point(442, 725);
             this.pictureBox13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(300, 265);
@@ -332,7 +333,7 @@
             // indizio_box
             // 
             this.indizio_box.Image = global::La_Forma_Delle_Stelle.Properties.Resources.star;
-            this.indizio_box.Location = new System.Drawing.Point(363, 20);
+            this.indizio_box.Location = new System.Drawing.Point(374, 54);
             this.indizio_box.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.indizio_box.Name = "indizio_box";
             this.indizio_box.Size = new System.Drawing.Size(1293, 644);

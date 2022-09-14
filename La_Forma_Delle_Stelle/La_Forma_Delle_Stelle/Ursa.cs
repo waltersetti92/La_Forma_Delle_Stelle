@@ -41,8 +41,7 @@ namespace La_Forma_Delle_Stelle
                 {
                     if (status == 11 || status == 12)
                     {
-                        Application.Exit();
-                        Environment.Exit(0);
+                        System.Diagnostics.Process.GetCurrentProcess().Kill();
                     }
                     if (status == 13)
                     {
@@ -58,6 +57,7 @@ namespace La_Forma_Delle_Stelle
                         indizio_box.Visible = true;
                         lbl_Error.Text = "ECCO L'INDIZIO!";
                         lbl_Error.Visible = true;
+                        parentForm.playbackResourceAudio("success");
                         this.Update();
                         break;
                     }
@@ -67,7 +67,7 @@ namespace La_Forma_Delle_Stelle
 
         public async void indizio()
         {
-            reset_operations();
+            star_invisible();
             await uda_server_communication.Server_Request(completed);
             Image_Indizio(uda_server_communication.indizio + "_" + uda_server_communication.turno);
             Thread.Sleep(2000);
@@ -105,31 +105,53 @@ namespace La_Forma_Delle_Stelle
         }
         public void Ursa_Final()
         {
-            indizio_box.Visible = false;
-            star1.Visible = true;
-            star2.Visible = true;
+            pictureBox1.WaitOnLoad = true;
+            pictureBox1.ImageLocation = Main.resourcesPath + "\\" + "first.png";
             pictureBox1.Visible = true;
-            pictureBox2.Visible = true;
-            pictureBox3.Visible = true;
-            pictureBox4.Visible = true;
-            pictureBox5.Visible = true;
-            pictureBox6.Visible = true;
-            pictureBox7.Visible = true;
-            pictureBox8.Visible = true;
-            pictureBox9.Visible = true;
-            pictureBox10.Visible = true;
-            pictureBox11.Visible = true;
-            pictureBox12.Visible = true;
-            pictureBox13.Visible = true;
+            star1.WaitOnLoad = true;
+            star1.ImageLocation = Main.resourcesPath + "\\" + "star.png";
+            star1.Visible = true;
             lbl_Alkaid.Visible = true;
+            pictureBox2.WaitOnLoad = true;
+            pictureBox2.ImageLocation = Main.resourcesPath + "\\" + "second.png";
+            pictureBox2.Visible = true;
+            star2.WaitOnLoad = true;
+            star2.ImageLocation = Main.resourcesPath + "\\" + "star.png";
             lbl_Mizar.Visible = true;
+            pictureBox3.WaitOnLoad = true;
+            pictureBox3.ImageLocation = Main.resourcesPath + "\\" + "star.png";
+            pictureBox3.Visible = true;
+            pictureBox4.WaitOnLoad = true;
+            pictureBox4.ImageLocation = Main.resourcesPath + "\\" + "third.png";
+            pictureBox4.Visible = true;
             lbl_alioth.Visible = true;
+            pictureBox5.WaitOnLoad = true;
+            pictureBox5.ImageLocation = Main.resourcesPath + "\\" + "star.png";
+            pictureBox5.Visible = true;
+            pictureBox6.WaitOnLoad = true;
+            pictureBox6.ImageLocation = Main.resourcesPath + "\\" + "fourth.png";
             lbl_Megrez.Visible = true;
+            pictureBox7.WaitOnLoad = true;
+            pictureBox7.ImageLocation = Main.resourcesPath + "\\" + "star.png";
+            pictureBox7.Visible = true;
+            pictureBox8.WaitOnLoad = true;
+            pictureBox8.ImageLocation = Main.resourcesPath + "\\" + "fifth.png";
+            pictureBox8.Visible = true;
             lbl_Dubhe.Visible = true;
+            pictureBox9.WaitOnLoad = true;
+            pictureBox9.ImageLocation = Main.resourcesPath + "\\" + "star.png";
+            pictureBox9.Visible = true;
+            pictureBox10.WaitOnLoad = true;
+            pictureBox10.ImageLocation = Main.resourcesPath + "\\" + "sei.png";
+            pictureBox10.Visible = true;
             lbl_Merak.Visible = true;
+            pictureBox11.WaitOnLoad = true;
+            pictureBox11.ImageLocation = Main.resourcesPath + "\\" + "star.png";
+            pictureBox11.Visible = true;
+            pictureBox12.WaitOnLoad = true;
+            pictureBox12.ImageLocation = Main.resourcesPath + "\\" + "seventh.png";
             lbl_Phecda.Visible = true;
-            lbl_Error.Visible = true;
-            lbl_Error.Visible = true;
+            indizio_box.Visible = false;
             this.Update();
             while (contatore_ts >= 0)
             {
@@ -152,9 +174,39 @@ namespace La_Forma_Delle_Stelle
             }
             contatore_ts = 5;
         }
+        public void star_invisible()
+        {
+            pictureBox1.Image = null;
+            star1.Image = null;
+            lbl_Alkaid.Visible = false;
+            pictureBox2.Image = null;
+            star2.Image = null;
+            lbl_Mizar.Visible = false;
+            pictureBox3.Image = null;
+            pictureBox4.Image = null;
+            lbl_alioth.Visible = false;
+            pictureBox5.Image = null;
+            pictureBox6.Image = null;
+            lbl_Megrez.Visible = false;
+            pictureBox7.Image = null;
+            pictureBox8.Image = null;
+            lbl_Dubhe.Visible = false;
+            pictureBox9.Image = null;
+            pictureBox10.Image = null;
+            lbl_Merak.Visible = false;
+            pictureBox11.Image = null;
+            pictureBox12.Image = null;
+            lbl_Phecda.Visible = false;
+            this.Update();
+        }
         private void Ursa_Load(object sender, EventArgs e)
         {
            
+        }
+
+        private void star1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -252,7 +252,6 @@ namespace La_Forma_Delle_Stelle
                     break;
                 }
                 currUC = ursa1;
-                playbackResourceAudio("clapping1");
                 ursa1.indizio();
                 break;
             }
@@ -265,12 +264,6 @@ namespace La_Forma_Delle_Stelle
 
         private void Main_Load(object sender, EventArgs e)
         {
-           // string mpvcommand = "--idle --input-ipc-server=\\\\.\\pipe\\mpv-pipe";
-           // proc = new System.Diagnostics.Process();
-           // proc.StartInfo.FileName = "C:\\Users\\wsetti\\Documents\\Video_LUDA\\mpv"; 
-            //proc.StartInfo.Arguments = mpvcommand;
-            //proc.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            //proc.Start();
             Size size = this.Size;
             initial1.setPos(size.Width, size.Height);
             interaction1.setPos(size.Width, size.Height);
