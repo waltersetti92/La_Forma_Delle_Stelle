@@ -542,6 +542,8 @@ namespace La_Forma_Delle_Stelle
             Feedback.Text = "RISPOSTA CORRETTA";
             this.Update();
             Thread.Sleep(2000);
+            Feedback.Text = "";
+           
         }
         public void Wrong_Answer()
         {
@@ -550,7 +552,8 @@ namespace La_Forma_Delle_Stelle
             Feedback.Visible = true;
             Feedback.Text = "RISPOSTA SBAGLIATA";
             this.Update();
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
+            Feedback.Text = "";
             Feedback.Visible = false;
             parentForm.round_correct1++;
             if (parentForm.round_correct1 == 5)
@@ -674,8 +677,9 @@ namespace La_Forma_Delle_Stelle
                             circles();
                             while (true)
                             {
-                            
-                                if (status == 14)
+                           // string k = parentForm.Status_Changed(parentForm.activity_form);
+                            //int status = int.Parse(k);
+                            if (status == 14)
                                 {
 
                                     JToken data = await uda_server_communication.Server_Request_datasent(get_status_uda);
@@ -1821,8 +1825,9 @@ namespace La_Forma_Delle_Stelle
                                             await uda_server_communication.Server_Request(parentForm.wait_data());
                                             break;
                                         }
-                                        break;
                                 }
+                                if(status==11 || status==12)
+                                System.Diagnostics.Process.GetCurrentProcess().Kill();
                             }
                             break;
                         }
