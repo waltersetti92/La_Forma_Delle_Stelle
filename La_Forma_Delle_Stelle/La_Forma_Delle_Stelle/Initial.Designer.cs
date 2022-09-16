@@ -47,11 +47,12 @@
             this.labLuda.Size = new System.Drawing.Size(744, 188);
             this.labLuda.TabIndex = 4;
             this.labLuda.Text = "STARGATE";
+            this.labLuda.UseWaitCursor = true;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::La_Forma_Delle_Stelle.Properties.Resources.star;
-            this.pictureBox2.Location = new System.Drawing.Point(1042, 422);
+            this.pictureBox2.Location = new System.Drawing.Point(1042, 418);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(136, 118);

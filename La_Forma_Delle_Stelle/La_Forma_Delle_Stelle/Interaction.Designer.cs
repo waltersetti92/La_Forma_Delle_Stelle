@@ -259,7 +259,7 @@
             this.lbl_Phecda.AutoSize = true;
             this.lbl_Phecda.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Phecda.ForeColor = System.Drawing.Color.Gold;
-            this.lbl_Phecda.Location = new System.Drawing.Point(908, 635);
+            this.lbl_Phecda.Location = new System.Drawing.Point(832, 631);
             this.lbl_Phecda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Phecda.Name = "lbl_Phecda";
             this.lbl_Phecda.Size = new System.Drawing.Size(191, 57);
@@ -269,7 +269,7 @@
             // star7
             // 
             this.star7.Image = global::La_Forma_Delle_Stelle.Properties.Resources.star;
-            this.star7.Location = new System.Drawing.Point(948, 528);
+            this.star7.Location = new System.Drawing.Point(867, 523);
             this.star7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.star7.Name = "star7";
             this.star7.Size = new System.Drawing.Size(120, 103);
@@ -372,7 +372,7 @@
             this.lbl_outoftime.AutoSize = true;
             this.lbl_outoftime.Font = new System.Drawing.Font("Segoe Script", 60F, System.Drawing.FontStyle.Bold);
             this.lbl_outoftime.ForeColor = System.Drawing.Color.Red;
-            this.lbl_outoftime.Location = new System.Drawing.Point(360, 462);
+            this.lbl_outoftime.Location = new System.Drawing.Point(366, 342);
             this.lbl_outoftime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_outoftime.Name = "lbl_outoftime";
             this.lbl_outoftime.Size = new System.Drawing.Size(1373, 199);
