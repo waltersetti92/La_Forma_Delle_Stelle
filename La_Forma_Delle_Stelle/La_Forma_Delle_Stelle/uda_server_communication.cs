@@ -24,8 +24,8 @@ namespace La_Forma_Delle_Stelle
         public static int[] explorers;
         public static int turno;
         public static int indizio;
-        public static string server_url = "https://luda.nixo.xyz/";
-        //public static string server_url = "http://192.168.10.1/luda02/"; //in area mettere questo
+        //public static string server_url = "https://luda.nixo.xyz/";
+        public static string server_url = "http://192.168.10.1/luda02/"; //in area mettere questo
         public uda_server_communication()
         {
         }

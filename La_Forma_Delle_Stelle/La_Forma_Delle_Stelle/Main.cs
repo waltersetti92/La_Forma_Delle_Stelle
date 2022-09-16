@@ -19,7 +19,6 @@ namespace La_Forma_Delle_Stelle
         public static readonly string resourcesPath = Path.GetDirectoryName(Application.ExecutablePath) + "\\resources";
         private const string background_image = "Cielo_Stellato.png";
         private UserControl currUC = null;
-
         public SoundPlayer player = null;
         public string activity_form;
         public string idle_status;
@@ -34,6 +33,7 @@ namespace La_Forma_Delle_Stelle
         public int seconds1;
         public int minutes1;
         public bool ShouldPause = true;
+        public int onactivity;
         public int contatore_iniziale = 0;
         public string MPV = resourcesPath + "\\" + "mpv.com";
         public string initial_video = Path.GetDirectoryName(Application.ExecutablePath) + "\\..\\..\\..\\..\\..\\Video_GAMES\\La_Forma_Delle_Stelle\\iniziale.mov";
@@ -91,6 +91,10 @@ namespace La_Forma_Delle_Stelle
             home();
 
         }
+        public void closemessage()
+        {
+
+        }
        static void OnProcessExit(object sender, EventArgs e)
         {
             //System.Diagnostics.Debug.WriteLine("ciao");
@@ -123,8 +127,7 @@ namespace La_Forma_Delle_Stelle
 
                 }
                 if (status == 6)
-                {
-                    
+                {                    
                     ursa1.Visible = false;
                     video_reproduction(initial_video);
                     interaction1.resetOperations();
@@ -158,12 +161,6 @@ namespace La_Forma_Delle_Stelle
 
         public void Abort_UDA()
         {
-            //await uda_server_communication.Server_Request(idle_status);
-            //if (currUC != null) currUC.Visible = false;
-            //initial1.Show();
-           // this.Visible = false;
-            //interaction1.Visible = false;
-            //currUC = initial1;
             while (true)
             {
                 string k = activity_form;
@@ -171,7 +168,6 @@ namespace La_Forma_Delle_Stelle
                 if (status == 11 || status == 12)
                 {
                     System.Diagnostics.Process.GetCurrentProcess().Kill();
-                    // Environment.Exit(0);
                     break;
                 }
             }
@@ -207,9 +203,8 @@ namespace La_Forma_Delle_Stelle
                 int status = int.Parse(k);
                 if (status == 11 || status == 12)
                 {
-                    Application.Exit();
+                    System.Diagnostics.Process.GetCurrentProcess().Kill();
                     ursa1.Visible = false;
-                    Environment.Exit(0);
                 }
                 if (status == 13)
                 {
@@ -219,12 +214,8 @@ namespace La_Forma_Delle_Stelle
                     break;
                 }
                 currUC = ursa1;
-                //playbackResourceAudio("clapping");
                 ursa1.Ursa_Final();         
-                //this.Update();
                 ursa1.indizio();
-                //Thread.Sleep(3000);
-    
                 break;
             }
 
@@ -240,9 +231,8 @@ namespace La_Forma_Delle_Stelle
                 int status = int.Parse(k);
                 if (status == 11 || status == 12)
                 {
-                    Application.Exit();
+                    System.Diagnostics.Process.GetCurrentProcess().Kill();
                     ursa1.Visible = false;
-                    Environment.Exit(0);
                 }
                 if (status == 13)
                 {
