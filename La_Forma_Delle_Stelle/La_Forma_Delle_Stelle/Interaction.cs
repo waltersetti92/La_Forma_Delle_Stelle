@@ -36,12 +36,12 @@ namespace La_Forma_Delle_Stelle
 
         public async void PutStarted()
         {
-            await uda_server_communication.Server_Request("api/uda/put/?i=1&k=7&data=" + parentForm.data_start);
+            await uda_server_communication.Server_Request("api/uda/put/?i=3&k=7&data=" + parentForm.data_start);
 
         }
         public async void Putwaitdata()
         {
-            await uda_server_communication.Server_Request("api/uda/put/?i=1&k=14&data=" + parentForm.data_start);
+            await uda_server_communication.Server_Request("api/uda/put/?i=3&k=14&data=" + parentForm.data_start);
 
         }
         public Interaction()
@@ -49,9 +49,9 @@ namespace La_Forma_Delle_Stelle
             InitializeComponent();
             correct_answers = 0;
             resetOperations();
-            get_status_uda = "api/uda/get/?i=1";
-           // put_started = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=1&k=7";
-            //put_wait_data = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=1&k=14" + "&data=" + "{\"question\": \"Inserisci il risultato corretto\", \"input_type\":\"\"}";
+            get_status_uda = "api/uda/get/?i=3";
+           // put_started = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=3&k=7";
+            //put_wait_data = "https://www.sagosoft.it/_API_/cpim/luda/www/luda_20210111_1500//api/uda/put/?i=3&k=14" + "&data=" + "{\"question\": \"Inserisci il risultato corretto\", \"input_type\":\"\"}";
  
         }
 

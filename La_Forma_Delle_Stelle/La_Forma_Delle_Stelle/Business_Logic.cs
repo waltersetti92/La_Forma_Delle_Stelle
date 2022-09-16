@@ -39,7 +39,7 @@ namespace La_Forma_Delle_Stelle
         }
         public async void New_Status_UDA(object source, ElapsedEventArgs e)
         {
-            string get_status_uda = "api/uda/get/?i=1";  // url per ottenere lo stato dell'UDA  
+            string get_status_uda = "api/uda/get/?i=3";  // url per ottenere lo stato dell'UDA  
             try
             {
                 string uda_status = await uda_server_communication.Server_Request(get_status_uda); //stato dell'UDA ottenuto con la classe UDA_server_communication
@@ -99,9 +99,9 @@ namespace La_Forma_Delle_Stelle
             if (ik >= 0 && ik < 20)
             {
                 if (ik == 11 || ik == 8)
-                    return "/api/uda/put/?i=1" + "&k=" + ik1.ToString() + "&data=" + mn.data_start;
+                    return "/api/uda/put/?i=3" + "&k=" + ik1.ToString() + "&data=" + mn.data_start;
                 else if (ik == 6)
-                    return "/api/uda/put/?i=1" + "&k=" + ik1.ToString() + "&data=" + mn.data_start;
+                    return "/api/uda/put/?i=3" + "&k=" + ik1.ToString() + "&data=" + mn.data_start;
                 else if (ik == 10 && mn.contatore_iniziale==1)
                 {
                     int[] can_answer;
@@ -121,12 +121,12 @@ namespace La_Forma_Delle_Stelle
                     request.Add("can_answer", can_answer);
 
                     string data = JsonConvert.SerializeObject(request);
-                    return "api/uda/put/?i=1&k=14&data=" + data;
+                    return "api/uda/put/?i=3&k=14&data=" + data;
                 }
                 else if (ik == 10 && mn.contatore_iniziale == 0)
-                return "/api/uda/put/?i=1" + "&k=7" + "&data=" + mn.data_start;
+                return "/api/uda/put/?i=3" + "&k=7" + "&data=" + mn.data_start;
                 else
-                    return "/api/uda/put/?i=1" + "&k=" + ik.ToString();
+                    return "/api/uda/put/?i=3" + "&k=" + ik.ToString();
             }
 
             else

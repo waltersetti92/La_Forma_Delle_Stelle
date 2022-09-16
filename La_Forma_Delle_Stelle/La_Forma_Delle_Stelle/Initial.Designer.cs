@@ -41,7 +41,7 @@
             this.labLuda.BackColor = System.Drawing.Color.Transparent;
             this.labLuda.Font = new System.Drawing.Font("Segoe Script", 57F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labLuda.ForeColor = System.Drawing.Color.Lime;
-            this.labLuda.Location = new System.Drawing.Point(469, 114);
+            this.labLuda.Location = new System.Drawing.Point(693, 152);
             this.labLuda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labLuda.Name = "labLuda";
             this.labLuda.Size = new System.Drawing.Size(744, 188);
@@ -83,7 +83,7 @@
             this.Location = new System.Drawing.Point(200, 200);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Initial";
-            this.Size = new System.Drawing.Size(1217, 831);
+            this.Size = new System.Drawing.Size(1441, 831);
             this.Load += new System.EventHandler(this.Initial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

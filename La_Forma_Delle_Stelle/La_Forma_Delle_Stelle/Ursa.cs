@@ -19,7 +19,7 @@ namespace La_Forma_Delle_Stelle
         public Ursa()
         {
             InitializeComponent();
-            completed = "api/uda/put/?i=1&k=16";
+            completed = "api/uda/put/?i=3&k=16";
             contatore_ts = 5;
         }
         public  void setPos(int w, int h)
@@ -100,7 +100,7 @@ namespace La_Forma_Delle_Stelle
         }
         public async void PutStarted()
         {
-            await uda_server_communication.Server_Request("api/uda/put/?i=1&k=7&data=" + parentForm.data_start);
+            await uda_server_communication.Server_Request("api/uda/put/?i=3&k=7&data=" + parentForm.data_start);
 
         }
         public void Ursa_Final()

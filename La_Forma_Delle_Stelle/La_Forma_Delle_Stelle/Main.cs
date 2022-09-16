@@ -58,7 +58,7 @@ namespace La_Forma_Delle_Stelle
             request.Add("can_answer", can_answer);
 
             string data = JsonConvert.SerializeObject(request);
-            return "api/uda/put/?i=1&k=14&data=" + data;
+            return "api/uda/put/?i=3&k=14&data=" + data;
         }
         private void init()
         {
@@ -81,10 +81,10 @@ namespace La_Forma_Delle_Stelle
         {
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
             InitializeComponent();
-            started_uda = "api/uda/put/?i=1&k=7" + "&data=" + data_start;
+            started_uda = "api/uda/put/?i=3&k=7" + "&data=" + data_start;
             //started_uda =  url_luda + "api/uda/put/?i=3&k=7";
             //get_data_uda = "api/uda/get/?i=3";
-            idle_status = "api/uda/put/?i=1&k=0";
+            idle_status = "api/uda/put/?i=3&k=0";
             BL = new Business_Logic(this);
 
             init();
