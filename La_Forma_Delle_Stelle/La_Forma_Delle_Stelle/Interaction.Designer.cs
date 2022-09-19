@@ -98,6 +98,7 @@
             this.lbl_minutes.Size = new System.Drawing.Size(182, 74);
             this.lbl_minutes.TabIndex = 2;
             this.lbl_minutes.Text = "00:00";
+            this.lbl_minutes.Click += new System.EventHandler(this.lbl_minutes_Click);
             // 
             // timer2
             // 
@@ -270,7 +271,7 @@
             // 
             this.lbl_outoftime.AutoSize = true;
             this.lbl_outoftime.Font = new System.Drawing.Font("Segoe Script", 60F, System.Drawing.FontStyle.Bold);
-            this.lbl_outoftime.ForeColor = System.Drawing.Color.Red;
+            this.lbl_outoftime.ForeColor = System.Drawing.Color.DarkRed;
             this.lbl_outoftime.Location = new System.Drawing.Point(323, 266);
             this.lbl_outoftime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_outoftime.Name = "lbl_outoftime";

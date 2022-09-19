@@ -537,7 +537,7 @@ namespace La_Forma_Delle_Stelle
         public void Correct_Answer()
         {
             parentForm.playbackResourceAudio("success");
-            Feedback.ForeColor = Color.Lime;
+            Feedback.ForeColor = Color.Yellow;
             Feedback.Visible = true;
             Feedback.Text = "RISPOSTA CORRETTA";
             this.Update();
@@ -548,7 +548,7 @@ namespace La_Forma_Delle_Stelle
         public void Wrong_Answer()
         {
             parentForm.playbackResourceAudio("failure");
-            Feedback.ForeColor = Color.Red;
+            Feedback.ForeColor = Color.DarkRed;
             Feedback.Visible = true;
             Feedback.Text = "RISPOSTA SBAGLIATA";
             this.Update();
@@ -622,8 +622,6 @@ namespace La_Forma_Delle_Stelle
                         timerLabel.Hide();
                         this.timer1.Stop();
                         int timerl = parentForm.timeleft1--;
-                        // timerLabel.Text = timerl.ToString();
-                      
                         this.Update();
                         timer_game = 1;
                         timer2.Enabled = true;
@@ -632,11 +630,8 @@ namespace La_Forma_Delle_Stelle
                         circles();
                     }
                     break;
-                }
-               
-            }
-
-           
+                }               
+            }           
         }
         public async void star_1_appaerance()
         {
@@ -664,9 +659,9 @@ namespace La_Forma_Delle_Stelle
                     lbl_Alkaid.Visible = true;
                     this.Update();
                     circles();
+                    break;
                 }
                 Thread.Sleep(400);
-               // break;
             }
             
         }
@@ -697,9 +692,9 @@ namespace La_Forma_Delle_Stelle
                     lbl_Mizar.Visible = true;
                     this.Update();
                     circles();
+                    break;
                 }
                 Thread.Sleep(400);
-                // break;
             }
 
         }
@@ -730,9 +725,9 @@ namespace La_Forma_Delle_Stelle
                     lbl_alioth.Visible = true;
                     this.Update();
                     circles();
+                    break;
                 }
                 Thread.Sleep(400);
-                // break;
             }
 
         }
@@ -764,9 +759,9 @@ namespace La_Forma_Delle_Stelle
                     lbl_Megrez.Visible = true;
                     this.Update();
                     circles();
+                    break;
                 }
                 Thread.Sleep(400);
-                // break;
             }
 
         }
@@ -797,9 +792,10 @@ namespace La_Forma_Delle_Stelle
                     lbl_Dubhe.Visible = true;
                     this.Update();
                     circles();
+                    break;
                 }
                 Thread.Sleep(400);
-                // break;
+
             }
 
         }
@@ -830,9 +826,10 @@ namespace La_Forma_Delle_Stelle
                     lbl_Merak.Visible = true;
                     this.Update();
                     circles();
+                    break;
                 }
                 Thread.Sleep(400);
-                // break;
+            
             }
 
         }
@@ -862,6 +859,7 @@ namespace La_Forma_Delle_Stelle
                     lbl_Phecda.Visible = true;
                     this.Update();
                     circles();
+                    break;
                 }
                 Thread.Sleep(400);
                 // break;
@@ -1808,9 +1806,9 @@ namespace La_Forma_Delle_Stelle
             int seconds = total_seconds - (minutes * 60);
             if (total_seconds <= 5)
             {
-                this.lbl_minutes.ForeColor = Color.Red;
+                this.lbl_minutes.ForeColor = Color.DarkRed;
             } else {
-                this.lbl_minutes.ForeColor = Color.White;
+                this.lbl_minutes.ForeColor = Color.Yellow;
             }
             if (seconds >= 10)
                 this.lbl_minutes.Text = minutes.ToString() + ":" + seconds.ToString();
@@ -1823,7 +1821,7 @@ namespace La_Forma_Delle_Stelle
             if (i == 1)
             {
                 Correct_Answer();
-                //PutStarted();
+                PutStarted();
                 parentForm.round_correct1 = 1;
                 parentForm.number_star1++;
                 parentForm.correct_answers1++;
@@ -1833,7 +1831,7 @@ namespace La_Forma_Delle_Stelle
             else if (i==0)
             {
                 Wrong_Answer();
-              // PutStarted();
+                PutStarted();
                 Feedback.Visible = false;
                 parentForm.round_correct1++;
                 if (parentForm.round_correct1 == 5)
@@ -1912,6 +1910,11 @@ namespace La_Forma_Delle_Stelle
             parentForm.activity();
             //parentForm.playbackResourceAudio("clapping1");
             
+        }
+
+        private void lbl_minutes_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

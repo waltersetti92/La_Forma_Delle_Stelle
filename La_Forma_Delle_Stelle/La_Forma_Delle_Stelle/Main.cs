@@ -25,8 +25,8 @@ namespace La_Forma_Delle_Stelle
         public string data_start;
         public string started_uda;
         public static System.Diagnostics.Process proc;
-        public int turno;
-         public int number_star1;
+        public int turno = -1;
+        public int number_star1;
         public int round_correct1 ;
         public int correct_answers1;
         public int timeleft1;
@@ -35,12 +35,14 @@ namespace La_Forma_Delle_Stelle
         public bool ShouldPause = true;
         public int onactivity;
         public int contatore_iniziale = 0;
+        public int contatore_abort = 0;
         public string MPV = resourcesPath + "\\" + "mpv.com";
         public string initial_video = Path.GetDirectoryName(Application.ExecutablePath) + "\\..\\..\\..\\..\\..\\Video_GAMES\\La_Forma_Delle_Stelle\\iniziale.mov";
 
         private Business_Logic BL;
         public string wait_data()
         {
+            turno += 1;
             int[] can_answer;
             if (uda_server_communication.explorers.Length == 0)
             {
@@ -50,8 +52,7 @@ namespace La_Forma_Delle_Stelle
             {
                 can_answer = new int[] { uda_server_communication.explorers[
                     turno % uda_server_communication.explorers.Length] };
-            }
-            turno += 1;
+            }          
             Dictionary<String, object> request = new Dictionary<String, object>();
             request.Add("question", "Inserisci il numero comune ai due cerchi");
             request.Add("input_type", 0);
@@ -136,13 +137,13 @@ namespace La_Forma_Delle_Stelle
                     onStart(activity_form);
                 }
 
-                if (status == 11 || status == 12)
+                if ((status == 11 || status == 12) && contatore_abort == 0)
                 {
-
-                    System.Diagnostics.Process.GetCurrentProcess().Kill();
-
-
+                    BL.Url_Put("5");
+                    Thread.Sleep(500);
                 }
+                if ((status == 11 || status == 12) && contatore_abort == 1)
+                    System.Diagnostics.Process.GetCurrentProcess().Kill();
                 if (status == 8)
                 {
 
