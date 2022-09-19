@@ -58,6 +58,7 @@ namespace La_Forma_Delle_Stelle
                         lbl_Error.Text = "ECCO L'INDIZIO!";
                         lbl_Error.Visible = true;
                         parentForm.playbackResourceAudio("success");
+                        Thread.Sleep(2000);
                         this.Update();
                         break;
                     }
@@ -70,7 +71,7 @@ namespace La_Forma_Delle_Stelle
             star_invisible();
             await uda_server_communication.Server_Request(completed);
             Image_Indizio(uda_server_communication.indizio + "_" + uda_server_communication.turno);
-            Thread.Sleep(2000);
+            
         }
         public void reset_operations()
         {
@@ -168,10 +169,10 @@ namespace La_Forma_Delle_Stelle
                     {
                         PutStarted();
                     }
-                    contatore_ts--;
-                    Thread.Sleep(1000);
+                    contatore_ts--;                    
                 }
             }
+            Thread.Sleep(7000);
             contatore_ts = 5;
         }
         public void star_invisible()

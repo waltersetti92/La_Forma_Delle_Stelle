@@ -46,6 +46,8 @@
             this.lbl_Dubhe = new System.Windows.Forms.Label();
             this.lbl_Merak = new System.Windows.Forms.Label();
             this.lbl_Phecda = new System.Windows.Forms.Label();
+            this.lbl_outoftime = new System.Windows.Forms.Label();
+            this.Feedback = new System.Windows.Forms.Label();
             this.star7 = new System.Windows.Forms.PictureBox();
             this.star6 = new System.Windows.Forms.PictureBox();
             this.star5 = new System.Windows.Forms.PictureBox();
@@ -55,8 +57,6 @@
             this.star1 = new System.Windows.Forms.PictureBox();
             this.Circle2 = new System.Windows.Forms.PictureBox();
             this.Circle1 = new System.Windows.Forms.PictureBox();
-            this.lbl_outoftime = new System.Windows.Forms.Label();
-            this.Feedback = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.star7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star5)).BeginInit();
@@ -72,7 +72,7 @@
             // 
             this.timerLabel.AutoSize = true;
             this.timerLabel.Font = new System.Drawing.Font("Segoe Script", 150F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timerLabel.ForeColor = System.Drawing.Color.Lime;
+            this.timerLabel.ForeColor = System.Drawing.Color.Yellow;
             this.timerLabel.Location = new System.Drawing.Point(838, 274);
             this.timerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.timerLabel.Name = "timerLabel";
@@ -109,7 +109,7 @@
             this.op1.AutoSize = true;
             this.op1.BackColor = System.Drawing.Color.Transparent;
             this.op1.Font = new System.Drawing.Font("Segoe Script", 47.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.op1.ForeColor = System.Drawing.Color.Lime;
+            this.op1.ForeColor = System.Drawing.Color.Yellow;
             this.op1.Location = new System.Drawing.Point(330, 194);
             this.op1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.op1.Name = "op1";
@@ -122,7 +122,7 @@
             this.op2.AutoSize = true;
             this.op2.BackColor = System.Drawing.Color.Transparent;
             this.op2.Font = new System.Drawing.Font("Segoe Script", 47.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.op2.ForeColor = System.Drawing.Color.Lime;
+            this.op2.ForeColor = System.Drawing.Color.Yellow;
             this.op2.Location = new System.Drawing.Point(152, 383);
             this.op2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.op2.Name = "op2";
@@ -135,7 +135,7 @@
             this.op3.AutoSize = true;
             this.op3.BackColor = System.Drawing.Color.Transparent;
             this.op3.Font = new System.Drawing.Font("Segoe Script", 47.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.op3.ForeColor = System.Drawing.Color.Lime;
+            this.op3.ForeColor = System.Drawing.Color.Yellow;
             this.op3.Location = new System.Drawing.Point(152, 598);
             this.op3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.op3.Name = "op3";
@@ -148,7 +148,7 @@
             this.op4.AutoSize = true;
             this.op4.BackColor = System.Drawing.Color.Transparent;
             this.op4.Font = new System.Drawing.Font("Segoe Script", 47.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.op4.ForeColor = System.Drawing.Color.Lime;
+            this.op4.ForeColor = System.Drawing.Color.Yellow;
             this.op4.Location = new System.Drawing.Point(1164, 203);
             this.op4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.op4.Name = "op4";
@@ -161,7 +161,7 @@
             this.op5.AutoSize = true;
             this.op5.BackColor = System.Drawing.Color.Transparent;
             this.op5.Font = new System.Drawing.Font("Segoe Script", 47.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.op5.ForeColor = System.Drawing.Color.Lime;
+            this.op5.ForeColor = System.Drawing.Color.Yellow;
             this.op5.Location = new System.Drawing.Point(1176, 383);
             this.op5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.op5.Name = "op5";
@@ -174,7 +174,7 @@
             this.op6.AutoSize = true;
             this.op6.BackColor = System.Drawing.Color.Transparent;
             this.op6.Font = new System.Drawing.Font("Segoe Script", 47.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.op6.ForeColor = System.Drawing.Color.Lime;
+            this.op6.ForeColor = System.Drawing.Color.Yellow;
             this.op6.Location = new System.Drawing.Point(1176, 581);
             this.op6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.op6.Name = "op6";
@@ -266,6 +266,30 @@
             this.lbl_Phecda.TabIndex = 27;
             this.lbl_Phecda.Text = "PHECDA";
             // 
+            // lbl_outoftime
+            // 
+            this.lbl_outoftime.AutoSize = true;
+            this.lbl_outoftime.Font = new System.Drawing.Font("Segoe Script", 60F, System.Drawing.FontStyle.Bold);
+            this.lbl_outoftime.ForeColor = System.Drawing.Color.Red;
+            this.lbl_outoftime.Location = new System.Drawing.Point(323, 266);
+            this.lbl_outoftime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_outoftime.Name = "lbl_outoftime";
+            this.lbl_outoftime.Size = new System.Drawing.Size(1373, 199);
+            this.lbl_outoftime.TabIndex = 28;
+            this.lbl_outoftime.Text = "TEMPO SCADUTO :(";
+            // 
+            // Feedback
+            // 
+            this.Feedback.AutoSize = true;
+            this.Feedback.Font = new System.Drawing.Font("Segoe Script", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Feedback.ForeColor = System.Drawing.Color.Gold;
+            this.Feedback.Location = new System.Drawing.Point(570, 931);
+            this.Feedback.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Feedback.Name = "Feedback";
+            this.Feedback.Size = new System.Drawing.Size(1440, 108);
+            this.Feedback.TabIndex = 30;
+            this.Feedback.Text = "CLICCA E SCOPRI LA COSTELLAZIONE!";
+            // 
             // star7
             // 
             this.star7.Image = global::La_Forma_Delle_Stelle.Properties.Resources.star;
@@ -345,8 +369,8 @@
             // 
             // Circle2
             // 
-            this.Circle2.Image = global::La_Forma_Delle_Stelle.Properties.Resources.Circle;
-            this.Circle2.Location = new System.Drawing.Point(1076, 115);
+            this.Circle2.Image = global::La_Forma_Delle_Stelle.Properties.Resources.Circle1;
+            this.Circle2.Location = new System.Drawing.Point(1072, 99);
             this.Circle2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Circle2.Name = "Circle2";
             this.Circle2.Size = new System.Drawing.Size(568, 678);
@@ -357,8 +381,8 @@
             // Circle1
             // 
             this.Circle1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Circle1.Image = global::La_Forma_Delle_Stelle.Properties.Resources.Circle;
-            this.Circle1.Location = new System.Drawing.Point(184, 115);
+            this.Circle1.Image = global::La_Forma_Delle_Stelle.Properties.Resources.Circle1;
+            this.Circle1.Location = new System.Drawing.Point(212, 99);
             this.Circle1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Circle1.Name = "Circle1";
             this.Circle1.Size = new System.Drawing.Size(568, 678);
@@ -366,30 +390,6 @@
             this.Circle1.TabIndex = 5;
             this.Circle1.TabStop = false;
             this.Circle1.Click += new System.EventHandler(this.Circle1_Click);
-            // 
-            // lbl_outoftime
-            // 
-            this.lbl_outoftime.AutoSize = true;
-            this.lbl_outoftime.Font = new System.Drawing.Font("Segoe Script", 60F, System.Drawing.FontStyle.Bold);
-            this.lbl_outoftime.ForeColor = System.Drawing.Color.Red;
-            this.lbl_outoftime.Location = new System.Drawing.Point(366, 342);
-            this.lbl_outoftime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_outoftime.Name = "lbl_outoftime";
-            this.lbl_outoftime.Size = new System.Drawing.Size(1373, 199);
-            this.lbl_outoftime.TabIndex = 28;
-            this.lbl_outoftime.Text = "TEMPO SCADUTO :(";
-            // 
-            // Feedback
-            // 
-            this.Feedback.AutoSize = true;
-            this.Feedback.Font = new System.Drawing.Font("Segoe Script", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Feedback.ForeColor = System.Drawing.Color.Gold;
-            this.Feedback.Location = new System.Drawing.Point(570, 931);
-            this.Feedback.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Feedback.Name = "Feedback";
-            this.Feedback.Size = new System.Drawing.Size(1440, 108);
-            this.Feedback.TabIndex = 30;
-            this.Feedback.Text = "CLICCA E SCOPRI LA COSTELLAZIONE!";
             // 
             // Interaction
             // 

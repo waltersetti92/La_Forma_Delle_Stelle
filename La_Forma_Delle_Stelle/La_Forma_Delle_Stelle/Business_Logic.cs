@@ -64,7 +64,6 @@ namespace La_Forma_Delle_Stelle
                         mn.minutes1 = 5; //qui va 5
                         put_server = Url_Put("5"); // creo la stringa per il put al server che notifica il cambio di stato dell'UDA
                         firststart = false;
-
                     }
                     else
                     {
@@ -104,6 +103,7 @@ namespace La_Forma_Delle_Stelle
                     return "/api/uda/put/?i=3" + "&k=" + ik1.ToString() + "&data=" + mn.data_start;
                 else if (ik == 10 && mn.contatore_iniziale==1)
                 {
+                  // return  mn.wait_data();
                     int[] can_answer;
                     if (uda_server_communication.explorers.Length == 0)
                     {
@@ -113,8 +113,10 @@ namespace La_Forma_Delle_Stelle
                     {
                         can_answer = new int[] { uda_server_communication.explorers[
                     mn.turno % uda_server_communication.explorers.Length] };
+                       
                     }
-                    mn.turno += 1;
+                    //
+                    //mn.turno= mn.turno +1;
                     Dictionary<String, object> request = new Dictionary<String, object>();
                     request.Add("question", "Inserisci il numero comune ai due cerchi");
                     request.Add("input_type", 0);

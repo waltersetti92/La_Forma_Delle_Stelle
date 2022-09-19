@@ -236,10 +236,7 @@ namespace La_Forma_Delle_Stelle
                 }
                 if (status == 13)
                 {
-                    this.Hide();
-                    ursa1.Visible = false;
-                    Abort_UDA();
-                    break;
+               
                 }
                 currUC = ursa1;
                 ursa1.indizio();
@@ -258,6 +255,17 @@ namespace La_Forma_Delle_Stelle
             initial1.setPos(size.Width, size.Height);
             interaction1.setPos(size.Width, size.Height);
             ursa1.setPos(size.Width, size.Height);
+           
+        }
+
+        private void activity1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ursa1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
