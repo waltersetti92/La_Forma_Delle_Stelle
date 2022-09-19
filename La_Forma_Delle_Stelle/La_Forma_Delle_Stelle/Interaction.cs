@@ -635,8 +635,239 @@ namespace La_Forma_Delle_Stelle
                 }
                
             }
+
+           
         }
-        
+        public async void star_1_appaerance()
+        {
+            while (true)
+            {
+                string k = parentForm.Status_Changed(parentForm.activity_form);
+                int status = int.Parse(k);
+                if (status != 9 && status != 8)
+                {
+                    if (status == 11 || status == 12)
+                    {
+                        System.Diagnostics.Process.GetCurrentProcess().Kill();
+                    }
+                    if (status == 10)
+                    {
+                        await uda_server_communication.Server_Request(parentForm.wait_data());
+                        star1.Visible = true;
+                        lbl_Alkaid.Visible = true;
+                        this.Update();
+                        circles();
+                        break;
+                    }
+                    await uda_server_communication.Server_Request(parentForm.wait_data());
+                    star1.Visible = true;
+                    lbl_Alkaid.Visible = true;
+                    this.Update();
+                    circles();
+                }
+                Thread.Sleep(400);
+               // break;
+            }
+            
+        }
+
+        public async void star_2_appaerance()
+        {
+            while (true)
+            {
+                string k = parentForm.Status_Changed(parentForm.activity_form);
+                int status = int.Parse(k);
+                if (status != 9 && status != 8)
+                {
+                    if (status == 11 || status == 12)
+                    {
+                        System.Diagnostics.Process.GetCurrentProcess().Kill();
+                    }
+                    if (status == 10)
+                    {
+                        await uda_server_communication.Server_Request(parentForm.wait_data());
+                        star2.Visible = true;
+                        lbl_Mizar.Visible = true;
+                        this.Update();
+                        circles();
+                        break;
+                    }
+                    await uda_server_communication.Server_Request(parentForm.wait_data());
+                    star2.Visible = true;
+                    lbl_Mizar.Visible = true;
+                    this.Update();
+                    circles();
+                }
+                Thread.Sleep(400);
+                // break;
+            }
+
+        }
+
+        public async void star_3_appaerance()
+        {
+            while (true)
+            {
+                string k = parentForm.Status_Changed(parentForm.activity_form);
+                int status = int.Parse(k);
+                if (status != 9 && status != 8)
+                {
+                    if (status == 11 || status == 12)
+                    {
+                        System.Diagnostics.Process.GetCurrentProcess().Kill();
+                    }
+                    if (status == 10)
+                    {
+                        await uda_server_communication.Server_Request(parentForm.wait_data());
+                        star3.Visible = true;
+                        lbl_alioth.Visible = true;
+                        this.Update();
+                        circles();
+                        break;
+                    }
+                    await uda_server_communication.Server_Request(parentForm.wait_data());
+                    star3.Visible = true;
+                    lbl_alioth.Visible = true;
+                    this.Update();
+                    circles();
+                }
+                Thread.Sleep(400);
+                // break;
+            }
+
+        }
+
+        public async void star_4_appaerance()
+        {
+            while (true)
+            {
+                string k = parentForm.Status_Changed(parentForm.activity_form);
+                int status = int.Parse(k);
+                if (status != 9 && status != 8)
+                {
+                    if (status == 11 || status == 12)
+                    {
+                        System.Diagnostics.Process.GetCurrentProcess().Kill();
+                    }
+                    if (status == 10)
+                    {
+                        await uda_server_communication.Server_Request(parentForm.wait_data());
+                       
+                        star4.Visible = true;
+                        lbl_Megrez.Visible = true;
+                        this.Update();
+                        circles();
+                        break;
+                    }
+                    await uda_server_communication.Server_Request(parentForm.wait_data());
+                    star4.Visible = true;
+                    lbl_Megrez.Visible = true;
+                    this.Update();
+                    circles();
+                }
+                Thread.Sleep(400);
+                // break;
+            }
+
+        }
+
+        public async void star_5_appaerance()
+        {
+            while (true)
+            {
+                string k = parentForm.Status_Changed(parentForm.activity_form);
+                int status = int.Parse(k);
+                if (status != 9 && status != 8)
+                {
+                    if (status == 11 || status == 12)
+                    {
+                        System.Diagnostics.Process.GetCurrentProcess().Kill();
+                    }
+                    if (status == 10)
+                    {
+                        await uda_server_communication.Server_Request(parentForm.wait_data());
+                        star5.Visible = true;
+                        lbl_Dubhe.Visible = true;
+                        this.Update();
+                        circles();
+                        break;
+                    }
+                    await uda_server_communication.Server_Request(parentForm.wait_data());
+                    star5.Visible = true;
+                    lbl_Dubhe.Visible = true;
+                    this.Update();
+                    circles();
+                }
+                Thread.Sleep(400);
+                // break;
+            }
+
+        }
+
+        public async void star_6_appaerance()
+        {
+            while (true)
+            {
+                string k = parentForm.Status_Changed(parentForm.activity_form);
+                int status = int.Parse(k);
+                if (status != 9 && status != 8)
+                {
+                    if (status == 11 || status == 12)
+                    {
+                        System.Diagnostics.Process.GetCurrentProcess().Kill();
+                    }
+                    if (status == 10)
+                    {
+                        await uda_server_communication.Server_Request(parentForm.wait_data());
+                        star6.Visible = true;
+                        lbl_Merak.Visible = true;
+                        this.Update();
+                        circles();
+                        break;
+                    }
+                    await uda_server_communication.Server_Request(parentForm.wait_data());
+                    star6.Visible = true;
+                    lbl_Merak.Visible = true;
+                    this.Update();
+                    circles();
+                }
+                Thread.Sleep(400);
+                // break;
+            }
+
+        }
+        public async void star_7_appaerance()
+        {
+            while (true)
+            {
+                string k = parentForm.Status_Changed(parentForm.activity_form);
+                int status = int.Parse(k);
+                if (status != 9 && status != 8)
+                {
+                    if (status == 11 || status == 12)
+                    {
+                        System.Diagnostics.Process.GetCurrentProcess().Kill();
+                    }
+                    if (status == 10)
+                    {
+                        await uda_server_communication.Server_Request(parentForm.wait_data());
+                        star7.Visible = true;
+                        lbl_Phecda.Visible = true;
+                        this.Update();
+                        circles();
+                        break;
+                    }
+                    await uda_server_communication.Server_Request(parentForm.wait_data());
+                    star7.Visible = true;
+                    lbl_Phecda.Visible = true;
+                    this.Update();
+                    circles();
+                }
+                Thread.Sleep(400);
+                // break;
+            }
+
+        }
 
         private async void timer2_Tick(object sender, EventArgs e)
         {
@@ -714,58 +945,38 @@ namespace La_Forma_Delle_Stelle
                                             {
 
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star1.Visible = true;
-                                                lbl_Alkaid.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_1_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "21") && parentForm.round_correct1 == 2 && control == 1)
                                             {
 
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star1.Visible = true;
-                                                lbl_Alkaid.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_1_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "17") && parentForm.round_correct1 == 3 && control == 1)
                                             {
 
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star1.Visible = true;
-                                                lbl_Alkaid.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_1_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "13") && parentForm.round_correct1 == 4 && control == 1)
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star1.Visible = true;
-                                                lbl_Alkaid.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_1_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "9") && parentForm.round_correct1 == 5 && control == 1)
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star1.Visible = true;
-                                                lbl_Alkaid.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_1_appaerance();
                                                 break;
                                             }
                                             else
@@ -779,12 +990,8 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star2.Visible = true;
-                                                lbl_Mizar.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_2_appaerance();   
                                                 break;
                                             }
                                             if (String.Equals(response, "8") && parentForm.round_correct1 == 2)
@@ -792,12 +999,8 @@ namespace La_Forma_Delle_Stelle
                                             {
 
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star2.Visible = true;
-                                                lbl_Mizar.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_2_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "15") && parentForm.round_correct1 == 3)
@@ -805,12 +1008,8 @@ namespace La_Forma_Delle_Stelle
                                             {
 
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star2.Visible = true;
-                                                lbl_Mizar.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_2_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "11") && parentForm.round_correct1 == 4)
@@ -818,12 +1017,8 @@ namespace La_Forma_Delle_Stelle
                                             {
 
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star2.Visible = true;
-                                                lbl_Mizar.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_2_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "10") && parentForm.round_correct1 == 5)
@@ -831,13 +1026,8 @@ namespace La_Forma_Delle_Stelle
                                             {
 
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star2.Visible = true;
-                                                this.Update();
-                                                lbl_Mizar.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_2_appaerance();
                                                 break;
                                             }
                                             else
@@ -851,60 +1041,40 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star3.Visible = true;
-                                                lbl_alioth.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_3_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "16") && parentForm.round_correct1 == 2)
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star3.Visible = true;
-                                                lbl_alioth.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_3_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "7") && parentForm.round_correct1 == 3)
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star3.Visible = true;
-                                                lbl_alioth.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_3_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "4") && parentForm.round_correct1 == 4)
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star3.Visible = true;
-                                                lbl_alioth.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_3_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "6") && parentForm.round_correct1 == 5)
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star3.Visible = true;
-                                                lbl_alioth.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_3_appaerance();
                                                 break;
                                             }
                                             else
@@ -918,56 +1088,36 @@ namespace La_Forma_Delle_Stelle
                                             if (String.Equals(response, "15") && parentForm.round_correct1 == 1)
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star4.Visible = true;
-                                                lbl_Megrez.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                               star_4_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "10") && parentForm.round_correct1 == 2)
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star4.Visible = true;
-                                                lbl_Megrez.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_4_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "8") && parentForm.round_correct1 == 3)
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star4.Visible = true;
-                                                lbl_Megrez.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_4_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "20") && parentForm.round_correct1 == 4)
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star4.Visible = true;
-                                                lbl_Megrez.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_4_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "12") && parentForm.round_correct1 == 5)
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star4.Visible = true;
-                                                lbl_Megrez.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_4_appaerance();
                                                 break;
                                             }
                                             else
@@ -980,60 +1130,40 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star5.Visible = true;
-                                                lbl_Dubhe.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_5_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "7") && parentForm.round_correct1 == 2)
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star5.Visible = true;
-                                                lbl_Dubhe.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_5_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "9") && parentForm.round_correct1 == 3)
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star5.Visible = true;
-                                                lbl_Dubhe.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_5_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "18") && parentForm.round_correct1 == 4)
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star5.Visible = true;
-                                                lbl_Dubhe.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_5_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "30") && parentForm.round_correct1 == 5)
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star5.Visible = true;
-                                                lbl_Dubhe.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_5_appaerance();
                                                 break;
                                             }
                                             else
@@ -1047,60 +1177,40 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star6.Visible = true;
-                                                lbl_Merak.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_6_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "6") && parentForm.round_correct1 == 2)
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star6.Visible = true;
-                                                lbl_Merak.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_6_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "14") && parentForm.round_correct1 == 3)
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star6.Visible = true;
-                                                lbl_Merak.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_6_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "24") && parentForm.round_correct1 == 4)
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star6.Visible = true;
-                                                lbl_Merak.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_6_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "45") && parentForm.round_correct1 == 5)
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star6.Visible = true;
-                                                lbl_Merak.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_6_appaerance();
                                                 break;
                                             }
                                             else
@@ -1113,12 +1223,8 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star7.Visible = true;
-                                                lbl_Phecda.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_7_appaerance();
                                                 Thread.Sleep(1000);
                                                 Feedback.ForeColor = Color.Gold;
                                                 Feedback.Visible = true;
@@ -1135,12 +1241,8 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star7.Visible = true;
-                                                lbl_Phecda.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_7_appaerance();
                                                 Thread.Sleep(1000);
                                                 Feedback.ForeColor = Color.Gold;
                                                 Feedback.Visible = true;
@@ -1158,12 +1260,8 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star7.Visible = true;
-                                                lbl_Phecda.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_7_appaerance();
                                                 Thread.Sleep(1000);
                                                 Feedback.ForeColor = Color.Gold;
                                                 Feedback.Visible = true;
@@ -1181,12 +1279,8 @@ namespace La_Forma_Delle_Stelle
                                             if (String.Equals(response, "16") && parentForm.round_correct1 == 4)
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star7.Visible = true;
-                                                lbl_Phecda.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_7_appaerance();
                                                 Thread.Sleep(1000);
                                                 Feedback.ForeColor = Color.Gold;
                                                 Feedback.Visible = true;
@@ -1206,12 +1300,8 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                                Thread.Sleep(1000);
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
-                                                star7.Visible = true;
-                                                lbl_Phecda.Visible = true;
-                                                this.Update();
-                                                circles();
+                                                Thread.Sleep(500);
+                                                star_7_appaerance();
                                                 Thread.Sleep(1000);
                                                 Feedback.ForeColor = Color.Gold;
                                                 Feedback.Visible = true;
@@ -1236,11 +1326,13 @@ namespace La_Forma_Delle_Stelle
 
                                 }
                             }
+                            Thread.Sleep(400);
                                 break;
                             }
                         
                         break;
                     }
+                    Thread.Sleep(400);
                 }
             }
 
@@ -1298,60 +1390,35 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star1.Visible = true;
-                                            this.Update();
-                                            lbl_Alkaid.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_1_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "21") && parentForm.round_correct1 == 2)
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star1.Visible = true;
-                                            this.Update();
-                                            lbl_Alkaid.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_1_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "17") && parentForm.round_correct1 == 3)
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star1.Visible = true;
-                                            this.Update();
-                                            lbl_Alkaid.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_1_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "13") && parentForm.round_correct1 == 4)
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star1.Visible = true;
-                                            this.Update();
-                                            lbl_Alkaid.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_1_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "9") && parentForm.round_correct1 == 5)
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star1.Visible = true;
-                                            this.Update();
-                                            lbl_Alkaid.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_1_appaerance();
                                             break;
                                         }
                                         else
@@ -1365,11 +1432,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star2.Visible = true;
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_2_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "8") && parentForm.round_correct1 == 2)
@@ -1377,11 +1440,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star2.Visible = true;
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_2_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "15") && parentForm.round_correct1 == 3)
@@ -1389,11 +1448,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star2.Visible = true;
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_2_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "11") && parentForm.round_correct1 == 4)
@@ -1401,11 +1456,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star2.Visible = true;
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_2_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "10") && parentForm.round_correct1 == 5)
@@ -1413,11 +1464,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star2.Visible = true;
-                                            lbl_Mizar.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_2_appaerance();
                                             break;
                                         }
                                         else
@@ -1433,11 +1480,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star3.Visible = true;
-                                            lbl_alioth.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_3_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "16") && parentForm.round_correct1 == 2)
@@ -1445,11 +1488,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star3.Visible = true;
-                                            lbl_alioth.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_3_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "7") && parentForm.round_correct1 == 3)
@@ -1457,11 +1496,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star3.Visible = true;
-                                            lbl_alioth.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_3_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "4") && parentForm.round_correct1 == 4)
@@ -1469,11 +1504,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star3.Visible = true;
-                                            lbl_alioth.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_3_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "6") && parentForm.round_correct1 == 5)
@@ -1481,11 +1512,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star3.Visible = true;
-                                            lbl_alioth.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_3_appaerance();
                                             break;
                                         }
                                         else
@@ -1499,60 +1526,35 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star4.Visible = true;
-                                            this.Update();
-                                            lbl_Megrez.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_4_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "10") && parentForm.round_correct1 == 2)
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star4.Visible = true;
-                                            this.Update();
-                                            lbl_Megrez.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_4_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "8") && parentForm.round_correct1 == 3)
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star4.Visible = true;
-                                            this.Update();
-                                            lbl_Megrez.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_4_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "20") && parentForm.round_correct1 == 4)
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star4.Visible = true;
-                                            this.Update();
-                                            lbl_Megrez.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_4_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "12") && parentForm.round_correct1 == 5)
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star4.Visible = true;
-                                            this.Update();
-                                            lbl_Megrez.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_4_appaerance();
                                             break;
                                         }
                                         else
@@ -1567,12 +1569,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star5.Visible = true;
-                                            this.Update();
-                                            lbl_Dubhe.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_5_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "7") && parentForm.round_correct1 == 2)
@@ -1580,12 +1577,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star5.Visible = true;
-                                            this.Update();
-                                            lbl_Dubhe.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_5_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "9") && parentForm.round_correct1 == 3)
@@ -1593,12 +1585,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star5.Visible = true;
-                                            this.Update();
-                                            lbl_Dubhe.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_5_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "18") && parentForm.round_correct1 == 4)
@@ -1606,12 +1593,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star5.Visible = true;
-                                            this.Update();
-                                            lbl_Dubhe.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_5_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "30") && parentForm.round_correct1 == 5)
@@ -1619,12 +1601,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star5.Visible = true;
-                                            this.Update();
-                                            lbl_Dubhe.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_5_appaerance();
                                             break;
                                         }
                                         else
@@ -1639,12 +1616,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star6.Visible = true;
-                                            this.Update();
-                                            lbl_Merak.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_6_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "6") && parentForm.round_correct1 == 2)
@@ -1652,12 +1624,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star6.Visible = true;
-                                            this.Update();
-                                            lbl_Merak.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_6_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "14") && parentForm.round_correct1 == 3)
@@ -1665,12 +1632,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star6.Visible = true;
-                                            this.Update();
-                                            lbl_Merak.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_6_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "24") && parentForm.round_correct1 == 4)
@@ -1678,12 +1640,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star6.Visible = true;
-                                            this.Update();
-                                            lbl_Merak.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_6_appaerance();
                                             break;
                                         }
                                         if (String.Equals(response, "45") && parentForm.round_correct1 == 5)
@@ -1691,12 +1648,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star6.Visible = true;
-                                            this.Update();
-                                            lbl_Merak.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_6_appaerance();
                                             break;
                                         }
                                         else
@@ -1711,12 +1663,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star7.Visible = true;
-                                            this.Update();
-                                            lbl_Phecda.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_7_appaerance();
                                             Thread.Sleep(1000);
                                             Feedback.ForeColor = Color.Gold;
                                             Feedback.Visible = true;
@@ -1736,12 +1683,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star7.Visible = true;
-                                            this.Update();
-                                            lbl_Phecda.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_7_appaerance();
                                             Thread.Sleep(1000);
                                             Feedback.ForeColor = Color.Gold;
                                             Feedback.Visible = true;
@@ -1762,12 +1704,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             answer(1);
                                             Thread.Sleep(2000);
-                                            await uda_server_communication.Server_Request(parentForm.wait_data());
-                                            star7.Visible = true;
-                                            this.Update();
-                                            lbl_Phecda.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_7_appaerance();
                                             Thread.Sleep(1000);
                                             Feedback.ForeColor = Color.Gold;
                                             Feedback.Visible = true;
@@ -1787,11 +1724,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             await uda_server_communication.Server_Request(parentForm.wait_data());
                                             answer(1);
-                                            star7.Visible = true;
-                                            this.Update();
-                                            lbl_Phecda.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_7_appaerance();
                                             Thread.Sleep(1000);
                                             Feedback.ForeColor = Color.Gold;
                                             Feedback.Visible = true;
@@ -1809,11 +1742,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             await uda_server_communication.Server_Request(parentForm.wait_data());
                                             answer(1);
-                                            star7.Visible = true;
-                                            this.Update();
-                                            lbl_Phecda.Visible = true;
-                                            this.Update();
-                                            circles();
+                                            star_7_appaerance();
                                             Thread.Sleep(1000);
                                             Feedback.ForeColor = Color.Gold;
                                             Feedback.Visible = true;
@@ -1836,7 +1765,7 @@ namespace La_Forma_Delle_Stelle
                                 if(status==11 || status==12)
                                 System.Diagnostics.Process.GetCurrentProcess().Kill();
                             }
-
+                            Thread.Sleep(400);
                             break;
                         }
                     }
@@ -1894,7 +1823,7 @@ namespace La_Forma_Delle_Stelle
             if (i == 1)
             {
                 Correct_Answer();
-               PutStarted();
+                //PutStarted();
                 parentForm.round_correct1 = 1;
                 parentForm.number_star1++;
                 parentForm.correct_answers1++;
@@ -1904,7 +1833,7 @@ namespace La_Forma_Delle_Stelle
             else if (i==0)
             {
                 Wrong_Answer();
-               PutStarted();
+              // PutStarted();
                 Feedback.Visible = false;
                 parentForm.round_correct1++;
                 if (parentForm.round_correct1 == 5)

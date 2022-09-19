@@ -116,7 +116,7 @@ namespace La_Forma_Delle_Stelle
                        
                     }
                     //
-                    //mn.turno= mn.turno +1;
+                    mn.turno= mn.turno +1;
                     Dictionary<String, object> request = new Dictionary<String, object>();
                     request.Add("question", "Inserisci il numero comune ai due cerchi");
                     request.Add("input_type", 0);

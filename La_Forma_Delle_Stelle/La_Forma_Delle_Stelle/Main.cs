@@ -203,6 +203,7 @@ namespace La_Forma_Delle_Stelle
                 int status = int.Parse(k);
                 if (status == 11 || status == 12)
                 {
+                    BL.Url_Put("5");
                     System.Diagnostics.Process.GetCurrentProcess().Kill();
                     ursa1.Visible = false;
                 }
@@ -233,6 +234,8 @@ namespace La_Forma_Delle_Stelle
                 {
                     System.Diagnostics.Process.GetCurrentProcess().Kill();
                     ursa1.Visible = false;
+                    BL.Url_Put("5");
+                   
                 }
                 if (status == 13)
                 {
