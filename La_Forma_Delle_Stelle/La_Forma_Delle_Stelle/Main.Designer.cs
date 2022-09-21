@@ -84,7 +84,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(146)))), ((int)(((byte)(207)))));
             this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.ursa1);
             this.Controls.Add(this.activity1);
