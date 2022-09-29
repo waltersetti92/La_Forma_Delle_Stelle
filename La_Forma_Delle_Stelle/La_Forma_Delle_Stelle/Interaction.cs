@@ -534,34 +534,74 @@ namespace La_Forma_Delle_Stelle
         {
             
         }
-        public void Correct_Answer()
+        public async void Correct_Answer()
         {
             parentForm.playbackResourceAudio("success");
             Feedback.ForeColor = Color.Yellow;
-            Feedback.Visible = true;
-            Feedback.Text = "RISPOSTA CORRETTA";
-            this.Update();
-            Thread.Sleep(2000);
-            Feedback.Text = "";
+            while (true)
+            {
+                string k = parentForm.Status_Changed(parentForm.activity_form);
+                int status = int.Parse(k);
+                if (status != 9 && status != 8)
+                {
+                    if (status == 11 || status == 12)
+                    {
+                        System.Diagnostics.Process.GetCurrentProcess().Kill();
+                    }
+                    if (status == 10)
+                    {
+                        PutStarted();
+                        break;
+                    }
+                    Feedback.Visible = true;
+                    Feedback.Text = "RISPOSTA CORRETTA";
+                    this.Update();
+                    Thread.Sleep(2000);
+                    Feedback.Text = "";
+                    break;
+                }
+                Thread.Sleep(400);
+            }
+           
            
         }
-        public void Wrong_Answer()
+        public async void Wrong_Answer()
         {
             parentForm.playbackResourceAudio("failure");
             Feedback.ForeColor = Color.DarkRed;
-            Feedback.Visible = true;
-            Feedback.Text = "RISPOSTA SBAGLIATA";
-            this.Update();
-            Thread.Sleep(2000);
-            Feedback.Text = "";
-            Feedback.Visible = false;
-            parentForm.round_correct1++;
-            if (parentForm.round_correct1 == 5)
+            while (true)
             {
-                parentForm.round_correct1 = 1;
+                string k = parentForm.Status_Changed(parentForm.activity_form);
+                int status = int.Parse(k);
+                if (status != 9 && status != 8)
+                {
+                    if (status == 11 || status == 12)
+                    {
+                        System.Diagnostics.Process.GetCurrentProcess().Kill();
+                    }
+                    if (status == 10)
+                    {
+                       PutStarted();
+                        break;
+                    }
+                    Feedback.Visible = true;
+                    Feedback.Text = "RISPOSTA SBAGLIATA";
+                    this.Update();
+                    Thread.Sleep(2000);
+                    Feedback.Text = "";
+                    Feedback.Visible = false;
+                    parentForm.round_correct1++;
+                    if (parentForm.round_correct1 == 5)
+                    {
+                        parentForm.round_correct1 = 1;
+                    }
+                    circles();
+                    timer2.Start();
+                    break;
+                }
+                Thread.Sleep(400);
             }
-            circles();
-            timer2.Start();
+           
         }
 
         private async void timer1_Tick(object sender, EventArgs e)
@@ -980,7 +1020,7 @@ namespace La_Forma_Delle_Stelle
                                             else
                                             {
                                                 Wrong_Answer();
-                                                await uda_server_communication.Server_Request(parentForm.wait_data());
+                                               await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 break;
                                             }
                                         case 2:
@@ -1031,6 +1071,7 @@ namespace La_Forma_Delle_Stelle
                                             else
                                             {
                                                 Wrong_Answer();
+
                                                 await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 break;
                                             }
@@ -1078,6 +1119,7 @@ namespace La_Forma_Delle_Stelle
                                             else
                                             {
                                                 Wrong_Answer();
+                                                
                                                 await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 break;
                                             }
@@ -1121,6 +1163,7 @@ namespace La_Forma_Delle_Stelle
                                             else
                                             {
                                                 Wrong_Answer();
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 break;
                                             }
                                         case 5:
@@ -1214,6 +1257,7 @@ namespace La_Forma_Delle_Stelle
                                             else
                                             {
                                                 Wrong_Answer();
+                                                await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 break;
                                             }
                                         case 7:
@@ -1820,26 +1864,66 @@ namespace La_Forma_Delle_Stelle
         {
             if (i == 1)
             {
-                Correct_Answer();
-                PutStarted();
-                parentForm.round_correct1 = 1;
-                parentForm.number_star1++;
-                parentForm.correct_answers1++;
-                Feedback.Visible = false;
-                parentForm.onStart(parentForm.activity_form);           
+                while (true)
+                {
+                    string k = parentForm.Status_Changed(parentForm.activity_form);
+                    int status = int.Parse(k);
+                    if (status != 9 && status != 8)
+                    {
+                        if (status == 11 || status == 12)
+                        {
+                            System.Diagnostics.Process.GetCurrentProcess().Kill();
+                        }
+                        if (status == 10)
+                        {
+                            await uda_server_communication.Server_Request(parentForm.wait_data());
+                            break;
+                        }
+                        Correct_Answer();
+                        parentForm.round_correct1 = 1;
+                        parentForm.number_star1++;
+                        parentForm.correct_answers1++;
+                        Feedback.Visible = false;
+                        parentForm.onStart(parentForm.activity_form);
+                        break;
+                    }
+                    Thread.Sleep(400);
+                }
+                 
             }
             else if (i==0)
             {
-                Wrong_Answer();
-                PutStarted();
-                Feedback.Visible = false;
-                parentForm.round_correct1++;
-                if (parentForm.round_correct1 == 5)
+                while (true)
                 {
-                    parentForm.round_correct1 = 1;
-                } 
-                circles();
-                timer2.Start();
+                    string k = parentForm.Status_Changed(parentForm.activity_form);
+                    int status = int.Parse(k);
+                    if (status != 9 && status != 8)
+                    {
+                        if (status == 11 || status == 12)
+                        {
+                            System.Diagnostics.Process.GetCurrentProcess().Kill();
+                        }
+                        if (status == 10)
+                        {
+                            await uda_server_communication.Server_Request(parentForm.wait_data());
+                            break;
+                        }
+                        Wrong_Answer();
+                        // PutStarted();
+                        Feedback.Visible = false;
+                        parentForm.round_correct1++;
+                        if (parentForm.round_correct1 == 5)
+                        {
+                            parentForm.round_correct1 = 1;
+                        }
+                        circles();
+                        timer2.Start();
+                        break;
+                    }
+                    Thread.Sleep(400);
+                }
+
+                
             }
         }
         public void final_scenario_time()
