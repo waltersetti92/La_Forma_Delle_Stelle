@@ -69,7 +69,7 @@ namespace La_Forma_Delle_Stelle
         public async void indizio()
         {
             star_invisible();
-            await uda_server_communication.Server_Request(completed);
+            //await uda_server_communication.Server_Request(completed);
             Image_Indizio(uda_server_communication.indizio + "_" + uda_server_communication.turno);
             
         }
