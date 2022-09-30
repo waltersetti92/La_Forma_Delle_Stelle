@@ -22,8 +22,8 @@ namespace La_Forma_Delle_Stelle
         public int counter_responses = 0;
         public int timer_game = 0;
         private int total_seconds;
-        public int seconds =7;
-        public int minutes=0;
+        public int seconds =0;
+        public int minutes=5;
         public int number_star=1;
         public string put_started;
         public string put_wait_data;
