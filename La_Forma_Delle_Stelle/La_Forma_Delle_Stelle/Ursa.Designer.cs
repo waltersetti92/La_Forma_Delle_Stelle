@@ -312,7 +312,7 @@
             this.lbl_Error.AutoSize = true;
             this.lbl_Error.Font = new System.Drawing.Font("Segoe Script", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Error.ForeColor = System.Drawing.Color.Gold;
-            this.lbl_Error.Location = new System.Drawing.Point(406, 1058);
+            this.lbl_Error.Location = new System.Drawing.Point(467, 873);
             this.lbl_Error.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Error.Name = "lbl_Error";
             this.lbl_Error.Size = new System.Drawing.Size(970, 108);
@@ -322,7 +322,7 @@
             // pictureBox13
             // 
             this.pictureBox13.Image = global::La_Forma_Delle_Stelle.Properties.Resources.Polar_Bear1;
-            this.pictureBox13.Location = new System.Drawing.Point(442, 725);
+            this.pictureBox13.Location = new System.Drawing.Point(112, 788);
             this.pictureBox13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(300, 265);
