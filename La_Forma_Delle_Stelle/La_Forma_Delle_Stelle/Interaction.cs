@@ -703,7 +703,29 @@ namespace La_Forma_Delle_Stelle
             }
 
         }
-
+        public async void wrong_recovery()
+        {
+            while (true)
+            {
+                string k = parentForm.Status_Changed(parentForm.activity_form);
+                int status = int.Parse(k);
+                if (status != 9 && status != 8)
+                {
+                    if (status == 11 || status == 12)
+                    {
+                        System.Diagnostics.Process.GetCurrentProcess().Kill();
+                    }
+                    if (status == 10)
+                    {
+                        await uda_server_communication.Server_Request(parentForm.wait_data());
+                        break;
+                    }
+                    await uda_server_communication.Server_Request(parentForm.wait_data());
+                    break;
+                }
+                Thread.Sleep(400);
+            }
+        }
         public async void star_4_appaerance()
         {
             while (true)
@@ -952,6 +974,7 @@ namespace La_Forma_Delle_Stelle
                                             else
                                             {
                                                 Wrong_Answer();
+                                                wrong_recovery();
                                               // await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 break;
                                             }
@@ -1003,8 +1026,8 @@ namespace La_Forma_Delle_Stelle
                                             else
                                             {
                                                 Wrong_Answer();
-
-                                             //   await uda_server_communication.Server_Request(parentForm.wait_data());
+                                                wrong_recovery();
+                                                //   await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 break;
                                             }
                                         case 3:
@@ -1051,8 +1074,8 @@ namespace La_Forma_Delle_Stelle
                                             else
                                             {
                                                 Wrong_Answer();
-                                                
-                                           //     await uda_server_communication.Server_Request(parentForm.wait_data());
+                                                wrong_recovery();
+                                                //     await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 break;
                                             }
 
@@ -1095,7 +1118,8 @@ namespace La_Forma_Delle_Stelle
                                             else
                                             {
                                                 Wrong_Answer();
-                                              //  await uda_server_communication.Server_Request(parentForm.wait_data());
+                                                wrong_recovery();
+                                                //  await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 break;
                                             }
                                         case 5:
@@ -1142,7 +1166,8 @@ namespace La_Forma_Delle_Stelle
                                             else
                                             {
                                                 Wrong_Answer();
-                                           //     await uda_server_communication.Server_Request(parentForm.wait_data());
+                                                wrong_recovery();
+                                                //     await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 break;
                                             }
                                         case 6:
@@ -1189,7 +1214,8 @@ namespace La_Forma_Delle_Stelle
                                             else
                                             {
                                                 Wrong_Answer();
-                                               // await uda_server_communication.Server_Request(parentForm.wait_data());
+                                                wrong_recovery();
+                                                // await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 break;
                                             }
                                         case 7:
@@ -1894,7 +1920,8 @@ namespace La_Forma_Delle_Stelle
                         }
                         if (status == 10)
                         {
-                            await uda_server_communication.Server_Request(parentForm.wait_data());
+                            PutStarted();
+                           // await uda_server_communication.Server_Request(parentForm.wait_data());
                             break;
                         }
                         Wrong_Answer();
@@ -1950,9 +1977,7 @@ namespace La_Forma_Delle_Stelle
         {
             parentForm.playbackResourceAudio("failure");
             Feedback.ForeColor = Color.DarkRed;
-            Feedback.Visible = true;
-            Feedback.Text = "RISPOSTA SBAGLIATA";
-            this.Update();
+           
             while (true)
             {
                 string k = parentForm.Status_Changed(parentForm.activity_form);
@@ -1965,13 +1990,16 @@ namespace La_Forma_Delle_Stelle
                     }
                     if (status == 10)
                     {
-                        Putwaitdata();
+                        PutStarted();
                         break;
                     }
+                    Feedback.Visible = true;
+                    Feedback.Text = "RISPOSTA SBAGLIATA";
+                    this.Update();
                     Thread.Sleep(2000);
                     Feedback.Text = "";
                     Feedback.Visible = false;
-                    await uda_server_communication.Server_Request(parentForm.wait_data());
+                   // await uda_server_communication.Server_Request(parentForm.wait_data());
                     parentForm.round_correct1++;
                     if (parentForm.round_correct1 == 5)
                     {
