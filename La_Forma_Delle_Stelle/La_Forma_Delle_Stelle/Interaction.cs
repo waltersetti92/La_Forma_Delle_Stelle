@@ -937,7 +937,6 @@ namespace La_Forma_Delle_Stelle
                                             {
 
                                                 answer(1);
-                                                //Thread.Sleep(500);
                                                 star_1_appaerance();
                                                 break;
                                             }
@@ -945,7 +944,6 @@ namespace La_Forma_Delle_Stelle
                                             {
 
                                                 answer(1);
-                                              //  Thread.Sleep(500);
                                                 star_1_appaerance();
                                                 break;
                                             }
@@ -953,21 +951,18 @@ namespace La_Forma_Delle_Stelle
                                             {
 
                                                 answer(1);
-                                               // Thread.Sleep(500);
                                                 star_1_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "13") && parentForm.round_correct1 == 4 && control == 1)
                                             {
                                                 answer(1);
-                                               // Thread.Sleep(500);
                                                 star_1_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "9") && parentForm.round_correct1 == 5 && control == 1)
                                             {
                                                 answer(1);
-                                                //Thread.Sleep(500);
                                                 star_1_appaerance();
                                                 break;
                                             }
@@ -975,7 +970,7 @@ namespace La_Forma_Delle_Stelle
                                             {
                                                 Wrong_Answer();
                                                 wrong_recovery();
-                                              // await uda_server_communication.Server_Request(parentForm.wait_data());
+                    
                                                 break;
                                             }
                                         case 2:
@@ -983,7 +978,6 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                             //   Thread.Sleep(500);
                                                 star_2_appaerance();   
                                                 break;
                                             }
@@ -992,7 +986,6 @@ namespace La_Forma_Delle_Stelle
                                             {
 
                                                 answer(1);
-                                                //Thread.Sleep(500);
                                                 star_2_appaerance();
                                                 break;
                                             }
@@ -1001,7 +994,6 @@ namespace La_Forma_Delle_Stelle
                                             {
 
                                                 answer(1);
-                                                //Thread.Sleep(500);
                                                 star_2_appaerance();
                                                 break;
                                             }
@@ -1010,7 +1002,6 @@ namespace La_Forma_Delle_Stelle
                                             {
 
                                                 answer(1);
-                                              //  Thread.Sleep(500);
                                                 star_2_appaerance();
                                                 break;
                                             }
@@ -1019,7 +1010,6 @@ namespace La_Forma_Delle_Stelle
                                             {
 
                                                 answer(1);
-                                              //  Thread.Sleep(500);
                                                 star_2_appaerance();
                                                 break;
                                             }
@@ -1027,7 +1017,6 @@ namespace La_Forma_Delle_Stelle
                                             {
                                                 Wrong_Answer();
                                                 wrong_recovery();
-                                                //   await uda_server_communication.Server_Request(parentForm.wait_data());
                                                 break;
                                             }
                                         case 3:
@@ -1035,7 +1024,7 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                           //     Thread.Sleep(500);
+                      
                                                 star_3_appaerance();
                                                 break;
                                             }
@@ -1043,7 +1032,7 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                             //   Thread.Sleep(500);
+                                    
                                                 star_3_appaerance();
                                                 break;
                                             }
@@ -1051,7 +1040,7 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                             //   Thread.Sleep(500);
+                                     
                                                 star_3_appaerance();
                                                 break;
                                             }
@@ -1059,7 +1048,7 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                        //       Thread.Sleep(500);
+                                  
                                                 star_3_appaerance();
                                                 break;
                                             }
@@ -1067,7 +1056,7 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                             //   Thread.Sleep(500);
+                                   
                                                 star_3_appaerance();
                                                 break;
                                             }
@@ -1075,7 +1064,7 @@ namespace La_Forma_Delle_Stelle
                                             {
                                                 Wrong_Answer();
                                                 wrong_recovery();
-                                                //     await uda_server_communication.Server_Request(parentForm.wait_data());
+                                               
                                                 break;
                                             }
 
@@ -1083,35 +1072,35 @@ namespace La_Forma_Delle_Stelle
                                             if (String.Equals(response, "15") && parentForm.round_correct1 == 1)
                                             {
                                                 answer(1);
-                                         //       Thread.Sleep(500);
+                                    
                                                star_4_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "10") && parentForm.round_correct1 == 2)
                                             {
                                                 answer(1);
-                                          //      Thread.Sleep(500);
+                                       
                                                 star_4_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "8") && parentForm.round_correct1 == 3)
                                             {
                                                 answer(1);
-                                           //     Thread.Sleep(500);
+                                     
                                                 star_4_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "20") && parentForm.round_correct1 == 4)
                                             {
                                                 answer(1);
-                                              //  Thread.Sleep(500);
+                                         
                                                 star_4_appaerance();
                                                 break;
                                             }
                                             if (String.Equals(response, "12") && parentForm.round_correct1 == 5)
                                             {
                                                 answer(1);
-                                             //   Thread.Sleep(500);
+                                      
                                                 star_4_appaerance();
                                                 break;
                                             }
@@ -1119,7 +1108,7 @@ namespace La_Forma_Delle_Stelle
                                             {
                                                 Wrong_Answer();
                                                 wrong_recovery();
-                                                //  await uda_server_communication.Server_Request(parentForm.wait_data());
+                                     
                                                 break;
                                             }
                                         case 5:
@@ -1127,7 +1116,7 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                           //    Thread.Sleep(500);
+                                     
                                                 star_5_appaerance();
                                                 break;
                                             }
@@ -1135,7 +1124,7 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                            //    Thread.Sleep(500);
+                              
                                                 star_5_appaerance();
                                                 break;
                                             }
@@ -1143,7 +1132,7 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                            //    Thread.Sleep(500);
+                                       
                                                 star_5_appaerance();
                                                 break;
                                             }
@@ -1151,7 +1140,7 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                            //    Thread.Sleep(500);
+                                      
                                                 star_5_appaerance();
                                                 break;
                                             }
@@ -1159,7 +1148,7 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                            //    Thread.Sleep(500);
+                                        
                                                 star_5_appaerance();
                                                 break;
                                             }
@@ -1167,7 +1156,7 @@ namespace La_Forma_Delle_Stelle
                                             {
                                                 Wrong_Answer();
                                                 wrong_recovery();
-                                                //     await uda_server_communication.Server_Request(parentForm.wait_data());
+                                            
                                                 break;
                                             }
                                         case 6:
@@ -1175,7 +1164,7 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                           //     Thread.Sleep(500);
+          
                                                 star_6_appaerance();
                                                 break;
                                             }
@@ -1183,7 +1172,7 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                           //     Thread.Sleep(500);
+                                 
                                                 star_6_appaerance();
                                                 break;
                                             }
@@ -1191,7 +1180,7 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                          //      Thread.Sleep(500);
+                                       
                                                 star_6_appaerance();
                                                 break;
                                             }
@@ -1199,7 +1188,7 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                         //       Thread.Sleep(500);
+                                   
                                                 star_6_appaerance();
                                                 break;
                                             }
@@ -1207,7 +1196,7 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                          //      Thread.Sleep(500);
+                                      
                                                 star_6_appaerance();
                                                 break;
                                             }
@@ -1215,7 +1204,7 @@ namespace La_Forma_Delle_Stelle
                                             {
                                                 Wrong_Answer();
                                                 wrong_recovery();
-                                                // await uda_server_communication.Server_Request(parentForm.wait_data());
+                                                
                                                 break;
                                             }
                                         case 7:
@@ -1223,61 +1212,45 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                         //       Thread.Sleep(500);
+                                        
                                                 await uda_server_communication.Server_Request(completed);
                                                 star_7_appaerance();
                                                 Thread.Sleep(1000);
-                                              //  Feedback.ForeColor = Color.Gold;
-                                               // Feedback.Visible = true;
-                                               // Feedback.Text = "GIOCO COMPLETATO!!";
+                                       
                                                 parentForm.contatore_iniziale = 0;
                                                 this.Update();
                                                 final_scenario();
                                                 parentForm.activity();
-                                                //parentForm.playbackResourceAudio("clapping1");
-                             
-       
-                                                //parentForm.activity();;
                                                 break;
                                             }
                                             if (String.Equals(response, "12") && parentForm.round_correct1 == 2)
 
                                             {
                                                 answer(1);
-                                           //     Thread.Sleep(500);
+                                           
                                                 await uda_server_communication.Server_Request(completed);
                                                 star_7_appaerance();
                                                 Thread.Sleep(1000);
-                                              //  Feedback.ForeColor = Color.Gold;
-                                              //  Feedback.Visible = true;
-                                              //  Feedback.Text = "GIOCO COMPLETATO!!";
+                                           
                                                 parentForm.contatore_iniziale = 0;
                                                 this.Update();
                                                 final_scenario();
                                                 parentForm.activity();
                           
-                                                //parentForm.playbackResourceAudio("clapping1");
-                                               
-                                            
                                                 break;
                                             }
                                             if (String.Equals(response, "28") && parentForm.round_correct1 == 3)
 
                                             {
                                                 answer(1);
-                                          //      Thread.Sleep(500);
+                                 
                                                 await uda_server_communication.Server_Request(completed);
                                                 star_7_appaerance();
                                                 Thread.Sleep(1000);
-                                              //  Feedback.ForeColor = Color.Gold;
-                                              //  Feedback.Visible = true;
-                                               // Feedback.Text = "GIOCO COMPLETATO!!";
+                                              
                                                 parentForm.contatore_iniziale = 0;
                                                 this.Update();
-                                                //parentForm.activity();
-
-                                                // parentForm.playbackResourceAudio("clapping1");
-
+                                                
                                                 final_scenario();
                                                 parentForm.activity();
                                                 break;
@@ -1285,13 +1258,11 @@ namespace La_Forma_Delle_Stelle
                                             if (String.Equals(response, "16") && parentForm.round_correct1 == 4)
                                             {
                                                 answer(1);
-                                          //      Thread.Sleep(500);
+                                     
                                                 await uda_server_communication.Server_Request(completed);
                                                 star_7_appaerance();
                                                 Thread.Sleep(1000);
-                                               // Feedback.ForeColor = Color.Gold;
-                                               // Feedback.Visible = true;
-                                               // Feedback.Text = "GIOCO COMPLETATO!!";
+                                          
                                                 parentForm.contatore_iniziale = 0;
                                                 this.Update();
                                               
@@ -1304,17 +1275,14 @@ namespace La_Forma_Delle_Stelle
 
                                             {
                                                 answer(1);
-                                             //   Thread.Sleep(500);
+                                     
                                                 await uda_server_communication.Server_Request(completed);
                                                 star_7_appaerance();
                                                 Thread.Sleep(1000);
-                                               // Feedback.ForeColor = Color.Gold;
-                                               // Feedback.Visible = true;
-                                               // Feedback.Text = "GIOCO COMPLETATO!!";
+                                         
                                                 parentForm.contatore_iniziale = 0;
                                                 this.Update();
                                               
-                                                // parentForm.playbackResourceAudio("clapping1");
                                                final_scenario();
                                                 parentForm.activity();
                                                 break;
@@ -1322,7 +1290,8 @@ namespace La_Forma_Delle_Stelle
                                             else
                                             {
                                                 Wrong_Answer();
-                                          //      await uda_server_communication.Server_Request(parentForm.wait_data());
+                                                wrong_recovery();
+                                              
                                                 break;
                                             }
                                     }
@@ -1428,7 +1397,8 @@ namespace La_Forma_Delle_Stelle
                                         else
                                         {
                                             Wrong_Answer();
-                                        //    await uda_server_communication.Server_Request(parentForm.wait_data());
+                                            wrong_recovery();
+                                           
                                             break;
                                         }
                                     case 2:
@@ -1436,7 +1406,7 @@ namespace La_Forma_Delle_Stelle
 
                                         {
                                             answer(1);
-                                        //    Thread.Sleep(2000);
+                                      
                                             star_2_appaerance();
                                             break;
                                         }
@@ -1444,7 +1414,7 @@ namespace La_Forma_Delle_Stelle
 
                                         {
                                             answer(1);
-                                           // Thread.Sleep(2000);
+                                      
                                             star_2_appaerance();
                                             break;
                                         }
@@ -1452,7 +1422,7 @@ namespace La_Forma_Delle_Stelle
 
                                         {
                                             answer(1);
-                                           // Thread.Sleep(2000);
+                            
                                             star_2_appaerance();
                                             break;
                                         }
@@ -1460,7 +1430,7 @@ namespace La_Forma_Delle_Stelle
 
                                         {
                                             answer(1);
-                                         //   Thread.Sleep(2000);
+                                       
                                             star_2_appaerance();
                                             break;
                                         }
@@ -1475,7 +1445,8 @@ namespace La_Forma_Delle_Stelle
                                         else
                                         {
                                             Wrong_Answer();
-                                         //   await uda_server_communication.Server_Request(parentForm.wait_data());
+                                            wrong_recovery();
+                                           
                                             break;
                                         }
 
@@ -1484,7 +1455,7 @@ namespace La_Forma_Delle_Stelle
 
                                         {
                                             answer(1);
-                                         //   Thread.Sleep(2000);
+                                       
                                             star_3_appaerance();
                                             break;
                                         }
@@ -1492,7 +1463,7 @@ namespace La_Forma_Delle_Stelle
 
                                         {
                                             answer(1);
-                                           // Thread.Sleep(2000);
+                                           
                                             star_3_appaerance();
                                             break;
                                         }
@@ -1500,7 +1471,7 @@ namespace La_Forma_Delle_Stelle
 
                                         {
                                             answer(1);
-                                         //   Thread.Sleep(2000);
+                                      
                                             star_3_appaerance();
                                             break;
                                         }
@@ -1508,7 +1479,7 @@ namespace La_Forma_Delle_Stelle
 
                                         {
                                             answer(1);
-                                           // Thread.Sleep(2000);
+                                      
                                             star_3_appaerance();
                                             break;
                                         }
@@ -1516,21 +1487,22 @@ namespace La_Forma_Delle_Stelle
 
                                         {
                                             answer(1);
-                                           // Thread.Sleep(2000);
+                                        
                                             star_3_appaerance();
                                             break;
                                         }
                                         else
                                         {
                                             Wrong_Answer();
-                                       //     await uda_server_communication.Server_Request(parentForm.wait_data());
+                                            wrong_recovery();
+                                        
                                             break;
                                         }
                                     case 4:
                                         if (String.Equals(response, "15") && parentForm.round_correct1 == 1)
                                         {
                                             answer(1);
-                                         //   Thread.Sleep(2000);
+                                   
                                             star_4_appaerance();
                                             break;
                                         }
@@ -1565,7 +1537,8 @@ namespace La_Forma_Delle_Stelle
                                         else
                                         {
                                             Wrong_Answer();
-                                         //   await uda_server_communication.Server_Request(parentForm.wait_data());
+                                            wrong_recovery();
+                                            //   await uda_server_communication.Server_Request(parentForm.wait_data());
                                             break;
                                         }
                                     case 5:
@@ -1612,7 +1585,8 @@ namespace La_Forma_Delle_Stelle
                                         else
                                         {
                                             Wrong_Answer();
-                                        //    await uda_server_communication.Server_Request(parentForm.wait_data());
+                                            wrong_recovery();
+                                            //    await uda_server_communication.Server_Request(parentForm.wait_data());
                                             break;
                                         }
                                     case 6:
@@ -1659,7 +1633,8 @@ namespace La_Forma_Delle_Stelle
                                         else
                                         {
                                             Wrong_Answer();
-                                    //        await uda_server_communication.Server_Request(parentForm.wait_data());
+                                            wrong_recovery();
+                                            //        await uda_server_communication.Server_Request(parentForm.wait_data());
                                             break;
                                         }
                                     case 7:
@@ -1744,8 +1719,7 @@ namespace La_Forma_Delle_Stelle
                                         {
                                             
                                             answer(1);
-                                            Thread.Sleep(500);
-                                           // await uda_server_communication.Server_Request(completed);
+                                     
                                             star_7_appaerance();
                                             Thread.Sleep(1000);
                                           //  Feedback.ForeColor = Color.Gold;
@@ -1761,7 +1735,8 @@ namespace La_Forma_Delle_Stelle
                                         else
                                         {
                                             Wrong_Answer();
-                                          //  await uda_server_communication.Server_Request(parentForm.wait_data());
+                                            wrong_recovery();
+                                           
                                             break;
                                         }
                                 }
@@ -1921,7 +1896,7 @@ namespace La_Forma_Delle_Stelle
                         if (status == 10)
                         {
                             PutStarted();
-                           // await uda_server_communication.Server_Request(parentForm.wait_data());
+                         
                             break;
                         }
                         Wrong_Answer();
