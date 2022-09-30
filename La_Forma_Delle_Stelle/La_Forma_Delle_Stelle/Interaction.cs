@@ -22,7 +22,7 @@ namespace La_Forma_Delle_Stelle
         public int counter_responses = 0;
         public int timer_game = 0;
         private int total_seconds;
-        public int seconds =4;
+        public int seconds =7;
         public int minutes=0;
         public int number_star=1;
         public string put_started;
@@ -1206,6 +1206,7 @@ namespace La_Forma_Delle_Stelle
                                                // Feedback.Text = "GIOCO COMPLETATO!!";
                                                 parentForm.contatore_iniziale = 0;
                                                 this.Update();
+                                                final_scenario();
                                                 parentForm.activity();
                                                 //parentForm.playbackResourceAudio("clapping1");
                              
@@ -1226,6 +1227,7 @@ namespace La_Forma_Delle_Stelle
                                               //  Feedback.Text = "GIOCO COMPLETATO!!";
                                                 parentForm.contatore_iniziale = 0;
                                                 this.Update();
+                                                final_scenario();
                                                 parentForm.activity();
                           
                                                 //parentForm.playbackResourceAudio("clapping1");
@@ -1247,10 +1249,10 @@ namespace La_Forma_Delle_Stelle
                                                 parentForm.contatore_iniziale = 0;
                                                 this.Update();
                                                 //parentForm.activity();
-             
+
                                                 // parentForm.playbackResourceAudio("clapping1");
 
-                                            
+                                                final_scenario();
                                                 parentForm.activity();
                                                 break;
                                             }
@@ -1267,9 +1269,7 @@ namespace La_Forma_Delle_Stelle
                                                 parentForm.contatore_iniziale = 0;
                                                 this.Update();
                                               
-                                                // parentForm.playbackResourceAudio("clapping1");
-                                                Thread.Sleep(5000);
-
+                                                final_scenario();
                                                 parentForm.activity();;
                                                 break;
                                             }
@@ -1289,8 +1289,8 @@ namespace La_Forma_Delle_Stelle
                                                 this.Update();
                                               
                                                 // parentForm.playbackResourceAudio("clapping1");
-                                               
-                                                parentForm.activity();;
+                                               final_scenario();
+                                                parentForm.activity();
                                                 break;
                                             }
                                             else
@@ -1650,10 +1650,9 @@ namespace La_Forma_Delle_Stelle
                                             //Feedback.Text = "GIOCO COMPLETATO!!";
                                             this.Update();
                                             parentForm.contatore_iniziale = 0;
+                                            final_scenario();
                                             parentForm.activity();
-                                            Thread.Sleep(5000);
-                                            // parentForm.playbackResourceAudio("clapping1");
-                                            parentForm.activity();;
+                          
                                             break;
                                             //parentForm.playbackResourceAudio("clapping1");
                                         }
@@ -1671,8 +1670,8 @@ namespace La_Forma_Delle_Stelle
                                             parentForm.contatore_iniziale = 0;
                                             this.Update();                                      
                                             parentForm.activity();
-                                            Thread.Sleep(5000);
-                                            parentForm.activity();;
+                                            final_scenario();
+                                        
                                             break;
                                             //parentForm.playbackResourceAudio("clapping1");
                                         }
@@ -1690,9 +1689,8 @@ namespace La_Forma_Delle_Stelle
                                             parentForm.contatore_iniziale = 0;
                                             this.Update();                                            
                                             parentForm.activity();
-                                      
-                                            Thread.Sleep(5000);
-                                            parentForm.activity();;
+                                            final_scenario();
+                                       
                                             break;
                                             //parentForm.playbackResourceAudio("clapping1");
                                         }
@@ -1710,8 +1708,8 @@ namespace La_Forma_Delle_Stelle
                                             parentForm.contatore_iniziale = 0;
                                             this.Update();
                                             parentForm.activity();
-                                            Thread.Sleep(5000);                                           
-                                            parentForm.activity();;
+                                            final_scenario();
+                                           
                                             break;
                                             //parentForm.playbackResourceAudio("clapping1");
                                         }
@@ -1730,10 +1728,9 @@ namespace La_Forma_Delle_Stelle
                                             parentForm.contatore_iniziale = 0;
                                             this.Update();
                                             parentForm.activity();
-                                            Thread.Sleep(5000);                                         
-                                            parentForm.activity();;
+                                            final_scenario();
+
                                             break;
-                                            //parentForm.playbackResourceAudio("clapping1");
                                         }
                                         else
                                         {
@@ -1836,11 +1833,10 @@ namespace La_Forma_Delle_Stelle
         }
         public void final_scenario()
         {
+
             timer2.Stop();
             lbl_minutes.Visible = false;
             this.Update();
-            //btn_conferma.Visible = false;
-            //txt_answers.Visible = false;
             Circle1.Visible = false;
             Circle2.Visible = false;
             //lbl_Error.Visible = false;

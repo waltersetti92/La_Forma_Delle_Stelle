@@ -76,7 +76,7 @@ namespace La_Forma_Delle_Stelle
             correct_answers1 = 0;
             timeleft1 = 6;
             seconds1 = 0;
-            minutes1 = 5;
+            minutes1 = 1;
         }
         public Main()
         {
