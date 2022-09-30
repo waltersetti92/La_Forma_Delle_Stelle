@@ -51,13 +51,13 @@ namespace La_Forma_Delle_Stelle
                     }
                     else if (status == 10 || status == 7 || status == 16)
                     {
-
+                        lbl_Error.Visible = false;
+                        this.Update();
                         indizio_box.WaitOnLoad = true;
                         indizio_box.ImageLocation = Main.resourcesPath + "\\" + a + ".png";
                         indizio_box.Visible = true;
                         lbl_Error.Text = "ECCO L'INDIZIO!";
                         lbl_Error.Visible = true;
-                        parentForm.playbackResourceAudio("success");
                         Thread.Sleep(2000);
                         this.Update();
                         break;
@@ -69,6 +69,7 @@ namespace La_Forma_Delle_Stelle
         public async void indizio()
         {
             star_invisible();
+            parentForm.playbackResourceAudio("success");
             //await uda_server_communication.Server_Request(completed);
             Image_Indizio(uda_server_communication.indizio + "_" + uda_server_communication.turno);
             
@@ -206,6 +207,11 @@ namespace La_Forma_Delle_Stelle
         }
 
         private void star1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_Error_Click(object sender, EventArgs e)
         {
 
         }

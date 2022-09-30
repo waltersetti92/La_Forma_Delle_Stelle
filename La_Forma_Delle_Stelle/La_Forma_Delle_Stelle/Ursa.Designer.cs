@@ -318,6 +318,7 @@
             this.lbl_Error.Size = new System.Drawing.Size(970, 108);
             this.lbl_Error.TabIndex = 36;
             this.lbl_Error.Text = "ECCO L\'ORSA MAGGIORE!";
+            this.lbl_Error.Click += new System.EventHandler(this.lbl_Error_Click);
             // 
             // pictureBox13
             // 

@@ -216,37 +216,13 @@ namespace La_Forma_Delle_Stelle
                     break;
                 }
                 currUC = ursa1;
-                ursa1.Ursa_Final();         
+                ursa1.Ursa_Final();
                 ursa1.indizio();
                 break;
             }
 
         }
-        public void activity_indizio()
-        {
-            interaction1.resetOperations();
-            interaction1.Visible = false;
-            ursa1.Visible = true;           
-            while (true)
-            {
-                string k = activity_form;
-                int status = int.Parse(k);
-                if (status == 11 || status == 12)
-                {
-                    System.Diagnostics.Process.GetCurrentProcess().Kill();
-                    ursa1.Visible = false;
-                    BL.Url_Put("5");
-                   
-                }
-                if (status == 13)
-                {
-               
-                }
-                currUC = ursa1;
-                ursa1.indizio();
-                break;
-            }
-        }
+      
 
         public void indizio_finale()
         {

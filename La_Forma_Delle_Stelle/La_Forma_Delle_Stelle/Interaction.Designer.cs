@@ -284,12 +284,13 @@
             this.Feedback.AutoSize = true;
             this.Feedback.Font = new System.Drawing.Font("Segoe Script", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Feedback.ForeColor = System.Drawing.Color.Gold;
-            this.Feedback.Location = new System.Drawing.Point(570, 931);
+            this.Feedback.Location = new System.Drawing.Point(479, 849);
             this.Feedback.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Feedback.Name = "Feedback";
             this.Feedback.Size = new System.Drawing.Size(1440, 108);
             this.Feedback.TabIndex = 30;
             this.Feedback.Text = "CLICCA E SCOPRI LA COSTELLAZIONE!";
+            this.Feedback.Click += new System.EventHandler(this.Feedback_Click);
             // 
             // star7
             // 
@@ -427,7 +428,7 @@
             this.Controls.Add(this.timerLabel);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Interaction";
-            this.Size = new System.Drawing.Size(2014, 1039);
+            this.Size = new System.Drawing.Size(1936, 957);
             this.Load += new System.EventHandler(this.Interaction_Load);
             ((System.ComponentModel.ISupportInitialize)(this.star7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star6)).EndInit();
